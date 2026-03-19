@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -8,342 +7,18 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
 <style>
-  /* QUIEN SOY */
-.quien-soy {
-  background: var(--black);
-  padding: 120px 64px;
-  border-top: 1px solid var(--border);
-}
-.quien-grid {
-  display: grid;
-  grid-template-columns: 420px 1fr;
-  gap: 100px;
-  align-items: start;
-}
-.quien-img-wrap {
-  position: sticky;
-  top: 120px;
-}
-.quien-img {
-  width: 100%;
-  aspect-ratio: 3/4;
-  object-fit: cover;
-  object-position: center top;
-  border-radius: 4px;
-  filter: grayscale(15%);
-  display: block;
-}
-.quien-img-caption {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-top: 16px;
-}
-.quien-img-line {
-  width: 24px;
-  height: 1px;
-  background: var(--accent);
-}
-.quien-img-caption span {
-  font-size: 12px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--muted);
-}
-.quien-content { padding-top: 8px; }
-.quien-content .section-h2 { margin-bottom: 36px; }
-.quien-text {
-  font-size: 16px;
-  line-height: 1.85;
-  color: rgba(245,242,238,0.72);
-  margin-bottom: 20px;
-}
-.quien-text strong {
-  color: var(--white);
-  font-weight: 500;
-}
-.quien-highlight {
-  border-left: 2px solid var(--accent);
-  padding: 16px 24px;
-  margin: 36px 0;
-  font-family: 'Playfair Display', serif;
-  font-style: italic;
-  font-size: 20px;
-  line-height: 1.5;
-  color: var(--white);
-}
-.quien-stats {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2px;
-  margin-top: 40px;
-  border: 1px solid var(--border);
-}
-.quien-stat {
-  padding: 28px 24px;
-  border-right: 1px solid var(--border);
-  transition: background 0.2s;
-}
-.quien-stat:last-child { border-right: none; }
-.quien-stat:hover { background: rgba(200,255,0,0.03); }
-.quien-stat-num {
-  font-family: 'Playfair Display', serif;
-  font-size: 36px;
-  font-weight: 700;
-  color: var(--accent);
-  line-height: 1;
-  letter-spacing: -1px;
-}
-.quien-stat-label {
-  font-size: 13px;
-  color: var(--muted);
-  margin-top: 6px;
-  line-height: 1.4;
-}
-
-/* TESTIMONIOS QUIEN SOY */
-.test-quien {
-  background: var(--gray);
-  padding: 80px 64px;
-  border-top: 1px solid var(--border);
-}
-.test-quien-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 13px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 48px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-.test-quien-title::after {
-  content: '';
-  flex: 1;
-  height: 1px;
-  background: var(--border);
-}
-.test-quien-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-.test-quien-card {
-  background: var(--black);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 32px 28px;
-  transition: border-color 0.25s, transform 0.25s;
-}
-.test-quien-card:hover {
-  border-color: rgba(200,255,0,0.2);
-  transform: translateY(-4px);
-}
-.test-stars {
-  display: flex;
-  gap: 3px;
-  margin-bottom: 16px;
-}
-.test-star {
-  width: 10px; height: 10px;
-  background: var(--accent);
-  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-}
-.test-quien-quote {
-  font-family: 'Playfair Display', serif;
-  font-style: italic;
-  font-size: 15px;
-  line-height: 1.7;
-  color: rgba(245,242,238,0.78);
-  margin-bottom: 24px;
-}
-.test-quien-divider {
-  width: 20px;
-  height: 1px;
-  background: var(--accent);
-  margin-bottom: 16px;
-}
-.test-quien-name { font-size: 14px; font-weight: 500; color: var(--white); }
-.test-quien-role { font-size: 12px; color: var(--muted); margin-top: 3px; }
-.test-quien-result {
-  display: inline-block;
-  margin-top: 12px;
-  background: rgba(200,255,0,0.08);
-  border: 1px solid rgba(200,255,0,0.2);
-  color: var(--accent);
-  font-size: 11px;
-  letter-spacing: 1px;
-  padding: 4px 10px;
-  border-radius: 100px;
-}
-
-@media (max-width: 960px) {
-  .quien-grid { grid-template-columns: 1fr; gap: 48px; }
-  .quien-img-wrap { position: static; }
-  .quien-stats { grid-template-columns: repeat(3, 1fr); }
-  .test-quien { padding: 64px 24px; }
-  .test-quien-grid { grid-template-columns: 1fr; }
-  .quien-soy { padding: 80px 24px; }
-}
 :root {
   --black: #0a0a0a;
   --white: #f5f2ee;
-  --gray: #1a1a1a;
-  --gray2: #2c2c2c;
+  --gray: #141414;
+  --gray2: #1e1e1e;
   --muted: rgba(245,242,238,0.45);
   --accent: #c8ff00;
   --border: rgba(245,242,238,0.08);
-  .wa-float {
-  position: fixed;
-  bottom: 32px;
-  right: 32px;
-  width: 60px; height: 60px;
-  background: #25d366;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 500;
-  box-shadow: 0 8px 32px rgba(37,211,102,0.4);
-  transition: transform 0.25s, box-shadow 0.25s;
-  text-decoration: none;
-  animation: waPulse 2.5s infinite;
 }
-.wa-float:hover {
-  transform: scale(1.1) translateY(-2px);
-  box-shadow: 0 16px 40px rgba(37,211,102,0.5);
-  animation: none;
-}
-.wa-tooltip {
-  position: absolute;
-  right: 70px;
-  background: #1a1a1a;
-  color: #f5f2ee;
-  font-size: 13px;
-  white-space: nowrap;
-  padding: 8px 14px;
-  border-radius: 6px;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.2s;
-}
-.wa-float:hover .wa-tooltip { opacity: 1; }
-@keyframes waPulse {
-  0%   { box-shadow: 0 0 0 0 rgba(37,211,102,0.5); }
-  70%  { box-shadow: 0 0 0 16px rgba(37,211,102,0); }
-  100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
-}
-  <a href="https://wa.me/TUNUMERO?text=Hola%20Pablo%2C%20quiero%20escalar%20mi%20tienda%20Shopify" 
-   target="_blank" 
-   class="wa-float">
-  <svg width="28" height="28" viewBox="0 0 24 24" fill="white">
-    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-  </svg>
-  <span class="wa-tooltip">¡Escríbeme ahora!</span>
-</a>
-}
+
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
-  <!-- QUIÉN SOY -->
-<section class="quien-soy" id="quien">
-  <div class="quien-grid">
-    <div class="quien-img-wrap reveal">
-      <img
-        src="IMG_5673.jpg"
-        alt="Pablo Villamo — Especialista Shopify y Meta Ads"
-        class="quien-img"
-      />
-      <div class="quien-img-caption">
-        <div class="quien-img-line"></div>
-        <span>Pablo Villamo · Fundador</span>
-      </div>
-    </div>
-    <div class="quien-content">
-      <div class="section-label reveal">
-        <div class="section-label-line"></div>
-        <span>Quién soy</span>
-      </div>
-      <h2 class="section-h2 reveal d1">No soy una<br>agencia. Soy<br><em>Pablo.</em></h2>
-
-      <p class="quien-text reveal d2">
-        Desde <strong>2020</strong> he trabajado directamente con dueños de negocios digitales que querían vender más — no con reportes bonitos ni con equipos que no conocen su producto.
-      </p>
-      <p class="quien-text reveal d2">
-        En estos años he acompañado a <strong>más de 30 negocios</strong> en distintos nichos: moda, cosméticos, accesorios, hogar, alimentos especializados. Todos con un denominador común — tenían un buen producto pero no un sistema de ventas que funcionara de forma predecible.
-      </p>
-
-      <div class="quien-highlight reveal d3">
-        "Mi metodología no es un curso ni un template. Es un proceso construido caso a caso, con los números reales de tu negocio."
-      </div>
-
-      <p class="quien-text reveal d3">
-        El resultado promedio de mis clientes: <strong>tasa de conversión entre 1% y 1.5%</strong> — por encima del estándar de la industria — con <strong>ROAS entre 3× y 5×</strong> dependiendo del nicho y el producto. No son promesas. Son los números que mis clientes me muestran cada mes.
-      </p>
-      <p class="quien-text reveal d3">
-        Si estás buscando a alguien que entre a tu negocio, entienda tu contexto y te diga exactamente qué cambiar — sin venderte un paquete genérico — estás en el lugar correcto.
-      </p>
-
-      <div class="quien-stats reveal d4">
-        <div class="quien-stat">
-          <div class="quien-stat-num">30+</div>
-          <div class="quien-stat-label">Negocios digitales acompañados</div>
-        </div>
-        <div class="quien-stat">
-          <div class="quien-stat-num">5×</div>
-          <div class="quien-stat-label">ROAS máximo alcanzado con clientes</div>
-        </div>
-        <div class="quien-stat">
-          <div class="quien-stat-num">2020</div>
-          <div class="quien-stat-label">Año en que empecé a construir esta metodología</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- TESTIMONIOS QUIEN SOY -->
-<div class="test-quien">
-  <div class="test-quien-title reveal">Lo que dicen mis clientes</div>
-  <div class="test-quien-grid">
-    <div class="test-quien-card reveal d1">
-      <div class="test-stars">
-        <div class="test-star"></div><div class="test-star"></div>
-        <div class="test-star"></div><div class="test-star"></div>
-        <div class="test-star"></div>
-      </div>
-      <p class="test-quien-quote">Pablo no te vende un servicio, te construye un sistema. En 45 días teníamos campañas corriendo con un ROAS que nunca habíamos visto. Lo más valioso fue entender por qué funcionaba cada decisión.</p>
-      <div class="test-quien-divider"></div>
-      <div class="test-quien-name">María R.</div>
-      <div class="test-quien-role">Dueña — Tienda de ropa femenina</div>
-      <span class="test-quien-result">ROAS 3.1× · +60% ventas</span>
-    </div>
-    <div class="test-quien-card reveal d2">
-      <div class="test-stars">
-        <div class="test-star"></div><div class="test-star"></div>
-        <div class="test-star"></div><div class="test-star"></div>
-        <div class="test-star"></div>
-      </div>
-      <p class="test-quien-quote">Llevaba 6 meses perdiendo dinero en Meta Ads. En la primera sesión con Pablo entendí exactamente dónde estaba el problema. No fue magia — fue diagnóstico real y un plan concreto que funcionó.</p>
-      <div class="test-quien-divider"></div>
-      <div class="test-quien-name">Jorge C.</div>
-      <div class="test-quien-role">Fundador — Accesorios para el hogar</div>
-      <span class="test-quien-result">De ROAS 0.8 → 3.4 en 45 días</span>
-    </div>
-    <div class="test-quien-card reveal d3">
-      <div class="test-stars">
-        <div class="test-star"></div><div class="test-star"></div>
-        <div class="test-star"></div><div class="test-star"></div>
-        <div class="test-star"></div>
-      </div>
-      <p class="test-quien-quote">Lo que más me sorprendió fue la velocidad. En menos de 3 meses pasé de 5 ventas semanales a 30. Pablo conoce Shopify y Meta Ads como nadie — y lo más importante, conoce el negocio del cliente.</p>
-      <div class="test-quien-divider"></div>
-      <div class="test-quien-name">Andrea L.</div>
-      <div class="test-quien-role">CEO — Cosméticos naturales</div>
-      <span class="test-quien-result">5 → 30 ventas/semana en 90 días</span>
-    </div>
-  </div>
-</div>
 body {
   background: var(--black);
   color: var(--white);
@@ -353,6 +28,7 @@ body {
   cursor: none;
 }
 
+/* CURSOR */
 .cursor {
   width: 8px; height: 8px;
   background: var(--accent);
@@ -361,7 +37,7 @@ body {
   pointer-events: none;
   z-index: 9999;
   transform: translate(-50%, -50%);
-  transition: width 0.2s, height 0.2s, transform 0.15s;
+  transition: width 0.2s, height 0.2s;
 }
 .cursor-ring {
   width: 32px; height: 32px;
@@ -379,15 +55,16 @@ nav {
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 100;
-  padding: 28px 64px;
+  padding: 24px 64px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(10,10,10,0.85);
-  backdrop-filter: blur(16px);
+  background: rgba(10,10,10,0.9);
+  backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border);
+  transition: padding 0.3s;
 }
-
+.nav-scrolled { padding: 16px 64px !important; }
 .logo {
   font-family: 'DM Sans', sans-serif;
   font-weight: 500;
@@ -396,12 +73,8 @@ nav {
   color: var(--white);
   text-decoration: none;
 }
-.logo span {
-  color: var(--accent);
-  font-weight: 400;
-}
-
-nav ul { list-style: none; display: flex; gap: 48px; }
+.logo span { color: var(--accent); font-weight: 300; }
+nav ul { list-style: none; display: flex; gap: 40px; align-items: center; }
 nav ul a {
   color: var(--muted);
   text-decoration: none;
@@ -411,38 +84,53 @@ nav ul a {
   transition: color 0.2s;
 }
 nav ul a:hover { color: var(--white); }
-
 .nav-cta {
   background: var(--accent) !important;
   color: var(--black) !important;
-  padding: 11px 24px !important;
+  padding: 10px 22px !important;
   border-radius: 2px !important;
   font-weight: 500 !important;
   text-transform: none !important;
   letter-spacing: 0 !important;
-  font-size: 14px !important;
+  font-size: 13px !important;
   transition: opacity 0.2s !important;
 }
-.nav-cta:hover { opacity: 0.88 !important; color: var(--black) !important; }
+.nav-cta:hover { opacity: 0.85 !important; }
 
 /* HERO */
 .hero {
   min-height: 100vh;
-  display: grid;
-  grid-template-rows: 1fr auto;
-  padding: 140px 64px 80px;
+  padding: 160px 64px 80px;
   position: relative;
   overflow: hidden;
   border-bottom: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
-
+.hero-bg-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(200,255,0,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(200,255,0,0.03) 1px, transparent 1px);
+  background-size: 80px 80px;
+  pointer-events: none;
+}
+.hero-bg-glow {
+  position: absolute;
+  top: -200px; right: -100px;
+  width: 700px; height: 700px;
+  background: radial-gradient(circle, rgba(200,255,0,0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
 .hero-inner {
   display: grid;
-  grid-template-columns: 1fr 340px;
+  grid-template-columns: 1fr 360px;
   gap: 60px;
   align-items: end;
+  position: relative;
 }
-
 .hero-eyebrow {
   display: flex;
   align-items: center;
@@ -451,44 +139,34 @@ nav ul a:hover { color: var(--white); }
   opacity: 0;
   animation: fadeUp 0.8s ease 0.2s forwards;
 }
-.hero-eyebrow-line {
-  width: 32px;
-  height: 1px;
-  background: var(--accent);
-}
+.hero-eyebrow-line { width: 32px; height: 1px; background: var(--accent); }
 .hero-eyebrow span {
   font-size: 11px;
   letter-spacing: 3px;
   text-transform: uppercase;
   color: var(--accent);
 }
-
 .hero h1 {
   font-family: 'Playfair Display', serif;
   font-weight: 900;
-  font-size: clamp(58px, 7.5vw, 108px);
-  line-height: 1;
-  letter-spacing: -1px;
+  font-size: clamp(60px, 7.5vw, 110px);
+  line-height: 0.95;
+  letter-spacing: -2px;
   opacity: 0;
   animation: fadeUp 0.9s ease 0.4s forwards;
 }
-.hero h1 em {
-  font-style: italic;
-  color: var(--accent);
-}
-
+.hero h1 em { font-style: italic; color: var(--accent); }
 .hero-right {
   opacity: 0;
   animation: fadeUp 0.9s ease 0.6s forwards;
-  padding-bottom: 8px;
+  padding-bottom: 12px;
 }
 .hero-right p {
   font-size: 16px;
-  line-height: 1.75;
+  line-height: 1.8;
   color: var(--muted);
   margin-bottom: 36px;
 }
-
 .btn-primary {
   display: inline-block;
   background: var(--accent);
@@ -500,22 +178,18 @@ nav ul a:hover { color: var(--white); }
   border-radius: 2px;
   text-decoration: none;
   transition: opacity 0.2s, transform 0.2s;
-  letter-spacing: 0.2px;
 }
 .btn-primary:hover { opacity: 0.88; transform: translateY(-1px); }
-
 .btn-ghost {
   display: inline-block;
   color: var(--muted);
   font-size: 14px;
   text-decoration: none;
-  letter-spacing: 0.3px;
-  transition: color 0.2s;
   margin-top: 16px;
+  transition: color 0.2s;
 }
 .btn-ghost:hover { color: var(--white); }
 .btn-ghost::after { content: ' →'; }
-
 .hero-bottom {
   display: flex;
   justify-content: space-between;
@@ -525,26 +199,17 @@ nav ul a:hover { color: var(--white); }
   margin-top: 60px;
   opacity: 0;
   animation: fadeUp 0.8s ease 0.9s forwards;
+  position: relative;
 }
-
-.hero-stats {
-  display: flex;
-  gap: 64px;
-}
+.hero-stats { display: flex; gap: 64px; }
 .hero-stat-num {
   font-family: 'Playfair Display', serif;
-  font-size: 36px;
+  font-size: 38px;
   font-weight: 700;
   color: var(--white);
   line-height: 1;
 }
-.hero-stat-label {
-  font-size: 12px;
-  color: var(--muted);
-  margin-top: 4px;
-  letter-spacing: 0.5px;
-}
-
+.hero-stat-label { font-size: 12px; color: var(--muted); margin-top: 4px; }
 .hero-scroll {
   display: flex;
   align-items: center;
@@ -554,14 +219,10 @@ nav ul a:hover { color: var(--white); }
   text-transform: uppercase;
   color: var(--muted);
 }
-.hero-scroll-line {
-  width: 40px;
-  height: 1px;
-  background: var(--muted);
-}
+.hero-scroll-line { width: 40px; height: 1px; background: var(--muted); }
 
 @keyframes fadeUp {
-  from { opacity: 0; transform: translateY(24px); }
+  from { opacity: 0; transform: translateY(28px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
@@ -574,28 +235,23 @@ nav ul a:hover { color: var(--white); }
 }
 .ticker-track {
   display: inline-flex;
-  animation: ticker 22s linear infinite;
+  animation: ticker 24s linear infinite;
 }
 .ticker-item {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 500;
   color: var(--black);
-  letter-spacing: 1.5px;
+  letter-spacing: 2px;
   text-transform: uppercase;
   padding: 0 48px;
 }
-.ticker-dot {
-  color: rgba(10,10,10,0.3);
-  padding: 0;
-}
+.ticker-dot { color: rgba(10,10,10,0.25); }
 @keyframes ticker {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
 }
 
-/* SECTIONS */
-section { padding: 120px 64px; }
+/* SECTION BASE */
 .section-label {
   display: flex;
   align-items: center;
@@ -609,12 +265,11 @@ section { padding: 120px 64px; }
   text-transform: uppercase;
   color: var(--accent);
 }
-
 .section-h2 {
   font-family: 'Playfair Display', serif;
   font-weight: 900;
-  font-size: clamp(36px, 4.5vw, 60px);
-  line-height: 1.05;
+  font-size: clamp(38px, 4.5vw, 62px);
+  line-height: 1.02;
   letter-spacing: -0.5px;
 }
 .section-h2 em { font-style: italic; color: var(--accent); }
@@ -622,6 +277,7 @@ section { padding: 120px 64px; }
 /* PROBLEMA */
 .problema {
   background: var(--gray);
+  padding: 120px 64px;
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
 }
@@ -634,7 +290,7 @@ section { padding: 120px 64px; }
 .problema-head p {
   margin-top: 28px;
   font-size: 16px;
-  line-height: 1.75;
+  line-height: 1.8;
   color: var(--muted);
   max-width: 380px;
 }
@@ -651,17 +307,12 @@ section { padding: 120px 64px; }
 }
 .pain-item:first-child { border-top: 1px solid var(--border); }
 .pain-item:hover { padding-left: 10px; }
-.pain-n {
-  font-family: 'Playfair Display', serif;
-  font-size: 12px;
-  color: var(--accent);
-  margin-top: 3px;
-}
-.pain-text { font-size: 15px; line-height: 1.65; color: rgba(245,242,238,0.7); }
+.pain-n { font-family: 'Playfair Display', serif; font-size: 12px; color: var(--accent); margin-top: 3px; }
+.pain-text { font-size: 15px; line-height: 1.7; color: rgba(245,242,238,0.7); }
 .pain-text strong { color: var(--white); font-weight: 500; display: block; margin-bottom: 4px; font-size: 16px; }
 
 /* SOLUCIÓN */
-.solucion { background: var(--black); }
+.solucion { background: var(--black); padding: 120px 64px; }
 .solucion-top {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -669,17 +320,8 @@ section { padding: 120px 64px; }
   align-items: end;
   margin-bottom: 80px;
 }
-.solucion-intro {
-  font-size: 16px;
-  line-height: 1.75;
-  color: var(--muted);
-  padding-bottom: 4px;
-}
-.steps {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  border: 1px solid var(--border);
-}
+.solucion-intro { font-size: 16px; line-height: 1.8; color: var(--muted); }
+.steps { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--border); }
 .step {
   padding: 48px 36px;
   border-right: 1px solid var(--border);
@@ -692,20 +334,14 @@ section { padding: 120px 64px; }
   font-family: 'Playfair Display', serif;
   font-size: 48px;
   font-weight: 700;
-  color: rgba(200,255,0,0.15);
+  color: rgba(200,255,0,0.12);
   line-height: 1;
   margin-bottom: 28px;
   transition: color 0.3s;
 }
 .step:hover .step-num { color: rgba(200,255,0,0.4); }
-.step h3 {
-  font-family: 'Playfair Display', serif;
-  font-size: 20px;
-  font-weight: 700;
-  margin-bottom: 12px;
-  letter-spacing: -0.2px;
-}
-.step p { font-size: 14px; line-height: 1.7; color: var(--muted); }
+.step h3 { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; margin-bottom: 12px; }
+.step p { font-size: 14px; line-height: 1.75; color: var(--muted); }
 .step-accent {
   position: absolute;
   bottom: 0; left: 0; right: 0;
@@ -718,15 +354,8 @@ section { padding: 120px 64px; }
 .step:hover .step-accent { transform: scaleX(1); }
 
 /* MÉTRICAS */
-.metricas {
-  background: var(--black);
-  padding: 0 64px 120px;
-}
-.metricas-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  border: 1px solid var(--border);
-}
+.metricas { background: var(--black); padding: 0 64px 120px; }
+.metricas-grid { display: grid; grid-template-columns: repeat(4, 1fr); border: 1px solid var(--border); }
 .metrica {
   padding: 52px 36px;
   border-right: 1px solid var(--border);
@@ -745,25 +374,132 @@ section { padding: 120px 64px; }
 }
 .metrica-label { font-size: 13px; color: var(--muted); line-height: 1.5; }
 
+/* QUIEN SOY */
+.quien-soy {
+  background: var(--black);
+  padding: 120px 64px;
+  border-top: 1px solid var(--border);
+}
+.quien-grid {
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  gap: 100px;
+  align-items: start;
+}
+.quien-img-wrap { position: sticky; top: 120px; }
+.quien-img {
+  width: 100%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 4px;
+  display: block;
+  filter: grayscale(10%) contrast(1.05);
+}
+.quien-img-caption {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 16px;
+}
+.quien-img-line { width: 24px; height: 1px; background: var(--accent); }
+.quien-img-caption span { font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); }
+.quien-content { padding-top: 8px; }
+.quien-content .section-h2 { margin-bottom: 36px; }
+.quien-text {
+  font-size: 16px;
+  line-height: 1.85;
+  color: rgba(245,242,238,0.72);
+  margin-bottom: 20px;
+}
+.quien-text strong { color: var(--white); font-weight: 500; }
+.quien-highlight {
+  border-left: 2px solid var(--accent);
+  padding: 16px 24px;
+  margin: 36px 0;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 20px;
+  line-height: 1.55;
+  color: var(--white);
+  background: rgba(200,255,0,0.02);
+}
+.quien-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  margin-top: 40px;
+  border: 1px solid var(--border);
+}
+.quien-stat { padding: 28px 24px; border-right: 1px solid var(--border); transition: background 0.2s; }
+.quien-stat:last-child { border-right: none; }
+.quien-stat:hover { background: rgba(200,255,0,0.03); }
+.quien-stat-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1;
+  letter-spacing: -1px;
+}
+.quien-stat-label { font-size: 13px; color: var(--muted); margin-top: 6px; line-height: 1.4; }
+
+/* TESTIMONIOS */
+.testimonios { background: var(--gray); padding: 120px 64px; border-top: 1px solid var(--border); }
+.testimonios-head { margin-bottom: 64px; }
+.test-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border: 1px solid var(--border);
+}
+.test-card {
+  padding: 44px 36px;
+  border-right: 1px solid var(--border);
+  transition: background 0.25s, border-color 0.25s;
+  position: relative;
+}
+.test-card:last-child { border-right: none; }
+.test-card:hover { background: rgba(200,255,0,0.02); }
+.test-stars { display: flex; gap: 3px; margin-bottom: 20px; }
+.test-star {
+  width: 10px; height: 10px;
+  background: var(--accent);
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+.test-quote {
+  font-family: 'Playfair Display', serif;
+  font-size: 15px;
+  font-style: italic;
+  line-height: 1.75;
+  color: rgba(245,242,238,0.82);
+  margin-bottom: 32px;
+}
+.test-divider { width: 24px; height: 1px; background: var(--accent); margin-bottom: 20px; }
+.test-name { font-size: 14px; font-weight: 500; color: var(--white); }
+.test-biz { font-size: 12px; color: var(--muted); margin-top: 3px; }
+.test-result {
+  display: inline-block;
+  margin-top: 14px;
+  background: rgba(200,255,0,0.08);
+  border: 1px solid rgba(200,255,0,0.18);
+  color: var(--accent);
+  font-size: 11px;
+  letter-spacing: 1px;
+  padding: 4px 10px;
+  border-radius: 100px;
+}
+
 /* PROCESO */
-.proceso { background: var(--gray); }
+.proceso { background: var(--black); padding: 120px 64px; border-top: 1px solid var(--border); }
 .proceso-grid {
   display: grid;
   grid-template-columns: 380px 1fr;
   gap: 100px;
   align-items: start;
 }
-.proceso-sticky {
-  position: sticky;
-  top: 120px;
-}
+.proceso-sticky { position: sticky; top: 120px; }
 .proceso-sticky .section-h2 { margin-bottom: 20px; }
-.proceso-sticky p {
-  font-size: 15px;
-  line-height: 1.75;
-  color: var(--muted);
-  margin-bottom: 36px;
-}
+.proceso-sticky p { font-size: 15px; line-height: 1.8; color: var(--muted); margin-bottom: 36px; }
 .proceso-items { display: flex; flex-direction: column; }
 .proceso-item {
   padding: 32px 0;
@@ -776,109 +512,137 @@ section { padding: 120px 64px; }
 }
 .proceso-item:first-child { border-top: 1px solid var(--border); }
 .proceso-item:hover { padding-left: 8px; }
-.proceso-num {
-  font-family: 'Playfair Display', serif;
-  font-size: 13px;
-  color: var(--accent);
-  margin-top: 3px;
-}
-.proceso-item h4 {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 16px;
-  font-weight: 500;
-  margin-bottom: 8px;
-  color: var(--white);
-}
-.proceso-item p { font-size: 14px; color: var(--muted); line-height: 1.65; }
+.proceso-num { font-family: 'Playfair Display', serif; font-size: 13px; color: var(--accent); margin-top: 3px; }
+.proceso-item h4 { font-size: 16px; font-weight: 500; margin-bottom: 8px; color: var(--white); }
+.proceso-item p { font-size: 14px; color: var(--muted); line-height: 1.7; }
 
-/* TESTIMONIOS */
-.testimonios { background: var(--black); }
-.testimonios-head {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  margin-bottom: 64px;
-}
-.test-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  border: 1px solid var(--border);
-}
-.test-card {
-  padding: 44px 36px;
-  border-right: 1px solid var(--border);
-  transition: background 0.2s;
-}
-.test-card:last-child { border-right: none; }
-.test-card:hover { background: rgba(200,255,0,0.02); }
-.test-quote {
-  font-family: 'Playfair Display', serif;
-  font-size: 16px;
-  font-style: italic;
-  line-height: 1.7;
-  color: rgba(245,242,238,0.8);
-  margin-bottom: 32px;
-}
-.test-divider {
-  width: 24px;
-  height: 1px;
-  background: var(--accent);
-  margin-bottom: 20px;
-}
-.test-name { font-size: 14px; font-weight: 500; color: var(--white); }
-.test-biz { font-size: 12px; color: var(--muted); margin-top: 3px; }
-
-/* CTA FINAL */
-.cta-final {
+/* CONTACTO */
+.contacto {
   background: var(--gray);
-  padding: 160px 64px;
+  padding: 120px 64px;
+  border-top: 1px solid var(--border);
   position: relative;
   overflow: hidden;
-  text-align: center;
-  border-top: 1px solid var(--border);
 }
-.cta-final .section-label { justify-content: center; margin-bottom: 40px; }
-.cta-big {
-  font-family: 'Playfair Display', serif;
-  font-weight: 900;
-  font-size: clamp(52px, 8vw, 112px);
-  line-height: 0.95;
-  letter-spacing: -1.5px;
+.contacto-bg {
+  position: absolute;
+  bottom: -200px; right: -100px;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(200,255,0,0.05) 0%, transparent 70%);
+  pointer-events: none;
+}
+.contacto-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 100px;
+  align-items: start;
+  position: relative;
+}
+.contacto-left .section-h2 { margin-bottom: 24px; }
+.contacto-left p { font-size: 16px; line-height: 1.8; color: var(--muted); margin-bottom: 40px; }
+.contacto-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
   margin-bottom: 40px;
 }
-.cta-big em { font-style: italic; color: var(--accent); display: block; }
-.cta-sub {
-  font-size: 17px;
+.contacto-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 14px;
   color: var(--muted);
-  max-width: 440px;
-  margin: 0 auto 52px;
-  line-height: 1.7;
 }
-.cta-note {
-  margin-top: 20px;
-  font-size: 12px;
-  color: rgba(245,242,238,0.3);
+.contacto-meta-icon {
+  width: 36px; height: 36px;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.contacto-meta-icon svg { width: 15px; height: 15px; fill: var(--accent); }
+.contacto-social { display: flex; gap: 12px; margin-top: 36px; }
+.social-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  font-size: 13px;
+  color: var(--muted);
+  text-decoration: none;
+  transition: border-color 0.25s, color 0.25s;
   letter-spacing: 0.5px;
 }
-.cta-note::before { content: '— '; }
+.social-link:hover { border-color: rgba(200,255,0,0.3); color: var(--white); }
+.social-link svg { width: 14px; height: 14px; fill: currentColor; flex-shrink: 0; }
 
-/* FAQ */
-.faq { background: var(--black); }
-.faq-grid {
-  display: grid;
-  grid-template-columns: 320px 1fr;
-  gap: 100px;
-}
-.faq-sticky {
+/* CTA FORM CARD */
+.cta-card {
+  background: var(--black);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 48px;
   position: sticky;
   top: 120px;
-  height: fit-content;
 }
+.cta-card-label {
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 20px;
+}
+.cta-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  line-height: 1.15;
+}
+.cta-card p { font-size: 14px; color: var(--muted); margin-bottom: 32px; line-height: 1.7; }
+.cta-divider { width: 100%; height: 1px; background: var(--border); margin: 24px 0; }
+.cta-features { display: flex; flex-direction: column; gap: 12px; margin-bottom: 36px; }
+.cta-feature {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  color: rgba(245,242,238,0.7);
+}
+.cta-feature-dot {
+  width: 6px; height: 6px;
+  background: var(--accent);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.btn-primary-full {
+  display: block;
+  width: 100%;
+  background: var(--accent);
+  color: var(--black);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  padding: 18px 32px;
+  border-radius: 2px;
+  text-decoration: none;
+  text-align: center;
+  transition: opacity 0.2s, transform 0.2s;
+  letter-spacing: 0.2px;
+}
+.btn-primary-full:hover { opacity: 0.88; transform: translateY(-1px); }
+.cta-note { font-size: 12px; color: rgba(245,242,238,0.25); text-align: center; margin-top: 14px; }
+
+/* FAQ */
+.faq { background: var(--black); padding: 120px 64px; border-top: 1px solid var(--border); }
+.faq-grid { display: grid; grid-template-columns: 320px 1fr; gap: 100px; }
+.faq-sticky { position: sticky; top: 120px; height: fit-content; }
 .faq-list { display: flex; flex-direction: column; }
-.faq-item {
-  border-bottom: 1px solid var(--border);
-  cursor: pointer;
-}
+.faq-item { border-bottom: 1px solid var(--border); cursor: pointer; }
 .faq-item:first-child { border-top: 1px solid var(--border); }
 .faq-q {
   display: flex;
@@ -907,7 +671,7 @@ section { padding: 120px 64px; }
 .faq-item.open .faq-icon { transform: rotate(45deg); border-color: var(--accent); }
 .faq-a {
   font-size: 14px;
-  line-height: 1.75;
+  line-height: 1.8;
   color: var(--muted);
   max-height: 0;
   overflow: hidden;
@@ -924,9 +688,9 @@ footer {
   justify-content: space-between;
   align-items: center;
 }
-.footer-logo { font-size: 16px; font-weight: 500; letter-spacing: 0.3px; }
+.footer-logo { font-size: 16px; font-weight: 500; }
 .footer-logo span { color: var(--accent); font-weight: 300; }
-footer p { font-size: 12px; color: rgba(245,242,238,0.25); }
+footer p { font-size: 12px; color: rgba(245,242,238,0.22); }
 .footer-links { display: flex; gap: 28px; }
 .footer-links a { font-size: 13px; color: var(--muted); text-decoration: none; transition: color 0.2s; }
 .footer-links a:hover { color: var(--white); }
@@ -939,23 +703,62 @@ footer p { font-size: 12px; color: rgba(245,242,238,0.25); }
 .d3 { transition-delay: 0.3s; }
 .d4 { transition-delay: 0.4s; }
 
+/* WHATSAPP */
+.wa-float {
+  position: fixed;
+  bottom: 32px; right: 32px;
+  width: 56px; height: 56px;
+  background: #25d366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 500;
+  text-decoration: none;
+  animation: waPulse 2.5s infinite;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+.wa-float:hover { transform: scale(1.1) translateY(-2px); animation: none; box-shadow: 0 16px 40px rgba(37,211,102,0.5); }
+.wa-tooltip {
+  position: absolute;
+  right: 66px;
+  background: #1a1a1a;
+  color: #f5f2ee;
+  font-size: 12px;
+  white-space: nowrap;
+  padding: 8px 14px;
+  border-radius: 4px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+  border: 1px solid var(--border);
+}
+.wa-float:hover .wa-tooltip { opacity: 1; }
+@keyframes waPulse {
+  0%   { box-shadow: 0 0 0 0 rgba(37,211,102,0.5); }
+  70%  { box-shadow: 0 0 0 14px rgba(37,211,102,0); }
+  100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+}
+
+/* RESPONSIVE */
 @media (max-width: 960px) {
   nav { padding: 20px 24px; }
   nav ul { display: none; }
-  section, .metricas { padding: 80px 24px; }
   .hero { padding: 120px 24px 60px; }
   .hero-inner { grid-template-columns: 1fr; }
   .hero-right { display: none; }
   .hero-bottom { flex-direction: column; gap: 24px; align-items: flex-start; }
-  .hero-stats { gap: 36px; }
-  .problema-grid, .solucion-top, .proceso-grid, .faq-grid { grid-template-columns: 1fr; gap: 48px; }
-  .proceso-sticky, .faq-sticky { position: static; }
+  .hero-stats { gap: 32px; }
+  .problema, .solucion, .metricas, .quien-soy, .testimonios, .proceso, .contacto, .faq { padding: 80px 24px; }
+  .metricas { padding: 0 24px 80px; }
+  .problema-grid, .solucion-top, .quien-grid, .proceso-grid, .faq-grid, .contacto-grid { grid-template-columns: 1fr; gap: 48px; }
+  .quien-img-wrap, .proceso-sticky, .faq-sticky, .cta-card { position: static; }
   .steps, .metricas-grid, .test-grid { grid-template-columns: 1fr; }
   .step, .metrica, .test-card { border-right: none; border-bottom: 1px solid var(--border); }
-  footer { flex-direction: column; gap: 16px; text-align: center; }
+  .quien-stats { grid-template-columns: repeat(3, 1fr); }
+  footer { flex-direction: column; gap: 16px; text-align: center; padding: 32px 24px; }
   body { cursor: auto; }
   .cursor, .cursor-ring { display: none; }
-  .cta-big { font-size: 48px; }
 }
 </style>
 </head>
@@ -964,20 +767,31 @@ footer p { font-size: 12px; color: rgba(245,242,238,0.25); }
 <div class="cursor" id="cursor"></div>
 <div class="cursor-ring" id="cursorRing"></div>
 
+<!-- WA FLOAT -->
+<a href="https://wa.me/TUNUMERO?text=Hola%20Pablo%2C%20quiero%20escalar%20mi%20tienda%20Shopify" target="_blank" class="wa-float">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="white">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+  <span class="wa-tooltip">¡Escríbeme ahora!</span>
+</a>
+
 <!-- NAV -->
-<nav>
+<nav id="mainNav">
   <a href="#" class="logo">Villamo<span>Growth</span></a>
   <ul>
     <li><a href="#problema">Problema</a></li>
+    <li><a href="#quien">Quién soy</a></li>
     <li><a href="#proceso">Proceso</a></li>
     <li><a href="#resultados">Resultados</a></li>
     <li><a href="#faq">FAQ</a></li>
-    <li><a href="#cta" class="nav-cta">Agendar sesión</a></li>
+    <li><a href="#contacto" class="nav-cta">Agendar sesión</a></li>
   </ul>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
+  <div class="hero-bg-grid"></div>
+  <div class="hero-bg-glow"></div>
   <div class="hero-inner">
     <div>
       <div class="hero-eyebrow">
@@ -987,8 +801,8 @@ footer p { font-size: 12px; color: rgba(245,242,238,0.25); }
       <h1>Tu Shopify<br>merece<br><em>escalar.</em></h1>
     </div>
     <div class="hero-right">
-      <p>Trabajo con dueños de tiendas Shopify que ya venden pero no crecen. Los ayudo a escalar con Meta Ads de bajo costo y una estrategia que tiene sentido para su negocio.</p>
-      <a href="#cta" class="btn-primary">Agendar sesión 1:1</a><br>
+      <p>Trabajo con dueños de tiendas Shopify que ya venden pero no crecen. Los ayudo a escalar con Meta Ads de bajo costo y una estrategia construida para su negocio específico — no para una tienda genérica.</p>
+      <a href="#contacto" class="btn-primary">Agendar sesión 1:1</a><br>
       <a href="#proceso" class="btn-ghost">Ver cómo funciona</a>
     </div>
   </div>
@@ -1016,7 +830,7 @@ footer p { font-size: 12px; color: rgba(245,242,238,0.25); }
 
 <!-- TICKER -->
 <div class="ticker">
-  <div class="ticker-track" id="ticker">
+  <div class="ticker-track">
     <span class="ticker-item">Shopify Growth</span><span class="ticker-dot">·</span>
     <span class="ticker-item">Meta Ads Strategy</span><span class="ticker-dot">·</span>
     <span class="ticker-item">Ecommerce Scale</span><span class="ticker-dot">·</span>
@@ -1041,7 +855,7 @@ footer p { font-size: 12px; color: rgba(245,242,238,0.25); }
         <span>El problema</span>
       </div>
       <h2 class="section-h2">Tu tienda vende.<br>Pero no <em>escala.</em></h2>
-      <p>Y no es el producto. Es la estrategia. La mayoría de tiendas Shopify se quedan estancadas no por falta de calidad, sino por falta de un sistema que convierta tráfico en ventas predecibles.</p>
+      <p>No es el producto. Es la estrategia. La mayoría de tiendas Shopify se quedan estancadas no por falta de calidad, sino por falta de un sistema que convierta tráfico en ventas predecibles.</p>
     </div>
     <ul class="pain-list">
       <li class="pain-item reveal d1">
@@ -1077,7 +891,7 @@ footer p { font-size: 12px; color: rgba(245,242,238,0.25); }
 </section>
 
 <!-- SOLUCIÓN -->
-<section class="solucion" id="solución">
+<section class="solucion">
   <div class="solucion-top">
     <div class="reveal">
       <div class="section-label">
@@ -1122,8 +936,8 @@ footer p { font-size: 12px; color: rgba(245,242,238,0.25); }
       <div class="metrica-label">Reducción promedio en costo por adquisición</div>
     </div>
     <div class="metrica">
-      <div class="metrica-num">90d</div>
-      <div class="metrica-label">Para resultados consistentes y escalables</div>
+      <div class="metrica-num">30+</div>
+      <div class="metrica-label">Negocios digitales acompañados desde 2020</div>
     </div>
     <div class="metrica">
       <div class="metrica-num">1:1</div>
@@ -1132,7 +946,111 @@ footer p { font-size: 12px; color: rgba(245,242,238,0.25); }
   </div>
 </div>
 
-<!-- PROCESO 1:1 -->
+<!-- QUIEN SOY -->
+<section class="quien-soy" id="quien">
+  <div class="quien-grid">
+    <div class="quien-img-wrap reveal">
+      <img
+        src="IMG_5673.jpg"
+        alt="Pablo Villamo — Especialista Shopify y Meta Ads"
+        class="quien-img"
+      />
+      <div class="quien-img-caption">
+        <div class="quien-img-line"></div>
+        <span>Pablo Villamo · Fundador</span>
+      </div>
+    </div>
+    <div class="quien-content">
+      <div class="section-label reveal">
+        <div class="section-label-line"></div>
+        <span>Quién soy</span>
+      </div>
+      <h2 class="section-h2 reveal d1">No soy una<br>agencia. Soy<br><em>Pablo.</em></h2>
+      <p class="quien-text reveal d2">
+        Desde <strong>2020</strong> he trabajado directamente con dueños de negocios digitales que querían vender más — no con reportes bonitos ni con equipos que no conocen su producto.
+      </p>
+      <p class="quien-text reveal d2">
+        En estos años he acompañado a <strong>más de 30 negocios</strong> en distintos nichos: moda, cosméticos, accesorios, hogar, alimentos especializados. Todos con un denominador común — tenían un buen producto pero no un sistema de ventas que funcionara de forma predecible.
+      </p>
+      <div class="quien-highlight reveal d3">
+        "Mi metodología no es un curso ni un template. Es un proceso construido caso a caso, con los números reales de tu negocio."
+      </div>
+      <p class="quien-text reveal d3">
+        El resultado promedio de mis clientes: <strong>tasa de conversión entre 1% y 1.5%</strong> — por encima del estándar de la industria — con <strong>ROAS entre 3× y 5×</strong> dependiendo del nicho y el producto. No son promesas. Son los números que mis clientes me muestran cada mes.
+      </p>
+      <p class="quien-text reveal d3">
+        Si estás buscando a alguien que entre a tu negocio, entienda tu contexto y te diga exactamente qué cambiar — sin venderte un paquete genérico — estás en el lugar correcto.
+      </p>
+      <div class="quien-stats reveal d4">
+        <div class="quien-stat">
+          <div class="quien-stat-num">30+</div>
+          <div class="quien-stat-label">Negocios digitales acompañados</div>
+        </div>
+        <div class="quien-stat">
+          <div class="quien-stat-num">5×</div>
+          <div class="quien-stat-label">ROAS máximo alcanzado</div>
+        </div>
+        <div class="quien-stat">
+          <div class="quien-stat-num">2020</div>
+          <div class="quien-stat-label">Año en que empecé</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIOS -->
+<section class="testimonios" id="testimonios">
+  <div class="testimonios-head">
+    <div class="reveal">
+      <div class="section-label">
+        <div class="section-label-line"></div>
+        <span>Resultados reales</span>
+      </div>
+      <h2 class="section-h2">Lo que dicen<br>quienes <em>escalaron.</em></h2>
+    </div>
+  </div>
+  <div class="test-grid reveal">
+    <div class="test-card">
+      <div class="test-stars">
+        <div class="test-star"></div><div class="test-star"></div>
+        <div class="test-star"></div><div class="test-star"></div>
+        <div class="test-star"></div>
+      </div>
+      <p class="test-quote">Pablo revisó mi tienda en 20 minutos y encontró 4 cosas que nadie me había señalado en 2 años. El mes siguiente vendí un 60% más sin aumentar el presupuesto en anuncios.</p>
+      <div class="test-divider"></div>
+      <div class="test-name">María R.</div>
+      <div class="test-biz">Tienda de ropa femenina — Shopify</div>
+      <span class="test-result">ROAS 3.1× · +60% ventas</span>
+    </div>
+    <div class="test-card">
+      <div class="test-stars">
+        <div class="test-star"></div><div class="test-star"></div>
+        <div class="test-star"></div><div class="test-star"></div>
+        <div class="test-star"></div>
+      </div>
+      <p class="test-quote">Llevaba 6 meses con ROAS de 0.8, botando plata. Después de la sesión lo llevamos a 3.4 en 45 días. Ojalá lo hubiera contactado desde el principio.</p>
+      <div class="test-divider"></div>
+      <div class="test-name">Jorge C.</div>
+      <div class="test-biz">Accesorios para el hogar — Shopify</div>
+      <span class="test-result">De ROAS 0.8 → 3.4 en 45 días</span>
+    </div>
+    <div class="test-card">
+      <div class="test-stars">
+        <div class="test-star"></div><div class="test-star"></div>
+        <div class="test-star"></div><div class="test-star"></div>
+        <div class="test-star"></div>
+      </div>
+      <p class="test-quote">Pensé que mi producto no funcionaba online. El problema era la estrategia. Pasé de 5 ventas semanales a 30 en 3 meses con el plan de Villamo Growth.</p>
+      <div class="test-divider"></div>
+      <div class="test-name">Andrea L.</div>
+      <div class="test-biz">Cosméticos naturales — Shopify</div>
+      <span class="test-result">5 → 30 ventas/semana en 90 días</span>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESO -->
 <section class="proceso" id="proceso">
   <div class="proceso-grid">
     <div class="proceso-sticky">
@@ -1141,8 +1059,8 @@ footer p { font-size: 12px; color: rgba(245,242,238,0.25); }
         <span>La sesión 1:1</span>
       </div>
       <h2 class="section-h2 reveal d1">Qué pasa cuando<br>trabajamos <em>juntos.</em></h2>
-      <p class="reveal d2">No es una consulta genérica. Entro a tu tienda, reviso tus métricas reales y salimos con un plan de acción específico para tu negocio — no para "una tienda Shopify en general".</p>
-      <a href="#cta" class="btn-primary reveal d3">Quiero mi sesión</a>
+      <p class="reveal d2">No es una consulta genérica. Entro a tu tienda, reviso tus métricas reales y salimos con un plan de acción específico para tu negocio.</p>
+      <a href="#contacto" class="btn-primary reveal d3">Quiero mi sesión</a>
     </div>
     <div class="proceso-items">
       <div class="proceso-item reveal">
@@ -1184,54 +1102,65 @@ footer p { font-size: 12px; color: rgba(245,242,238,0.25); }
   </div>
 </section>
 
-<!-- TESTIMONIOS -->
-<section class="testimonios">
-  <div class="testimonios-head">
-    <div class="reveal">
-      <div class="section-label">
+<!-- CONTACTO -->
+<section class="contacto" id="contacto">
+  <div class="contacto-bg"></div>
+  <div class="contacto-grid">
+    <div class="contacto-left">
+      <div class="section-label reveal">
         <div class="section-label-line"></div>
-        <span>Resultados reales</span>
+        <span>Contacto</span>
       </div>
-      <h2 class="section-h2">Lo que dicen<br>quienes <em>escalaron.</em></h2>
+      <h2 class="section-h2 reveal d1">¿Listo para<br><em>escalar?</em></h2>
+      <p class="reveal d2">Agendá tu sesión 1:1 con Pablo Villamo. 90 minutos. Un plan de acción concreto para tu tienda Shopify — sin compromiso, sin scripts de venta.</p>
+      <div class="contacto-meta reveal d3">
+        <div class="contacto-meta-item">
+          <div class="contacto-meta-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+          </div>
+          90 minutos de sesión 1:1
+        </div>
+        <div class="contacto-meta-item">
+          <div class="contacto-meta-icon">
+            <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
+          </div>
+          Plan de acción personalizado incluido
+        </div>
+        <div class="contacto-meta-item">
+          <div class="contacto-meta-icon">
+            <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
+          </div>
+          7 días de seguimiento post-sesión
+        </div>
+      </div>
+      <div class="contacto-social reveal d4">
+        <a href="https://www.instagram.com/villamogrowth/" target="_blank" class="social-link">
+          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          @villamogrowth
+        </a>
+        <a href="https://wa.me/TUNUMERO" target="_blank" class="social-link">
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp
+        </a>
+      </div>
     </div>
-  </div>
-  <div class="test-grid reveal">
-    <div class="test-card">
-      <p class="test-quote">Pablo revisó mi tienda en 20 minutos y encontró 4 cosas que nadie me había señalado en 2 años. El mes siguiente vendí un 60% más sin aumentar el presupuesto en anuncios.</p>
-      <div class="test-divider"></div>
-      <div class="test-name">María R.</div>
-      <div class="test-biz">Tienda de ropa — Shopify</div>
-    </div>
-    <div class="test-card">
-      <p class="test-quote">Llevaba 6 meses con ROAS de 0.8, botando plata. Después de la sesión lo llevamos a 3.4 en 45 días. Ojalá lo hubiera contactado desde el principio.</p>
-      <div class="test-divider"></div>
-      <div class="test-name">Jorge C.</div>
-      <div class="test-biz">Accesorios para el hogar — Shopify</div>
-    </div>
-    <div class="test-card">
-      <p class="test-quote">Pensé que mi producto no funcionaba online. El problema era la estrategia de anuncios. Pasé de 5 ventas semanales a 30 en 3 meses con el plan de Villamo Growth.</p>
-      <div class="test-divider"></div>
-      <div class="test-name">Andrea L.</div>
-      <div class="test-biz">Cosméticos naturales — Shopify</div>
-    </div>
-  </div>
-</section>
 
-<!-- CTA FINAL -->
-<section class="cta-final" id="cta">
-  <div class="section-label reveal">
-    <div class="section-label-line"></div>
-    <span>El siguiente paso</span>
-    <div class="section-label-line"></div>
+    <div class="cta-card reveal d2">
+      <div class="cta-card-label">Sesión 1:1 con Pablo</div>
+      <h3>Agenda tu<br>sesión ahora</h3>
+      <p>90 minutos. Tu tienda, tus números, tu plan de acción. Sin paquetes genéricos.</p>
+      <div class="cta-features">
+        <div class="cta-feature"><div class="cta-feature-dot"></div>Auditoría de Shopify en vivo</div>
+        <div class="cta-feature"><div class="cta-feature-dot"></div>Análisis de campañas Meta Ads</div>
+        <div class="cta-feature"><div class="cta-feature-dot"></div>Estructura de campañas personalizada</div>
+        <div class="cta-feature"><div class="cta-feature-dot"></div>Roadmap 30 / 60 / 90 días</div>
+        <div class="cta-feature"><div class="cta-feature-dot"></div>7 días de seguimiento post-sesión</div>
+      </div>
+      <div class="cta-divider"></div>
+      <a href="https://calendly.com/pablovillamo123" target="_blank" class="btn-primary-full">Agendar mi sesión 1:1</a>
+      <p class="cta-note">Sin compromiso. Sin scripts de venta. Solo tu negocio y un plan real.</p>
+    </div>
   </div>
-  <div class="cta-big reveal d1">
-    ¿Listo para<br><em>escalar?</em>
-  </div>
-  <p class="cta-sub reveal d2">Agendá tu sesión 1:1 con Pablo Villamo. 90 minutos. Un plan de acción concreto para tu tienda Shopify.</p>
-  <div class="reveal d3">
-    <a href="https://calendly.com/pablovillamo123" target="_blank" class="btn-primary" style="font-size: 16px; padding: 20px 48px;">Agendar mi sesión 1:1</a>
-  </div>
-  <div class="cta-note reveal d4">Sin compromiso. Sin scripts de venta. Solo tu negocio y un plan real.</div>
 </section>
 
 <!-- FAQ -->
@@ -1276,21 +1205,20 @@ footer p { font-size: 12px; color: rgba(245,242,238,0.25); }
   <div class="footer-links">
     <a href="https://calendly.com/pablovillamo123" target="_blank">Agendar sesión</a>
     <a href="https://www.instagram.com/villamogrowth/" target="_blank">Instagram</a>
-    <a href="#">LinkedIn</a>
+    <a href="#contacto">Contacto</a>
   </div>
 </footer>
 
 <script>
+// CURSOR
 const cursor = document.getElementById('cursor');
 const ring = document.getElementById('cursorRing');
 let mx = 0, my = 0, rx = 0, ry = 0;
-
 document.addEventListener('mousemove', e => {
   mx = e.clientX; my = e.clientY;
   cursor.style.left = mx + 'px';
   cursor.style.top = my + 'px';
 });
-
 (function animateRing() {
   rx += (mx - rx) * 0.1;
   ry += (my - ry) * 0.1;
@@ -1298,23 +1226,31 @@ document.addEventListener('mousemove', e => {
   ring.style.top = ry + 'px';
   requestAnimationFrame(animateRing);
 })();
-
-document.querySelectorAll('a, button, .faq-item, .step, .pain-item, .proceso-item').forEach(el => {
+document.querySelectorAll('a, button, .faq-item, .step, .pain-item, .proceso-item, .test-card, .metrica, .quien-stat').forEach(el => {
   el.addEventListener('mouseenter', () => cursor.classList.add('big'));
   el.addEventListener('mouseleave', () => cursor.classList.remove('big'));
 });
 
+// NAV SCROLL
+const nav = document.getElementById('mainNav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('nav-scrolled', window.scrollY > 60);
+});
+
+// REVEAL
 const observer = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-}, { threshold: 0.12 });
+}, { threshold: 0.1 });
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
+// FAQ
 function toggleFaq(el) {
   const isOpen = el.classList.contains('open');
   document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
   if (!isOpen) el.classList.add('open');
 }
 
+// SMOOTH SCROLL
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
     const t = document.querySelector(a.getAttribute('href'));
