@@ -16,9 +16,46 @@
   --muted: rgba(245,242,238,0.45);
   --accent: #c8ff00;
   --border: rgba(245,242,238,0.08);
+  .wa-float {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  width: 60px; height: 60px;
+  background: #25d366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 500;
+  box-shadow: 0 8px 32px rgba(37,211,102,0.4);
+  transition: transform 0.25s, box-shadow 0.25s;
+  text-decoration: none;
+  animation: waPulse 2.5s infinite;
 }
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+.wa-float:hover {
+  transform: scale(1.1) translateY(-2px);
+  box-shadow: 0 16px 40px rgba(37,211,102,0.5);
+  animation: none;
+}
+.wa-tooltip {
+  position: absolute;
+  right: 70px;
+  background: #1a1a1a;
+  color: #f5f2ee;
+  font-size: 13px;
+  white-space: nowrap;
+  padding: 8px 14px;
+  border-radius: 6px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+}
+.wa-float:hover .wa-tooltip { opacity: 1; }
+@keyframes waPulse {
+  0%   { box-shadow: 0 0 0 0 rgba(37,211,102,0.5); }
+  70%  { box-shadow: 0 0 0 16px rgba(37,211,102,0); }
+  100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+}
   <a href="https://wa.me/TUNUMERO?text=Hola%20Pablo%2C%20quiero%20escalar%20mi%20tienda%20Shopify" 
    target="_blank" 
    class="wa-float">
@@ -27,6 +64,9 @@ html { scroll-behavior: smooth; }
   </svg>
   <span class="wa-tooltip">¡Escríbeme ahora!</span>
 </a>
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
 body {
   background: var(--black);
   color: var(--white);
