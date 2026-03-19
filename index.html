@@ -8,6 +8,184 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
 <style>
+  /* QUIEN SOY */
+.quien-soy {
+  background: var(--black);
+  padding: 120px 64px;
+  border-top: 1px solid var(--border);
+}
+.quien-grid {
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  gap: 100px;
+  align-items: start;
+}
+.quien-img-wrap {
+  position: sticky;
+  top: 120px;
+}
+.quien-img {
+  width: 100%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 4px;
+  filter: grayscale(15%);
+  display: block;
+}
+.quien-img-caption {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 16px;
+}
+.quien-img-line {
+  width: 24px;
+  height: 1px;
+  background: var(--accent);
+}
+.quien-img-caption span {
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.quien-content { padding-top: 8px; }
+.quien-content .section-h2 { margin-bottom: 36px; }
+.quien-text {
+  font-size: 16px;
+  line-height: 1.85;
+  color: rgba(245,242,238,0.72);
+  margin-bottom: 20px;
+}
+.quien-text strong {
+  color: var(--white);
+  font-weight: 500;
+}
+.quien-highlight {
+  border-left: 2px solid var(--accent);
+  padding: 16px 24px;
+  margin: 36px 0;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 20px;
+  line-height: 1.5;
+  color: var(--white);
+}
+.quien-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  margin-top: 40px;
+  border: 1px solid var(--border);
+}
+.quien-stat {
+  padding: 28px 24px;
+  border-right: 1px solid var(--border);
+  transition: background 0.2s;
+}
+.quien-stat:last-child { border-right: none; }
+.quien-stat:hover { background: rgba(200,255,0,0.03); }
+.quien-stat-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1;
+  letter-spacing: -1px;
+}
+.quien-stat-label {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 6px;
+  line-height: 1.4;
+}
+
+/* TESTIMONIOS QUIEN SOY */
+.test-quien {
+  background: var(--gray);
+  padding: 80px 64px;
+  border-top: 1px solid var(--border);
+}
+.test-quien-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 13px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 48px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.test-quien-title::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+.test-quien-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.test-quien-card {
+  background: var(--black);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 32px 28px;
+  transition: border-color 0.25s, transform 0.25s;
+}
+.test-quien-card:hover {
+  border-color: rgba(200,255,0,0.2);
+  transform: translateY(-4px);
+}
+.test-stars {
+  display: flex;
+  gap: 3px;
+  margin-bottom: 16px;
+}
+.test-star {
+  width: 10px; height: 10px;
+  background: var(--accent);
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+.test-quien-quote {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 15px;
+  line-height: 1.7;
+  color: rgba(245,242,238,0.78);
+  margin-bottom: 24px;
+}
+.test-quien-divider {
+  width: 20px;
+  height: 1px;
+  background: var(--accent);
+  margin-bottom: 16px;
+}
+.test-quien-name { font-size: 14px; font-weight: 500; color: var(--white); }
+.test-quien-role { font-size: 12px; color: var(--muted); margin-top: 3px; }
+.test-quien-result {
+  display: inline-block;
+  margin-top: 12px;
+  background: rgba(200,255,0,0.08);
+  border: 1px solid rgba(200,255,0,0.2);
+  color: var(--accent);
+  font-size: 11px;
+  letter-spacing: 1px;
+  padding: 4px 10px;
+  border-radius: 100px;
+}
+
+@media (max-width: 960px) {
+  .quien-grid { grid-template-columns: 1fr; gap: 48px; }
+  .quien-img-wrap { position: static; }
+  .quien-stats { grid-template-columns: repeat(3, 1fr); }
+  .test-quien { padding: 64px 24px; }
+  .test-quien-grid { grid-template-columns: 1fr; }
+  .quien-soy { padding: 80px 24px; }
+}
 :root {
   --black: #0a0a0a;
   --white: #f5f2ee;
@@ -67,6 +245,105 @@
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
+  <!-- QUIÉN SOY -->
+<section class="quien-soy" id="quien">
+  <div class="quien-grid">
+    <div class="quien-img-wrap reveal">
+      <img
+        src="IMG_5673.jpg"
+        alt="Pablo Villamo — Especialista Shopify y Meta Ads"
+        class="quien-img"
+      />
+      <div class="quien-img-caption">
+        <div class="quien-img-line"></div>
+        <span>Pablo Villamo · Fundador</span>
+      </div>
+    </div>
+    <div class="quien-content">
+      <div class="section-label reveal">
+        <div class="section-label-line"></div>
+        <span>Quién soy</span>
+      </div>
+      <h2 class="section-h2 reveal d1">No soy una<br>agencia. Soy<br><em>Pablo.</em></h2>
+
+      <p class="quien-text reveal d2">
+        Desde <strong>2020</strong> he trabajado directamente con dueños de negocios digitales que querían vender más — no con reportes bonitos ni con equipos que no conocen su producto.
+      </p>
+      <p class="quien-text reveal d2">
+        En estos años he acompañado a <strong>más de 30 negocios</strong> en distintos nichos: moda, cosméticos, accesorios, hogar, alimentos especializados. Todos con un denominador común — tenían un buen producto pero no un sistema de ventas que funcionara de forma predecible.
+      </p>
+
+      <div class="quien-highlight reveal d3">
+        "Mi metodología no es un curso ni un template. Es un proceso construido caso a caso, con los números reales de tu negocio."
+      </div>
+
+      <p class="quien-text reveal d3">
+        El resultado promedio de mis clientes: <strong>tasa de conversión entre 1% y 1.5%</strong> — por encima del estándar de la industria — con <strong>ROAS entre 3× y 5×</strong> dependiendo del nicho y el producto. No son promesas. Son los números que mis clientes me muestran cada mes.
+      </p>
+      <p class="quien-text reveal d3">
+        Si estás buscando a alguien que entre a tu negocio, entienda tu contexto y te diga exactamente qué cambiar — sin venderte un paquete genérico — estás en el lugar correcto.
+      </p>
+
+      <div class="quien-stats reveal d4">
+        <div class="quien-stat">
+          <div class="quien-stat-num">30+</div>
+          <div class="quien-stat-label">Negocios digitales acompañados</div>
+        </div>
+        <div class="quien-stat">
+          <div class="quien-stat-num">5×</div>
+          <div class="quien-stat-label">ROAS máximo alcanzado con clientes</div>
+        </div>
+        <div class="quien-stat">
+          <div class="quien-stat-num">2020</div>
+          <div class="quien-stat-label">Año en que empecé a construir esta metodología</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIOS QUIEN SOY -->
+<div class="test-quien">
+  <div class="test-quien-title reveal">Lo que dicen mis clientes</div>
+  <div class="test-quien-grid">
+    <div class="test-quien-card reveal d1">
+      <div class="test-stars">
+        <div class="test-star"></div><div class="test-star"></div>
+        <div class="test-star"></div><div class="test-star"></div>
+        <div class="test-star"></div>
+      </div>
+      <p class="test-quien-quote">Pablo no te vende un servicio, te construye un sistema. En 45 días teníamos campañas corriendo con un ROAS que nunca habíamos visto. Lo más valioso fue entender por qué funcionaba cada decisión.</p>
+      <div class="test-quien-divider"></div>
+      <div class="test-quien-name">María R.</div>
+      <div class="test-quien-role">Dueña — Tienda de ropa femenina</div>
+      <span class="test-quien-result">ROAS 3.1× · +60% ventas</span>
+    </div>
+    <div class="test-quien-card reveal d2">
+      <div class="test-stars">
+        <div class="test-star"></div><div class="test-star"></div>
+        <div class="test-star"></div><div class="test-star"></div>
+        <div class="test-star"></div>
+      </div>
+      <p class="test-quien-quote">Llevaba 6 meses perdiendo dinero en Meta Ads. En la primera sesión con Pablo entendí exactamente dónde estaba el problema. No fue magia — fue diagnóstico real y un plan concreto que funcionó.</p>
+      <div class="test-quien-divider"></div>
+      <div class="test-quien-name">Jorge C.</div>
+      <div class="test-quien-role">Fundador — Accesorios para el hogar</div>
+      <span class="test-quien-result">De ROAS 0.8 → 3.4 en 45 días</span>
+    </div>
+    <div class="test-quien-card reveal d3">
+      <div class="test-stars">
+        <div class="test-star"></div><div class="test-star"></div>
+        <div class="test-star"></div><div class="test-star"></div>
+        <div class="test-star"></div>
+      </div>
+      <p class="test-quien-quote">Lo que más me sorprendió fue la velocidad. En menos de 3 meses pasé de 5 ventas semanales a 30. Pablo conoce Shopify y Meta Ads como nadie — y lo más importante, conoce el negocio del cliente.</p>
+      <div class="test-quien-divider"></div>
+      <div class="test-quien-name">Andrea L.</div>
+      <div class="test-quien-role">CEO — Cosméticos naturales</div>
+      <span class="test-quien-result">5 → 30 ventas/semana en 90 días</span>
+    </div>
+  </div>
+</div>
 body {
   background: var(--black);
   color: var(--white);
