@@ -258,6 +258,95 @@
   .app-icon-svg { width: 36px; height: 36px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
   .app-icon-svg svg { width: 36px; height: 36px; display: block; }
 
+
+  /* Cupos + Confidencialidad cards */
+  .cupos-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    align-items: stretch;
+  }
+  .cupos-card {
+    background: var(--black);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 10px;
+    padding: 2rem 2rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .cupos-card--green { border-color: rgba(34,197,94,0.25); }
+  .cupos-card__top-bar {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--green);
+  }
+  .cupos-card__label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem;
+    color: var(--green);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-bottom: 0.9rem;
+    margin-top: 0.25rem;
+  }
+  .cupos-card__title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.7rem;
+    color: var(--white);
+    line-height: 1.1;
+    margin-bottom: 1.1rem;
+    font-weight: 400;
+  }
+  .cupos-card__body {
+    font-size: 0.875rem;
+    color: var(--gray);
+    line-height: 1.8;
+    margin-bottom: 0.85rem;
+  }
+  .cupos-card__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--green);
+    color: var(--black);
+    padding: 0.8rem 1.6rem;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-decoration: none;
+    margin-top: auto;
+    width: fit-content;
+    transition: background 0.2s;
+  }
+  .cupos-card__cta:hover { background: #1aad50; }
+  .cupos-card__quote {
+    border-left: 2px solid rgba(34,197,94,0.35);
+    padding-left: 1rem;
+    margin-top: auto;
+  }
+  .cupos-card__quote p {
+    font-size: 0.835rem;
+    color: var(--gray);
+    line-height: 1.75;
+    font-style: italic;
+  }
+  .cupos-card__quote-author {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.62rem !important;
+    color: var(--green) !important;
+    font-style: normal !important;
+    margin-top: 0.5rem;
+    letter-spacing: 0.04em;
+  }
+  @media (max-width: 720px) {
+    .cupos-grid { grid-template-columns: 1fr; }
+  }
+
 </style>
 </head>
 <body>
@@ -584,24 +673,27 @@
       <div class="deliverable reveal"><div class="deliverable-num">08 —</div><h4>Métricas y análisis</h4><p>Panel claro para decisiones con datos reales, no intuición.</p></div>
       <div class="deliverable reveal"><div class="deliverable-num">09 —</div><h4>Escalabilidad</h4><p>Sistema replicable con procesos definidos y base sólida para crecer.</p></div>
 
-    <div style="margin-top:2rem;display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;" class="reveal">
-      <div style="background:var(--black);border:1px solid rgba(34,197,94,0.2);border-radius:8px;padding:2rem;position:relative;overflow:hidden;">
-        <div style="position:absolute;top:0;left:0;right:0;height:2px;background:var(--green);"></div>
-        <p style="font-family:'Space Mono',monospace;font-size:0.62rem;color:var(--green);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:1rem;">Cupos limitados</p>
-        <p style="font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--white);line-height:1.1;margin-bottom:1rem;">Trabajamos con pocos clientes simultáneos para garantizar resultados reales.</p>
-        <p style="font-size:0.875rem;color:var(--gray);line-height:1.8;margin-bottom:1.25rem;">Los cupos se abren cada trimestre. Nuestra prioridad no es el volumen — es el éxito de su ecommerce. Cuando trabajamos con usted, lo hacemos con atención completa, sin proyectos paralelos que comprometan su resultado.</p>
-        <p style="font-size:0.875rem;color:var(--gray);line-height:1.8;margin-bottom:1.5rem;">Si hay espacio disponible puede agendarlo ahora. Si no, puede reservar su descuento para la próxima apertura — su prioridad queda garantizada.</p>
-        <a href="https://calendly.com/pablovillamo123" target="_blank" style="display:inline-flex;align-items:center;gap:8px;background:var(--green);color:var(--black);padding:0.85rem 1.75rem;border-radius:4px;font-weight:700;font-size:0.875rem;text-decoration:none;">Consultar disponibilidad →</a>
+    <div class="cupos-grid reveal">
+
+      <div class="cupos-card cupos-card--green">
+        <div class="cupos-card__top-bar"></div>
+        <p class="cupos-card__label">Cupos limitados</p>
+        <h3 class="cupos-card__title">Trabajamos con pocos clientes simultáneos para garantizar resultados reales.</h3>
+        <p class="cupos-card__body">Los cupos se abren cada trimestre. Nuestra prioridad no es el volumen — es el éxito de su ecommerce. Cuando trabajamos con usted, lo hacemos con atención completa, sin proyectos paralelos que comprometan su resultado.</p>
+        <p class="cupos-card__body">Si hay espacio disponible puede agendarlo ahora. Si no, puede reservar su descuento para la próxima apertura — su prioridad queda garantizada.</p>
+        <a href="https://calendly.com/pablovillamo123" target="_blank" class="cupos-card__cta">Consultar disponibilidad →</a>
       </div>
-      <div style="background:var(--black);border:1px solid rgba(255,255,255,0.06);border-radius:8px;padding:2rem;">
-        <p style="font-family:'Space Mono',monospace;font-size:0.62rem;color:var(--green);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:1rem;">Confidencialidad total</p>
-        <p style="font-family:'Bebas Neue',sans-serif;font-size:1.8rem;color:var(--white);line-height:1.1;margin-bottom:1rem;">Su éxito es nuestra única carta de presentación.</p>
-        <p style="font-size:0.875rem;color:var(--gray);line-height:1.8;margin-bottom:1rem;">Todos los resultados y casos mostrados en este sitio son de clientes reales que autorizaron compartir su experiencia. Nunca publicamos información confidencial sin permiso explícito del dueño del negocio.</p>
-        <div style="border-left:2px solid rgba(34,197,94,0.4);padding-left:1rem;margin-top:1.25rem;">
-          <p style="font-size:0.82rem;color:var(--gray);line-height:1.7;font-style:italic;">Al iniciar el programa, le preguntamos si podemos utilizar su caso de éxito como testimonio — siempre con su autorización y de forma transparente. Jamás mostraremos nombre, datos, cifras ni información del negocio que usted no nos permita compartir.</p>
-          <p style="font-size:0.72rem;color:var(--green);margin-top:0.5rem;font-family:'Space Mono',monospace;">— Pablo Villamo, Fundador</p>
+
+      <div class="cupos-card">
+        <p class="cupos-card__label">Confidencialidad total</p>
+        <h3 class="cupos-card__title">Su éxito es nuestra única carta de presentación.</h3>
+        <p class="cupos-card__body">Todos los resultados y casos mostrados en este sitio son de clientes reales que autorizaron compartir su experiencia. Nunca publicamos información confidencial sin permiso explícito del dueño del negocio.</p>
+        <div class="cupos-card__quote">
+          <p>Al iniciar el programa, le preguntamos si podemos utilizar su caso de éxito como testimonio — siempre con su autorización y de forma transparente. Jamás mostraremos nombre, datos, cifras ni información del negocio que usted no nos permita compartir.</p>
+          <p class="cupos-card__quote-author">— Pablo Villamo, Fundador</p>
         </div>
       </div>
+
     </div>
     </div>
   </div>
@@ -716,29 +808,7 @@
   </div>
 </section>
 
-<section class="content-hub" id="contenido">
-  <div class="container">
-    <div class="section-tag">Contenido gratuito</div>
-    <h2 class="section-title display reveal">APRENDÉ<br>ANTES DE<br>INVERTIR</h2>
-    <p class="section-subtitle reveal">Contenido de alto valor para dueños de negocio, sin costo. Evalúe el enfoque antes de tomar cualquier decisión.</p>
-    <div class="content-hub-grid">
-      <a href="https://youtube.com/@pablovillamo?si=3-l_Ygmfd95a3f5R" target="_blank" class="content-card reveal">
-        <div class="content-platform"><span class="platform-dot"></span>YouTube — Canal gratuito</div>
-        <h3>Ecommerce real.<br>Sin filtros.</h3>
-        <p>Videos sobre Shopify, conversión, automatización, SEO y operación real de negocios. Sin teoría de podcast, sin promesas vacías. Lo que funciona en negocios reales, explicado con detalle.</p>
-        <div class="content-cta">Ver canal →</div>
-        <div class="content-big-num">YT</div>
-      </a>
-      <a href="https://youtube.com/@pablovillamo?si=3-l_Ygmfd95a3f5R" target="_blank" class="content-card reveal">
-        <div class="content-platform"><span class="platform-dot"></span>Podcast — Para dueños de negocio</div>
-        <h3>El podcast de<br>negocios reales.</h3>
-        <p>Episodios sobre sistemas, escalabilidad, operación y mentalidad empresarial. Para dueños de marca que quieren crecer con orden. Disponible en YouTube y plataformas de podcast.</p>
-        <div class="content-cta">Escuchar ahora →</div>
-        <div class="content-big-num">PO</div>
-      </a>
-    </div>
-  </div>
-</section>
+
 
 <div class="social-section">
   <div class="social-inner">
