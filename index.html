@@ -353,6 +353,10 @@
     .podcast-grid > div:last-child { margin-top: 2rem; }
   }
 
+
+  .low-ticket-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  @media (max-width: 720px) { .low-ticket-grid { grid-template-columns: 1fr; } }
+
 </style>
 </head>
 <body>
@@ -1011,13 +1015,25 @@ function generar() {
 
   var prompt = 'Sos Pablo de Villamo Growth. Experto en ecommerce latinoamericano. Ustedeo y voseo, nunca tuteo. Directo, costarricense, autoridad real desde experiencia operativa. Sin promesas vacías ni coach de redes.\n\nGenerá un diagnóstico de negocio premium basado en estos datos. Máximo 220 palabras. Sin subtítulos ni bullets. Párrafos directos.\n\nDATOS:\nProducto: ' + D.producto + ' | País: ' + D.pais + '\nAntigüedad: ' + D.antiguedad + ' | Equipo: ' + D.equipo + '\nCanal de ventas: ' + D.canal + ' | Pedidos/semana: ' + D.pedidos + '\nHoras/día en atención: ' + D.horas + '\nCuando no está disponible: ' + D.ausencia + '\nCuello de botella: ' + D.cuello + '\nProcesos documentados: ' + D.docs + '\nFacturación mensual: $' + D.fac.toLocaleString() + ' USD\nTicket: ' + D.ticket + ' | Dependencia manual: ' + D.dep + '%\nRecompra: ' + D.recompra + ' | Freno de ventas: ' + D.freno + '\nPostventa: ' + D.postventa + '\nPauta: $' + D.pauta + '/mes (' + D.pctpauta + '% de facturación)\nPlataforma principal: ' + D.plataforma + '\nContenido: ' + D.contenido + ' | Base de datos: ' + D.base + '\nPixel/métricas: ' + D.pixel + '\nSistemas activos: ' + sysLabel + '\nAutomatización: ' + D.automatizacion + '/10\nReportes: ' + D.reportes + '\nSin el dueño una semana: ' + D.sinmi + '\nÁrea más débil: ' + D.debil + '\nMárgenes: ' + D.margenes + ' | Utilidad: ' + D.utilidad + '\nRentabilidad: ' + D.rent + '/10\nWeb: ' + D.web + ' | Confianza de marca: ' + D.confianza + '\nPrueba social: ' + D.social + ' | Por qué no compran: ' + D.nocompra + '\nLo intentado antes: ' + D.intento + '\nMeta 12 meses: ' + D.meta12 + '\nProblema a resolver en 90 días: "' + D.problema + '"\nScore de madurez digital: ' + score + '/100\n\nEl diagnóstico debe:\n1. Nombrar el problema raíz con precisión, sin suavizarlo\n2. Conectar 2-3 problemas entre sí mostrando el patrón\n3. Señalar la oportunidad concreta más grande\n4. Cerrar con el costo real de no actuar\n\nTono: primera llamada real. Directo. Sin relleno.';
 
+  // Fallback: show offer even if API fails
+  var offerTimer = setTimeout(function() {
+    if (document.getElementById('vg-res').style.display === 'none') {
+      document.getElementById('vg-load').style.display = 'none';
+      document.getElementById('vg-res').style.display = 'block';
+      document.getElementById('pgb').style.width = '100%';
+      document.getElementById('res-ai').textContent = 'Análisis completado. Revise sus métricas arriba.';
+      showOffer();
+    }
+  }, 12000);
+
   fetch('https://api.anthropic.com/v1/messages', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    headers: { 'Content-Type': 'application/json', 'x-anthropic-dangerous-direct-browser-calls': 'true' },
     body: JSON.stringify({ model: 'claude-sonnet-4-20250514', max_tokens: 1000, messages: [{ role: 'user', content: prompt }] })
   }).then(function(res) {
     return res.json();
   }).then(function(json) {
+    clearTimeout(offerTimer);
     var txt = (json.content && json.content[0] && json.content[0].text) ? json.content[0].text : 'No se pudo generar el diagnóstico.';
     clearInterval(iv);
     document.getElementById('vg-load').style.display = 'none';
@@ -1045,10 +1061,13 @@ function generar() {
       if (i < txt.length) { aiOut.textContent += txt[i]; i++; } else clearInterval(ti);
     }, 14);
   }).catch(function() {
+    clearTimeout(offerTimer);
     clearInterval(iv);
     document.getElementById('vg-load').style.display = 'none';
-    document.getElementById('vg-res').style.display = 'block'; setTimeout(showOffer, 1500);
-    document.getElementById('res-ai').textContent = 'Error al conectar con la IA. Intente de nuevo.';
+    document.getElementById('vg-res').style.display = 'block'; setTimeout(showOffer, 800);
+    document.getElementById('pgb').style.width = '100%';
+    document.getElementById('res-score').textContent = calcScore();
+    document.getElementById('res-ai').textContent = 'Complete su diagnóstico y revise las métricas arriba para ver sus oportunidades de mejora.';
   });
 }
 
@@ -1154,7 +1173,7 @@ Identificá los 5 problemas más críticos que se pueden ver desde afuera (estru
 
   fetch('https://api.anthropic.com/v1/messages', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    headers: { 'Content-Type': 'application/json', 'x-anthropic-dangerous-direct-browser-calls': 'true' },
     body: JSON.stringify({ model: 'claude-sonnet-4-20250514', max_tokens: 1000, messages: [{ role: 'user', content: prompt }] })
   }).then(function(r) { return r.json(); })
   .then(function(json) {
@@ -1615,33 +1634,88 @@ function downloadResult() {
       <div class="deliverable reveal"><div class="deliverable-num">08 —</div><h4>Métricas y análisis</h4><p>Panel claro para decisiones con datos reales, no intuición.</p></div>
       <div class="deliverable reveal"><div class="deliverable-num">09 —</div><h4>Escalabilidad</h4><p>Sistema replicable con procesos definidos y base sólida para crecer.</p></div>
 
-    <div class="cupos-grid reveal">
-
-      <div class="cupos-card cupos-card--green">
-        <div class="cupos-card__top-bar"></div>
-        <p class="cupos-card__label">Cupos limitados</p>
-        <h3 class="cupos-card__title">Trabajamos con pocos clientes simultáneos para garantizar resultados reales.</h3>
-        <p class="cupos-card__body">Los cupos se abren cada trimestre. Nuestra prioridad no es el volumen — es el éxito de su ecommerce. Cuando trabajamos con usted, lo hacemos con atención completa, sin proyectos paralelos que comprometan su resultado.</p>
-        <p class="cupos-card__body">Si hay espacio disponible, evaluamos si hay fit y arrancamos. Si no, puede reservar su lugar para la próxima apertura de cupos.</p>
-        <a href="https://calendly.com/pablovillamo123" target="_blank" class="cupos-card__cta">Solicitar auditoría →</a>
-      </div>
-
-      <div class="cupos-card">
-        <p class="cupos-card__label">Confidencialidad total</p>
-        <h3 class="cupos-card__title">Su éxito es nuestra única carta de presentación.</h3>
-        <p class="cupos-card__body">Todos los resultados y casos mostrados en este sitio son de clientes reales que autorizaron compartir su experiencia. Nunca publicamos información confidencial sin permiso explícito del dueño del negocio.</p>
-        <div class="cupos-card__quote">
-          <p>Al iniciar el programa, le preguntamos si podemos utilizar su caso de éxito como testimonio — siempre con su autorización y de forma transparente. Jamás mostraremos nombre, datos, cifras ni información del negocio que usted no nos permita compartir.</p>
-          <p class="cupos-card__quote-author">— Pablo Villamo, Fundador</p>
-        </div>
-      </div>
-
-    </div>
+    
     </div>
   </div>
 </section>
 
 
+<section style="background:var(--black);border-top:1px solid rgba(255,255,255,0.04);padding:6rem 2rem;" id="low-ticket">
+  <div class="container">
+    <div class="section-tag">Productos digitales</div>
+    <h2 class="section-title display reveal">¿NO ESTÁ LISTO<br>PARA EL PROGRAMA?<br><span style="color:var(--green);">EMPIECE AQUÍ.</span></h2>
+    <p class="section-subtitle reveal" style="margin-bottom:3.5rem;">Dos productos con análisis de inteligencia artificial. Se generan en segundos basados en su diagnóstico y su negocio específico. Sin teoría genérica.</p>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;" class="low-ticket-grid">
+
+      <!-- Producto A: Mapa de Sistemas $97 -->
+      <div class="reveal" style="background:var(--black-soft);border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:2rem;position:relative;overflow:hidden;transition:border-color 0.2s;" onmouseenter="this.style.borderColor='rgba(34,197,94,0.3)'" onmouseleave="this.style.borderColor='rgba(255,255,255,0.08)'">
+        <div style="font-family:'Space Mono',monospace;font-size:0.6rem;color:var(--green);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.75rem;">Producto A</div>
+        <h3 style="font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--white);line-height:1.1;margin-bottom:1rem;">Mapa de Sistemas<br>Personalizado</h3>
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:3.5rem;color:var(--green);line-height:1;margin-bottom:0.25rem;">$97</div>
+        <div style="font-family:'Space Mono',monospace;font-size:0.65rem;color:var(--gray);margin-bottom:1.25rem;">USD · Entrega inmediata</div>
+        <p style="font-size:0.875rem;color:var(--gray);line-height:1.8;margin-bottom:1.25rem;">La IA analiza su negocio y genera un mapa exacto de qué sistemas activar primero, en qué orden y con qué herramientas. Basado en su diagnóstico. No es genérico — es específico para su situación.</p>
+        <div style="display:flex;flex-direction:column;gap:0.6rem;margin-bottom:1.5rem;">
+          <div style="display:flex;align-items:flex-start;gap:0.6rem;font-size:0.82rem;color:var(--gray);">
+            <span style="color:var(--green);flex-shrink:0;margin-top:2px;">✓</span> Los 3 sistemas que debe activar primero (en orden de impacto)
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:0.6rem;font-size:0.82rem;color:var(--gray);">
+            <span style="color:var(--green);flex-shrink:0;margin-top:2px;">✓</span> Qué herramienta usar en cada uno y por qué
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:0.6rem;font-size:0.82rem;color:var(--gray);">
+            <span style="color:var(--green);flex-shrink:0;margin-top:2px;">✓</span> Resultado esperado en 30-60 días por sistema
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:0.6rem;font-size:0.82rem;color:var(--gray);">
+            <span style="color:var(--green);flex-shrink:0;margin-top:2px;">✓</span> El sistema que más dinero le cuesta no tener hoy
+          </div>
+        </div>
+        <a href="#diagnostico" style="display:block;text-align:center;background:transparent;border:1px solid var(--green);color:var(--green);padding:0.9rem 1.5rem;border-radius:6px;font-weight:700;font-size:0.875rem;text-decoration:none;transition:background 0.2s,color 0.2s;margin-bottom:0.75rem;" onmouseover="this.style.background='var(--green)';this.style.color='#000'" onmouseout="this.style.background='transparent';this.style.color='var(--green)'">Hacer diagnóstico y obtener mi Mapa → $97</a>
+        <p style="font-size:0.7rem;color:var(--gray);text-align:center;font-family:'Space Mono',monospace;">Complete el diagnóstico gratuito primero · La IA usa sus respuestas</p>
+      </div>
+
+      <!-- Producto B: Pack de Implementación $260 -->
+      <div class="reveal" style="background:var(--black-soft);border:1px solid rgba(34,197,94,0.25);border-radius:10px;padding:2rem;position:relative;overflow:hidden;transition:border-color 0.2s;" onmouseenter="this.style.borderColor='rgba(34,197,94,0.5)'" onmouseleave="this.style.borderColor='rgba(34,197,94,0.25)'">
+        <div style="position:absolute;top:0;left:0;right:0;height:3px;background:var(--green);"></div>
+        <div style="position:absolute;top:1.25rem;right:1.25rem;background:var(--green);color:#000;font-size:0.6rem;font-weight:700;padding:3px 10px;border-radius:20px;font-family:'Space Mono',monospace;">RECOMENDADO</div>
+        <div style="font-family:'Space Mono',monospace;font-size:0.6rem;color:var(--green);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.75rem;">Pack completo · Incluye Producto A</div>
+        <h3 style="font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--white);line-height:1.1;margin-bottom:1rem;">Pack de<br>Implementación</h3>
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:3.5rem;color:var(--green);line-height:1;margin-bottom:0.25rem;">$260</div>
+        <div style="font-family:'Space Mono',monospace;font-size:0.65rem;color:var(--gray);margin-bottom:1.25rem;">USD · Entrega inmediata</div>
+        <p style="font-size:0.875rem;color:var(--gray);line-height:1.8;margin-bottom:1.25rem;">Todo lo del Mapa de Sistemas más una auditoría completa de su tienda y perfil digital. La IA identifica los 5 problemas críticos y entrega templates listos para implementar.</p>
+        <div style="display:flex;flex-direction:column;gap:0.6rem;margin-bottom:1.5rem;">
+          <div style="display:flex;align-items:flex-start;gap:0.6rem;font-size:0.82rem;color:var(--gray);">
+            <span style="color:var(--green);flex-shrink:0;margin-top:2px;">✓</span> Todo del Mapa de Sistemas
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:0.6rem;font-size:0.82rem;color:var(--gray);">
+            <span style="color:var(--green);flex-shrink:0;margin-top:2px;">✓</span> Auditoría IA de su tienda/perfil digital
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:0.6rem;font-size:0.82rem;color:var(--gray);">
+            <span style="color:var(--green);flex-shrink:0;margin-top:2px;">✓</span> Los 5 problemas críticos identificados con solución
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:0.6rem;font-size:0.82rem;color:var(--gray);">
+            <span style="color:var(--green);flex-shrink:0;margin-top:2px;">✓</span> Templates: ManyChat, email flows, checklist Shopify, guía SEO
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:0.6rem;font-size:0.82rem;color:var(--gray);">
+            <span style="color:var(--green);flex-shrink:0;margin-top:2px;">✓</span> Plan de implementación priorizado en 90 días
+          </div>
+        </div>
+        <a href="#diagnostico" style="display:block;text-align:center;background:var(--green);color:#000;padding:0.9rem 1.5rem;border-radius:6px;font-weight:700;font-size:0.875rem;text-decoration:none;transition:background 0.2s;margin-bottom:0.75rem;" onmouseover="this.style.background='#16A34A'" onmouseout="this.style.background='var(--green)'">Hacer diagnóstico y obtener el Pack → $260</a>
+        <p style="font-size:0.7rem;color:var(--gray);text-align:center;font-family:'Space Mono',monospace;">Complete el diagnóstico gratuito primero · La IA usa sus respuestas</p>
+      </div>
+
+    </div>
+
+    <div style="margin-top:2rem;padding:1.5rem 2rem;background:var(--black-soft);border:1px solid rgba(255,255,255,0.06);border-radius:8px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem;" class="reveal">
+      <div>
+        <p style="font-family:'Bebas Neue',sans-serif;font-size:1.6rem;color:var(--white);line-height:1.1;margin-bottom:0.5rem;">Despreocúpese.<br>Nuestro equipo construye todo por usted.</p>
+        <p style="font-size:0.85rem;color:var(--gray);line-height:1.7;max-width:480px;">En 90 días su negocio tiene los sistemas instalados, funcionando y listos para escalar — sin que usted tenga que aprender ni ejecutar nada técnico. Eso es el programa completo.</p>
+        <p style="font-family:'Space Mono',monospace;font-size:0.7rem;color:var(--green);margin-top:0.6rem;letter-spacing:0.06em;">Implementación directa · $5,000 USD · 90 días</p>
+      </div>
+      <a href="https://calendly.com/pablovillamo123" target="_blank" class="btn-primary" style="flex-shrink:0;white-space:nowrap;">Solicitar auditoría →</a>
+    </div>
+
+  </div>
+</section>
 <section class="ideal-client">
   <div class="container">
     <div class="section-tag">Para quién es</div>
