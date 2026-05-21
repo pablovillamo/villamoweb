@@ -398,7 +398,7 @@
     <div class="section-tag">Diagnóstico gratuito</div>
     <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,4vw,3.5rem);color:var(--white);line-height:0.95;margin-bottom:0.75rem;" class="reveal">DESCUBRA QUÉ ESTÁ<br>FRENANDO SU NEGOCIO.</h2>
     <p style="font-size:0.95rem;color:var(--gray);max-width:560px;line-height:1.8;margin-bottom:2.5rem;" class="reveal">8 módulos, 40+ preguntas, análisis con inteligencia artificial. Identifique exactamente qué está generando pérdidas y cuánto le está costando no tener un sistema.</p>
-    <div class="reveal" style="max-width:720px;margin:0 auto;">
+    <div style="max-width:720px;margin:0 auto;">
 
 <style>
 /* Fonts loaded from main page */
@@ -507,42 +507,42 @@ input[type=range]{width:100%;accent-color:#22C55E;}
   <div class="mod-title">Operación</div>
   <div class="q-title">¿Cómo cierra la mayoría de sus ventas hoy?</div>
   <div class="opts" id="g-canal">
-    <div class="opt" onclick="pick('canal','whatsapp','g-canal')"><div class="opt-t">WhatsApp / DM</div><div class="opt-s">Todo por chat manual</div></div>
-    <div class="opt" onclick="pick('canal','shopify','g-canal')"><div class="opt-t">Shopify / Web</div><div class="opt-s">Tienda online activa</div></div>
-    <div class="opt" onclick="pick('canal','mixto','g-canal')"><div class="opt-t">Mixto</div><div class="opt-s">Web + chat</div></div>
-    <div class="opt" onclick="pick('canal','instagram','g-canal')"><div class="opt-t">Solo Instagram</div><div class="opt-s">Sin tienda propia</div></div>
+    <div class="opt" onclick="pick(pick('canal','whatsapp','g-canal',this)"><div class="opt-t">WhatsApp / DM</div><div class="opt-s">Todo por chat manual</div></div>
+    <div class="opt" onclick="pick(pick('canal','shopify','g-canal',this)"><div class="opt-t">Shopify / Web</div><div class="opt-s">Tienda online activa</div></div>
+    <div class="opt" onclick="pick(pick('canal','mixto','g-canal',this)"><div class="opt-t">Mixto</div><div class="opt-s">Web + chat</div></div>
+    <div class="opt" onclick="pick(pick('canal','instagram','g-canal',this)"><div class="opt-t">Solo Instagram</div><div class="opt-s">Sin tienda propia</div></div>
   </div>
   <div class="q-title">¿Cuánto tiempo dedica a responder clientes por día?</div>
   <div class="opts3" id="g-horas">
-    <div class="opt" onclick="pick('horas','1-2h','g-horas')"><div class="opt-t">1–2 horas</div><div class="opt-s">Manejable</div></div>
-    <div class="opt" onclick="pick('horas','3-5h','g-horas')"><div class="opt-t">3–5 horas</div><div class="opt-s">Consume el día</div></div>
-    <div class="opt" onclick="pick('horas','6+h','g-horas')"><div class="opt-t">6+ horas</div><div class="opt-s">Es mi trabajo completo</div></div>
+    <div class="opt" onclick="pick(pick('horas','1-2h','g-horas',this)"><div class="opt-t">1–2 horas</div><div class="opt-s">Manejable</div></div>
+    <div class="opt" onclick="pick(pick('horas','3-5h','g-horas',this)"><div class="opt-t">3–5 horas</div><div class="opt-s">Consume el día</div></div>
+    <div class="opt" onclick="pick(pick('horas','6+h','g-horas',this)"><div class="opt-t">6+ horas</div><div class="opt-s">Es mi trabajo completo</div></div>
   </div>
   <div class="q-title">¿Qué pasa con las ventas cuando usted no está disponible?</div>
   <div class="opts" id="g-ausencia">
-    <div class="opt" onclick="pick('ausencia','pierde','g-ausencia')"><div class="opt-t">Se pierden ventas</div><div class="opt-s">El cliente no espera</div></div>
-    <div class="opt" onclick="pick('ausencia','espera','g-ausencia')"><div class="opt-t">El cliente espera</div><div class="opt-s">Genera fricción</div></div>
-    <div class="opt" onclick="pick('ausencia','alguien','g-ausencia')"><div class="opt-t">Alguien más atiende</div><div class="opt-s">Depende de otra persona</div></div>
-    <div class="opt" onclick="pick('ausencia','auto','g-ausencia')"><div class="opt-t">Funciona solo</div><div class="opt-s">Tengo automatizaciones</div></div>
+    <div class="opt" onclick="pick(pick('ausencia','pierde','g-ausencia',this)"><div class="opt-t">Se pierden ventas</div><div class="opt-s">El cliente no espera</div></div>
+    <div class="opt" onclick="pick(pick('ausencia','espera','g-ausencia',this)"><div class="opt-t">El cliente espera</div><div class="opt-s">Genera fricción</div></div>
+    <div class="opt" onclick="pick(pick('ausencia','alguien','g-ausencia',this)"><div class="opt-t">Alguien más atiende</div><div class="opt-s">Depende de otra persona</div></div>
+    <div class="opt" onclick="pick(pick('ausencia','auto','g-ausencia',this)"><div class="opt-t">Funciona solo</div><div class="opt-s">Tengo automatizaciones</div></div>
   </div>
   <div class="q-title">¿Cuántos pedidos procesa por semana?</div>
   <div class="opts3" id="g-pedidos">
-    <div class="opt" onclick="pick('pedidos','1-20','g-pedidos')"><div class="opt-t">1–20</div><div class="opt-s">Volumen inicial</div></div>
-    <div class="opt" onclick="pick('pedidos','21-80','g-pedidos')"><div class="opt-t">21–80</div><div class="opt-s">Creciendo</div></div>
-    <div class="opt" onclick="pick('pedidos','80+','g-pedidos')"><div class="opt-t">80+</div><div class="opt-s">Alto volumen</div></div>
+    <div class="opt" onclick="pick(pick('pedidos','1-20','g-pedidos',this)"><div class="opt-t">1–20</div><div class="opt-s">Volumen inicial</div></div>
+    <div class="opt" onclick="pick(pick('pedidos','21-80','g-pedidos',this)"><div class="opt-t">21–80</div><div class="opt-s">Creciendo</div></div>
+    <div class="opt" onclick="pick(pick('pedidos','80+','g-pedidos',this)"><div class="opt-t">80+</div><div class="opt-s">Alto volumen</div></div>
   </div>
   <div class="q-title">¿Cuál es el mayor cuello de botella operativo hoy?</div>
   <div class="opts" id="g-cuello">
-    <div class="opt" onclick="pick('cuello','atencion','g-cuello')"><div class="opt-t">Atención al cliente</div><div class="opt-s">Demasiados mensajes</div></div>
-    <div class="opt" onclick="pick('cuello','logistica','g-cuello')"><div class="opt-t">Logística / entregas</div><div class="opt-s">Problemas de envío</div></div>
-    <div class="opt" onclick="pick('cuello','inventario','g-cuello')"><div class="opt-t">Inventario</div><div class="opt-s">Descontrol de stock</div></div>
-    <div class="opt" onclick="pick('cuello','tiempo','g-cuello')"><div class="opt-t">Tiempo del dueño</div><div class="opt-s">Todo pasa por mí</div></div>
+    <div class="opt" onclick="pick(pick('cuello','atencion','g-cuello',this)"><div class="opt-t">Atención al cliente</div><div class="opt-s">Demasiados mensajes</div></div>
+    <div class="opt" onclick="pick(pick('cuello','logistica','g-cuello',this)"><div class="opt-t">Logística / entregas</div><div class="opt-s">Problemas de envío</div></div>
+    <div class="opt" onclick="pick(pick('cuello','inventario','g-cuello',this)"><div class="opt-t">Inventario</div><div class="opt-s">Descontrol de stock</div></div>
+    <div class="opt" onclick="pick(pick('cuello','tiempo','g-cuello',this)"><div class="opt-t">Tiempo del dueño</div><div class="opt-s">Todo pasa por mí</div></div>
   </div>
   <div class="q-title">¿Tiene procesos documentados?</div>
   <div class="opts3" id="g-docs">
-    <div class="opt" onclick="pick('docs','nada','g-docs')"><div class="opt-t">Nada documentado</div><div class="opt-s">Todo en mi cabeza</div></div>
-    <div class="opt" onclick="pick('docs','algo','g-docs')"><div class="opt-t">Algo informal</div><div class="opt-s">Notas, chats</div></div>
-    <div class="opt" onclick="pick('docs','si','g-docs')"><div class="opt-t">Sí, documentados</div><div class="opt-s">SOPs definidos</div></div>
+    <div class="opt" onclick="pick(pick('docs','nada','g-docs',this)"><div class="opt-t">Nada documentado</div><div class="opt-s">Todo en mi cabeza</div></div>
+    <div class="opt" onclick="pick(pick('docs','algo','g-docs',this)"><div class="opt-t">Algo informal</div><div class="opt-s">Notas, chats</div></div>
+    <div class="opt" onclick="pick(pick('docs','si','g-docs',this)"><div class="opt-t">Sí, documentados</div><div class="opt-s">SOPs definidos</div></div>
   </div>
   <div class="nav">
     <button class="btn btn-p" onclick="goTo(1)">Siguiente: Ventas →</button>
@@ -562,9 +562,9 @@ input[type=range]{width:100%;accent-color:#22C55E;}
   </div>
   <div class="q-title">Ticket promedio por venta</div>
   <div class="opts3" id="g-ticket">
-    <div class="opt" onclick="pick('ticket','bajo','g-ticket')"><div class="opt-t">Menos de $30</div><div class="opt-s">Producto de entrada</div></div>
-    <div class="opt" onclick="pick('ticket','medio','g-ticket')"><div class="opt-t">$30–$100</div><div class="opt-s">Rango medio</div></div>
-    <div class="opt" onclick="pick('ticket','alto','g-ticket')"><div class="opt-t">$100+</div><div class="opt-s">Ticket premium</div></div>
+    <div class="opt" onclick="pick(pick('ticket','bajo','g-ticket',this)"><div class="opt-t">Menos de $30</div><div class="opt-s">Producto de entrada</div></div>
+    <div class="opt" onclick="pick(pick('ticket','medio','g-ticket',this)"><div class="opt-t">$30–$100</div><div class="opt-s">Rango medio</div></div>
+    <div class="opt" onclick="pick(pick('ticket','alto','g-ticket',this)"><div class="opt-t">$100+</div><div class="opt-s">Ticket premium</div></div>
   </div>
   <div class="q-title">¿Qué porcentaje de ventas depende de que usted esté disponible?</div>
   <div class="sli">
@@ -574,22 +574,22 @@ input[type=range]{width:100%;accent-color:#22C55E;}
   </div>
   <div class="q-title">¿Tiene recompra o la mayoría compra una sola vez?</div>
   <div class="opts3" id="g-recompra">
-    <div class="opt" onclick="pick('recompra','unica','g-recompra')"><div class="opt-t">Compra única</div><div class="opt-s">No hay fidelización</div></div>
-    <div class="opt" onclick="pick('recompra','algo','g-recompra')"><div class="opt-t">Algo de recompra</div><div class="opt-s">Algunos regresan</div></div>
-    <div class="opt" onclick="pick('recompra','alta','g-recompra')"><div class="opt-t">Alta recompra</div><div class="opt-s">Base fiel activa</div></div>
+    <div class="opt" onclick="pick(pick('recompra','unica','g-recompra',this)"><div class="opt-t">Compra única</div><div class="opt-s">No hay fidelización</div></div>
+    <div class="opt" onclick="pick(pick('recompra','algo','g-recompra',this)"><div class="opt-t">Algo de recompra</div><div class="opt-s">Algunos regresan</div></div>
+    <div class="opt" onclick="pick(pick('recompra','alta','g-recompra',this)"><div class="opt-t">Alta recompra</div><div class="opt-s">Base fiel activa</div></div>
   </div>
   <div class="q-title">¿Qué está frenando sus ventas hoy?</div>
   <div class="opts" id="g-freno">
-    <div class="opt" onclick="pick('freno','trafico','g-freno')"><div class="opt-t">Falta de tráfico</div><div class="opt-s">Poca gente llega</div></div>
-    <div class="opt" onclick="pick('freno','conversion','g-freno')"><div class="opt-t">Baja conversión</div><div class="opt-s">Llegan pero no compran</div></div>
-    <div class="opt" onclick="pick('freno','confianza','g-freno')"><div class="opt-t">Falta de confianza</div><div class="opt-s">Dudan antes de comprar</div></div>
-    <div class="opt" onclick="pick('freno','precio','g-freno')"><div class="opt-t">Objeción de precio</div><div class="opt-s">Sienten que es caro</div></div>
+    <div class="opt" onclick="pick(pick('freno','trafico','g-freno',this)"><div class="opt-t">Falta de tráfico</div><div class="opt-s">Poca gente llega</div></div>
+    <div class="opt" onclick="pick(pick('freno','conversion','g-freno',this)"><div class="opt-t">Baja conversión</div><div class="opt-s">Llegan pero no compran</div></div>
+    <div class="opt" onclick="pick(pick('freno','confianza','g-freno',this)"><div class="opt-t">Falta de confianza</div><div class="opt-s">Dudan antes de comprar</div></div>
+    <div class="opt" onclick="pick(pick('freno','precio','g-freno',this)"><div class="opt-t">Objeción de precio</div><div class="opt-s">Sienten que es caro</div></div>
   </div>
   <div class="q-title">¿Tiene seguimiento postventa activo?</div>
   <div class="opts3" id="g-postventa">
-    <div class="opt" onclick="pick('postventa','no','g-postventa')"><div class="opt-t">No tengo</div><div class="opt-s">Venta y listo</div></div>
-    <div class="opt" onclick="pick('postventa','manual','g-postventa')"><div class="opt-t">Manual ocasional</div><div class="opt-s">A veces les escribo</div></div>
-    <div class="opt" onclick="pick('postventa','auto','g-postventa')"><div class="opt-t">Automatizado</div><div class="opt-s">Flujos activos</div></div>
+    <div class="opt" onclick="pick(pick('postventa','no','g-postventa',this)"><div class="opt-t">No tengo</div><div class="opt-s">Venta y listo</div></div>
+    <div class="opt" onclick="pick(pick('postventa','manual','g-postventa',this)"><div class="opt-t">Manual ocasional</div><div class="opt-s">A veces les escribo</div></div>
+    <div class="opt" onclick="pick(pick('postventa','auto','g-postventa',this)"><div class="opt-t">Automatizado</div><div class="opt-s">Flujos activos</div></div>
   </div>
   <div class="nav">
     <button class="btn btn-g" onclick="goTo(0)">← Volver</button>
@@ -610,28 +610,28 @@ input[type=range]{width:100%;accent-color:#22C55E;}
   </div>
   <div class="q-title">¿Qué plataforma le genera más ventas hoy?</div>
   <div class="opts" id="g-plataforma">
-    <div class="opt" onclick="pick('plataforma','meta','g-plataforma')"><div class="opt-t">Meta Ads</div><div class="opt-s">Facebook / Instagram</div></div>
-    <div class="opt" onclick="pick('plataforma','organico','g-plataforma')"><div class="opt-t">Contenido orgánico</div><div class="opt-s">Sin pauta</div></div>
-    <div class="opt" onclick="pick('plataforma','google','g-plataforma')"><div class="opt-t">Google / SEO</div><div class="opt-s">Búsqueda orgánica</div></div>
-    <div class="opt" onclick="pick('plataforma','referidos','g-plataforma')"><div class="opt-t">Referidos / boca a boca</div><div class="opt-s">Sin canal digital claro</div></div>
+    <div class="opt" onclick="pick(pick('plataforma','meta','g-plataforma',this)"><div class="opt-t">Meta Ads</div><div class="opt-s">Facebook / Instagram</div></div>
+    <div class="opt" onclick="pick(pick('plataforma','organico','g-plataforma',this)"><div class="opt-t">Contenido orgánico</div><div class="opt-s">Sin pauta</div></div>
+    <div class="opt" onclick="pick(pick('plataforma','google','g-plataforma',this)"><div class="opt-t">Google / SEO</div><div class="opt-s">Búsqueda orgánica</div></div>
+    <div class="opt" onclick="pick(pick('plataforma','referidos','g-plataforma',this)"><div class="opt-t">Referidos / boca a boca</div><div class="opt-s">Sin canal digital claro</div></div>
   </div>
   <div class="q-title">¿Publica contenido de forma constante?</div>
   <div class="opts3" id="g-contenido">
-    <div class="opt" onclick="pick('contenido','no','g-contenido')"><div class="opt-t">Casi no publico</div><div class="opt-s">Sin estrategia</div></div>
-    <div class="opt" onclick="pick('contenido','irregular','g-contenido')"><div class="opt-t">Irregular</div><div class="opt-s">Cuando puedo</div></div>
-    <div class="opt" onclick="pick('contenido','constante','g-contenido')"><div class="opt-t">Constante</div><div class="opt-s">Sistema de contenido</div></div>
+    <div class="opt" onclick="pick(pick('contenido','no','g-contenido',this)"><div class="opt-t">Casi no publico</div><div class="opt-s">Sin estrategia</div></div>
+    <div class="opt" onclick="pick(pick('contenido','irregular','g-contenido',this)"><div class="opt-t">Irregular</div><div class="opt-s">Cuando puedo</div></div>
+    <div class="opt" onclick="pick(pick('contenido','constante','g-contenido',this)"><div class="opt-t">Constante</div><div class="opt-s">Sistema de contenido</div></div>
   </div>
   <div class="q-title">¿Está construyendo base de datos de clientes?</div>
   <div class="opts3" id="g-base">
-    <div class="opt" onclick="pick('base','no','g-base')"><div class="opt-t">No tengo</div><div class="opt-s">Cero captura</div></div>
-    <div class="opt" onclick="pick('base','algo','g-base')"><div class="opt-t">Algo básico</div><div class="opt-s">Lista pequeña</div></div>
-    <div class="opt" onclick="pick('base','si','g-base')"><div class="opt-t">Sí, activa</div><div class="opt-s">Creciendo bien</div></div>
+    <div class="opt" onclick="pick(pick('base','no','g-base',this)"><div class="opt-t">No tengo</div><div class="opt-s">Cero captura</div></div>
+    <div class="opt" onclick="pick(pick('base','algo','g-base',this)"><div class="opt-t">Algo básico</div><div class="opt-s">Lista pequeña</div></div>
+    <div class="opt" onclick="pick(pick('base','si','g-base',this)"><div class="opt-t">Sí, activa</div><div class="opt-s">Creciendo bien</div></div>
   </div>
   <div class="q-title">¿Tiene pixel y métricas correctamente configuradas?</div>
   <div class="opts3" id="g-pixel">
-    <div class="opt" onclick="pick('pixel','no','g-pixel')"><div class="opt-t">No tengo</div><div class="opt-s">Sin seguimiento</div></div>
-    <div class="opt" onclick="pick('pixel','basico','g-pixel')"><div class="opt-t">Básico</div><div class="opt-s">Pixel instalado</div></div>
-    <div class="opt" onclick="pick('pixel','completo','g-pixel')"><div class="opt-t">Completo</div><div class="opt-s">Eventos + conversiones</div></div>
+    <div class="opt" onclick="pick(pick('pixel','no','g-pixel',this)"><div class="opt-t">No tengo</div><div class="opt-s">Sin seguimiento</div></div>
+    <div class="opt" onclick="pick(pick('pixel','basico','g-pixel',this)"><div class="opt-t">Básico</div><div class="opt-s">Pixel instalado</div></div>
+    <div class="opt" onclick="pick(pick('pixel','completo','g-pixel',this)"><div class="opt-t">Completo</div><div class="opt-s">Eventos + conversiones</div></div>
   </div>
   <div class="nav">
     <button class="btn btn-g" onclick="goTo(1)">← Volver</button>
@@ -661,9 +661,9 @@ input[type=range]{width:100%;accent-color:#22C55E;}
   </div>
   <div class="q-title">¿Tiene reportes claros para tomar decisiones?</div>
   <div class="opts3" id="g-reportes">
-    <div class="opt" onclick="pick('reportes','no','g-reportes')"><div class="opt-t">No tengo</div><div class="opt-s">Decido por intuición</div></div>
-    <div class="opt" onclick="pick('reportes','basico','g-reportes')"><div class="opt-t">Algo básico</div><div class="opt-s">Reviso Shopify o Meta</div></div>
-    <div class="opt" onclick="pick('reportes','dashboard','g-reportes')"><div class="opt-t">Dashboard claro</div><div class="opt-s">Métricas centralizadas</div></div>
+    <div class="opt" onclick="pick(pick('reportes','no','g-reportes',this)"><div class="opt-t">No tengo</div><div class="opt-s">Decido por intuición</div></div>
+    <div class="opt" onclick="pick(pick('reportes','basico','g-reportes',this)"><div class="opt-t">Algo básico</div><div class="opt-s">Reviso Shopify o Meta</div></div>
+    <div class="opt" onclick="pick(pick('reportes','dashboard','g-reportes',this)"><div class="opt-t">Dashboard claro</div><div class="opt-s">Métricas centralizadas</div></div>
   </div>
   <div class="nav">
     <button class="btn btn-g" onclick="goTo(2)">← Volver</button>
@@ -680,23 +680,23 @@ input[type=range]{width:100%;accent-color:#22C55E;}
   <input class="vg-input" id="i-pais" type="text" placeholder="¿En qué país opera?">
   <div class="q-title">¿Hace cuánto inició el negocio?</div>
   <div class="opts3" id="g-antiguedad">
-    <div class="opt" onclick="pick('antiguedad','menos1','g-antiguedad')"><div class="opt-t">Menos de 1 año</div><div class="opt-s">Etapa temprana</div></div>
-    <div class="opt" onclick="pick('antiguedad','1-3','g-antiguedad')"><div class="opt-t">1–3 años</div><div class="opt-s">En crecimiento</div></div>
-    <div class="opt" onclick="pick('antiguedad','3+','g-antiguedad')"><div class="opt-t">3+ años</div><div class="opt-s">Negocio establecido</div></div>
+    <div class="opt" onclick="pick(pick('antiguedad','menos1','g-antiguedad',this)"><div class="opt-t">Menos de 1 año</div><div class="opt-s">Etapa temprana</div></div>
+    <div class="opt" onclick="pick(pick('antiguedad','1-3','g-antiguedad',this)"><div class="opt-t">1–3 años</div><div class="opt-s">En crecimiento</div></div>
+    <div class="opt" onclick="pick(pick('antiguedad','3+','g-antiguedad',this)"><div class="opt-t">3+ años</div><div class="opt-s">Negocio establecido</div></div>
   </div>
   <div class="q-title">¿Qué intentó anteriormente para crecer?</div>
   <div class="opts" id="g-intento">
-    <div class="opt" onclick="pick('intento','agencia','g-intento')"><div class="opt-t">Contratar una agencia</div><div class="opt-s">No dio resultados</div></div>
-    <div class="opt" onclick="pick('intento','curso','g-intento')"><div class="opt-t">Cursos o formación</div><div class="opt-s">Teoría sin implementación</div></div>
-    <div class="opt" onclick="pick('intento','pauta','g-intento')"><div class="opt-t">Más pauta pagada</div><div class="opt-s">Quemé presupuesto</div></div>
-    <div class="opt" onclick="pick('intento','nada','g-intento')"><div class="opt-t">No he intentado nada</div><div class="opt-s">Es mi primera vez</div></div>
+    <div class="opt" onclick="pick(pick('intento','agencia','g-intento',this)"><div class="opt-t">Contratar una agencia</div><div class="opt-s">No dio resultados</div></div>
+    <div class="opt" onclick="pick(pick('intento','curso','g-intento',this)"><div class="opt-t">Cursos o formación</div><div class="opt-s">Teoría sin implementación</div></div>
+    <div class="opt" onclick="pick(pick('intento','pauta','g-intento',this)"><div class="opt-t">Más pauta pagada</div><div class="opt-s">Quemé presupuesto</div></div>
+    <div class="opt" onclick="pick(pick('intento','nada','g-intento',this)"><div class="opt-t">No he intentado nada</div><div class="opt-s">Es mi primera vez</div></div>
   </div>
   <div class="q-title">¿Cuál sería su escenario ideal en 12 meses?</div>
   <div class="opts" id="g-meta12">
-    <div class="opt" onclick="pick('meta12','doble','g-meta12')"><div class="opt-t">Doblar facturación</div><div class="opt-s">Crecer en ventas</div></div>
-    <div class="opt" onclick="pick('meta12','salirchat','g-meta12')"><div class="opt-t">Salir del chat</div><div class="opt-s">Vender sin depender de mí</div></div>
-    <div class="opt" onclick="pick('meta12','sistematizar','g-meta12')"><div class="opt-t">Sistematizar la operación</div><div class="opt-s">Orden y procesos claros</div></div>
-    <div class="opt" onclick="pick('meta12','escalar','g-meta12')"><div class="opt-t">Escalar a nuevos mercados</div><div class="opt-s">Expansión regional</div></div>
+    <div class="opt" onclick="pick(pick('meta12','doble','g-meta12',this)"><div class="opt-t">Doblar facturación</div><div class="opt-s">Crecer en ventas</div></div>
+    <div class="opt" onclick="pick(pick('meta12','salirchat','g-meta12',this)"><div class="opt-t">Salir del chat</div><div class="opt-s">Vender sin depender de mí</div></div>
+    <div class="opt" onclick="pick(pick('meta12','sistematizar','g-meta12',this)"><div class="opt-t">Sistematizar la operación</div><div class="opt-s">Orden y procesos claros</div></div>
+    <div class="opt" onclick="pick(pick('meta12','escalar','g-meta12',this)"><div class="opt-t">Escalar a nuevos mercados</div><div class="opt-s">Expansión regional</div></div>
   </div>
   <div class="nav">
     <button class="btn btn-g" onclick="goTo(3)">← Volver</button>
@@ -711,23 +711,23 @@ input[type=range]{width:100%;accent-color:#22C55E;}
   <div class="mod-title">Equipo y Delegación</div>
   <div class="q-title">¿Cuántas personas forman parte del negocio?</div>
   <div class="opts3" id="g-equipo">
-    <div class="opt" onclick="pick('equipo','solo','g-equipo')"><div class="opt-t">Solo yo</div><div class="opt-s">Operación unipersonal</div></div>
-    <div class="opt" onclick="pick('equipo','2-3','g-equipo')"><div class="opt-t">2–3 personas</div><div class="opt-s">Equipo pequeño</div></div>
-    <div class="opt" onclick="pick('equipo','4+','g-equipo')"><div class="opt-t">4 o más</div><div class="opt-s">Equipo en crecimiento</div></div>
+    <div class="opt" onclick="pick(pick('equipo','solo','g-equipo',this)"><div class="opt-t">Solo yo</div><div class="opt-s">Operación unipersonal</div></div>
+    <div class="opt" onclick="pick(pick('equipo','2-3','g-equipo',this)"><div class="opt-t">2–3 personas</div><div class="opt-s">Equipo pequeño</div></div>
+    <div class="opt" onclick="pick(pick('equipo','4+','g-equipo',this)"><div class="opt-t">4 o más</div><div class="opt-s">Equipo en crecimiento</div></div>
   </div>
   <div class="q-title">¿Qué tan fácil sería que el negocio funcione sin usted por una semana?</div>
   <div class="opts" id="g-sinmi">
-    <div class="opt" onclick="pick('sinmi','imposible','g-sinmi')"><div class="opt-t">Imposible</div><div class="opt-s">Todo se detiene</div></div>
-    <div class="opt" onclick="pick('sinmi','dificil','g-sinmi')"><div class="opt-t">Muy difícil</div><div class="opt-s">Habría problemas graves</div></div>
-    <div class="opt" onclick="pick('sinmi','algo','g-sinmi')"><div class="opt-t">Con esfuerzo</div><div class="opt-s">Alguien podría cubrirme</div></div>
-    <div class="opt" onclick="pick('sinmi','facil','g-sinmi')"><div class="opt-t">Sin problema</div><div class="opt-s">Tengo sistemas y equipo</div></div>
+    <div class="opt" onclick="pick(pick('sinmi','imposible','g-sinmi',this)"><div class="opt-t">Imposible</div><div class="opt-s">Todo se detiene</div></div>
+    <div class="opt" onclick="pick(pick('sinmi','dificil','g-sinmi',this)"><div class="opt-t">Muy difícil</div><div class="opt-s">Habría problemas graves</div></div>
+    <div class="opt" onclick="pick(pick('sinmi','algo','g-sinmi',this)"><div class="opt-t">Con esfuerzo</div><div class="opt-s">Alguien podría cubrirme</div></div>
+    <div class="opt" onclick="pick(pick('sinmi','facil','g-sinmi',this)"><div class="opt-t">Sin problema</div><div class="opt-s">Tengo sistemas y equipo</div></div>
   </div>
   <div class="q-title">¿Qué área del negocio siente más débil hoy?</div>
   <div class="opts" id="g-debil">
-    <div class="opt" onclick="pick('debil','marketing','g-debil')"><div class="opt-t">Marketing y ventas</div><div class="opt-s">No sé cómo crecer</div></div>
-    <div class="opt" onclick="pick('debil','operacion','g-debil')"><div class="opt-t">Operación</div><div class="opt-s">Mucho caos interno</div></div>
-    <div class="opt" onclick="pick('debil','finanzas','g-debil')"><div class="opt-t">Finanzas</div><div class="opt-s">Sin claridad de números</div></div>
-    <div class="opt" onclick="pick('debil','equipo','g-debil')"><div class="opt-t">Equipo / delegación</div><div class="opt-s">Todo depende de mí</div></div>
+    <div class="opt" onclick="pick(pick('debil','marketing','g-debil',this)"><div class="opt-t">Marketing y ventas</div><div class="opt-s">No sé cómo crecer</div></div>
+    <div class="opt" onclick="pick(pick('debil','operacion','g-debil',this)"><div class="opt-t">Operación</div><div class="opt-s">Mucho caos interno</div></div>
+    <div class="opt" onclick="pick(pick('debil','finanzas','g-debil',this)"><div class="opt-t">Finanzas</div><div class="opt-s">Sin claridad de números</div></div>
+    <div class="opt" onclick="pick(pick('debil','equipo','g-debil',this)"><div class="opt-t">Equipo / delegación</div><div class="opt-s">Todo depende de mí</div></div>
   </div>
   <div class="nav">
     <button class="btn btn-g" onclick="goTo(4)">← Volver</button>
@@ -748,15 +748,15 @@ input[type=range]{width:100%;accent-color:#22C55E;}
   </div>
   <div class="q-title">¿Conoce sus márgenes reales por producto?</div>
   <div class="opts3" id="g-margenes">
-    <div class="opt" onclick="pick('margenes','no','g-margenes')"><div class="opt-t">No los conozco</div><div class="opt-s">Opero sin datos</div></div>
-    <div class="opt" onclick="pick('margenes','aprox','g-margenes')"><div class="opt-t">Aproximadamente</div><div class="opt-s">Estimados básicos</div></div>
-    <div class="opt" onclick="pick('margenes','si','g-margenes')"><div class="opt-t">Sí, con claridad</div><div class="opt-s">Cálculo exacto</div></div>
+    <div class="opt" onclick="pick(pick('margenes','no','g-margenes',this)"><div class="opt-t">No los conozco</div><div class="opt-s">Opero sin datos</div></div>
+    <div class="opt" onclick="pick(pick('margenes','aprox','g-margenes',this)"><div class="opt-t">Aproximadamente</div><div class="opt-s">Estimados básicos</div></div>
+    <div class="opt" onclick="pick(pick('margenes','si','g-margenes',this)"><div class="opt-t">Sí, con claridad</div><div class="opt-s">Cálculo exacto</div></div>
   </div>
   <div class="q-title">¿Siente que el negocio genera utilidad real o solo movimiento de dinero?</div>
   <div class="opts3" id="g-utilidad">
-    <div class="opt" onclick="pick('utilidad','movimiento','g-utilidad')"><div class="opt-t">Solo movimiento</div><div class="opt-s">Entra y sale igual</div></div>
-    <div class="opt" onclick="pick('utilidad','algo','g-utilidad')"><div class="opt-t">Algo de utilidad</div><div class="opt-s">Queda poco al final</div></div>
-    <div class="opt" onclick="pick('utilidad','buena','g-utilidad')"><div class="opt-t">Buena utilidad</div><div class="opt-s">Negocio rentable</div></div>
+    <div class="opt" onclick="pick(pick('utilidad','movimiento','g-utilidad',this)"><div class="opt-t">Solo movimiento</div><div class="opt-s">Entra y sale igual</div></div>
+    <div class="opt" onclick="pick(pick('utilidad','algo','g-utilidad',this)"><div class="opt-t">Algo de utilidad</div><div class="opt-s">Queda poco al final</div></div>
+    <div class="opt" onclick="pick(pick('utilidad','buena','g-utilidad',this)"><div class="opt-t">Buena utilidad</div><div class="opt-s">Negocio rentable</div></div>
   </div>
   <div class="q-title">¿Qué tan rentable considera el negocio hoy? (1–10)</div>
   <div class="sli">
@@ -777,28 +777,28 @@ input[type=range]{width:100%;accent-color:#22C55E;}
   <div class="mod-title">Marca y Conversión</div>
   <div class="q-title">¿Su sitio web fue construido para convertir o solo para verse bien?</div>
   <div class="opts3" id="g-web">
-    <div class="opt" onclick="pick('web','no','g-web')"><div class="opt-t">No tengo web</div><div class="opt-s">Solo redes sociales</div></div>
-    <div class="opt" onclick="pick('web','visual','g-web')"><div class="opt-t">Solo visual</div><div class="opt-s">Bonita pero no convierte</div></div>
-    <div class="opt" onclick="pick('web','conversion','g-web')"><div class="opt-t">Para convertir</div><div class="opt-s">Optimizada con estrategia</div></div>
+    <div class="opt" onclick="pick(pick('web','no','g-web',this)"><div class="opt-t">No tengo web</div><div class="opt-s">Solo redes sociales</div></div>
+    <div class="opt" onclick="pick(pick('web','visual','g-web',this)"><div class="opt-t">Solo visual</div><div class="opt-s">Bonita pero no convierte</div></div>
+    <div class="opt" onclick="pick(pick('web','conversion','g-web',this)"><div class="opt-t">Para convertir</div><div class="opt-s">Optimizada con estrategia</div></div>
   </div>
   <div class="q-title">¿Su marca transmite confianza y autoridad de forma inmediata?</div>
   <div class="opts3" id="g-confianza">
-    <div class="opt" onclick="pick('confianza','no','g-confianza')"><div class="opt-t">No creo</div><div class="opt-s">Falta solidez</div></div>
-    <div class="opt" onclick="pick('confianza','algo','g-confianza')"><div class="opt-t">Algo, mejorable</div><div class="opt-s">Hay oportunidad</div></div>
-    <div class="opt" onclick="pick('confianza','si','g-confianza')"><div class="opt-t">Sí, claramente</div><div class="opt-s">Branding sólido</div></div>
+    <div class="opt" onclick="pick(pick('confianza','no','g-confianza',this)"><div class="opt-t">No creo</div><div class="opt-s">Falta solidez</div></div>
+    <div class="opt" onclick="pick(pick('confianza','algo','g-confianza',this)"><div class="opt-t">Algo, mejorable</div><div class="opt-s">Hay oportunidad</div></div>
+    <div class="opt" onclick="pick(pick('confianza','si','g-confianza',this)"><div class="opt-t">Sí, claramente</div><div class="opt-s">Branding sólido</div></div>
   </div>
   <div class="q-title">¿Tiene pruebas sociales visibles?</div>
   <div class="opts3" id="g-social">
-    <div class="opt" onclick="pick('social','no','g-social')"><div class="opt-t">No tengo</div><div class="opt-s">Sin prueba social</div></div>
-    <div class="opt" onclick="pick('social','pocas','g-social')"><div class="opt-t">Algunas</div><div class="opt-s">Podría mejorar</div></div>
-    <div class="opt" onclick="pick('social','si','g-social')"><div class="opt-t">Sí, activas</div><div class="opt-s">Bien visibles</div></div>
+    <div class="opt" onclick="pick(pick('social','no','g-social',this)"><div class="opt-t">No tengo</div><div class="opt-s">Sin prueba social</div></div>
+    <div class="opt" onclick="pick(pick('social','pocas','g-social',this)"><div class="opt-t">Algunas</div><div class="opt-s">Podría mejorar</div></div>
+    <div class="opt" onclick="pick(pick('social','si','g-social',this)"><div class="opt-t">Sí, activas</div><div class="opt-s">Bien visibles</div></div>
   </div>
   <div class="q-title">¿Qué hace que alguien NO compre hoy en su negocio?</div>
   <div class="opts" id="g-nocompra">
-    <div class="opt" onclick="pick('nocompra','desconfianza','g-nocompra')"><div class="opt-t">Desconfianza</div><div class="opt-s">No parece seguro comprar</div></div>
-    <div class="opt" onclick="pick('nocompra','friccion','g-nocompra')"><div class="opt-t">Fricción en el proceso</div><div class="opt-s">Comprar es complicado</div></div>
-    <div class="opt" onclick="pick('nocompra','precio','g-nocompra')"><div class="opt-t">Precio</div><div class="opt-s">Sienten que es caro</div></div>
-    <div class="opt" onclick="pick('nocompra','info','g-nocompra')"><div class="opt-t">Falta de información</div><div class="opt-s">No entienden el producto</div></div>
+    <div class="opt" onclick="pick(pick('nocompra','desconfianza','g-nocompra',this)"><div class="opt-t">Desconfianza</div><div class="opt-s">No parece seguro comprar</div></div>
+    <div class="opt" onclick="pick(pick('nocompra','friccion','g-nocompra',this)"><div class="opt-t">Fricción en el proceso</div><div class="opt-s">Comprar es complicado</div></div>
+    <div class="opt" onclick="pick(pick('nocompra','precio','g-nocompra',this)"><div class="opt-t">Precio</div><div class="opt-s">Sienten que es caro</div></div>
+    <div class="opt" onclick="pick(pick('nocompra','info','g-nocompra',this)"><div class="opt-t">Falta de información</div><div class="opt-s">No entienden el producto</div></div>
   </div>
   <div style="margin-top:16px;padding:14px;background:#0f1a0f;border:1px solid #22C55E20;border-left:3px solid #22C55E;border-radius:0 8px 8px 0;">
     <div style="font-size:10px;color:#22C55E;font-family:'Space Mono',monospace;margin-bottom:6px;letter-spacing:.04em;">PREGUNTA FINAL</div>
@@ -932,11 +932,11 @@ function sliUp(id, outId, pre, suf) {
   document.getElementById(outId).textContent = pre === '$' ? '$' + v.toLocaleString() : v + suf;
 }
 
-function pick(key, val, gid) {
+function pick(key, val, gid, el) {
   var group = document.getElementById(gid);
   var opts = group.querySelectorAll('.opt');
   for (var i = 0; i < opts.length; i++) opts[i].classList.remove('sel');
-  event.currentTarget.classList.add('sel');
+  if (el) el.classList.add('sel');
   D[key] = val;
 }
 
@@ -2154,7 +2154,7 @@ function downloadResult() {
   });
 </script>
 
-<nav style="position:sticky;bottom:0;z-index:100;backdrop-filter:blur(12px);background:rgba(10,10,10,0.96);">
+<nav style="position:sticky;bottom:0;z-index:50;backdrop-filter:blur(12px);background:rgba(10,10,10,0.96);">
   <a href="#" class="nav-logo">
     <div class="nav-logo-text">VILLAMO <span>GROWTH</span></div>
   </a>
