@@ -358,6 +358,7 @@
 <body>
 
 
+
 <section class="hero">
   <div class="hero-grid container">
     <div>
@@ -386,6 +387,7 @@
     </div>
   </div>
 </section>
+
 
 <section style="background:var(--black);border-top:1px solid rgba(255,255,255,0.04);padding:5rem 2rem;" id="diagnostico">
   <div class="container">
@@ -820,11 +822,90 @@ input[type=range]{width:100%;accent-color:#22C55E;}
   <div class="metrics" id="res-metrics"></div>
   <div><span class="pill">Diagnóstico 360°</span><span class="pill">8 módulos</span><span class="pill">Análisis IA</span></div>
   <div class="ai-out" id="res-ai"></div>
-  <button class="cta-btn" onclick="sendPrompt('Quiero hablar sobre el programa de 90 días de Villamo Growth para implementar estos sistemas en mi negocio')">
-    <div><div class="cta-t">Quiero implementar esto en 90 días</div><div class="cta-s">Programa Villamo Growth · $3,000 USD · Implementación directa</div></div>
-    <div style="font-size:18px;color:#000;">→</div>
-  </button>
-  <button class="restart-btn" onclick="restart()">↺ Nuevo diagnóstico</button>
+  <!-- OFFER SECTION after diagnosis -->
+  <div id="vg-offer" style="display:none;margin-top:16px;">
+    <div style="font-size:10px;color:#22C55E;font-family:'Space Mono',monospace;letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px;">Próximo paso recomendado</div>
+    <p style="font-size:12px;color:#555;line-height:1.6;margin-bottom:14px;">Su diagnóstico reveló oportunidades concretas. Dos opciones para actuar sobre ellas ahora:</p>
+
+    <!-- OFFER A: Mapa de Sistemas $97 -->
+    <div id="offer-a" style="background:#0f0f0f;border:1px solid #1a1a1a;border-radius:10px;padding:16px;margin-bottom:10px;cursor:pointer;transition:border-color .2s;" onmouseenter="this.style.borderColor='#22C55E40'" onmouseleave="this.style.borderColor='#1a1a1a'">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px;">
+        <div>
+          <div style="font-size:9px;color:#22C55E;font-family:'Space Mono',monospace;letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px;">Producto A · Entrega inmediata</div>
+          <div style="font-size:15px;font-weight:700;color:#fff;font-family:'DM Sans',sans-serif;">Mapa de Sistemas Personalizado</div>
+        </div>
+        <div style="text-align:right;flex-shrink:0;margin-left:12px;">
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:24px;color:#22C55E;line-height:1;">$97</div>
+          <div style="font-size:9px;color:#333;font-family:'Space Mono',monospace;">USD</div>
+        </div>
+      </div>
+      <p style="font-size:11px;color:#444;line-height:1.6;margin-bottom:12px;">La IA genera un mapa exacto de qué sistemas activar en su negocio, en qué orden y con qué herramientas — basado en sus respuestas. Específico para su nicho y situación. No genérico.</p>
+      <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px;">
+        <span style="background:#22C55E10;border:1px solid #22C55E20;color:#22C55E;font-size:9px;padding:2px 8px;border-radius:20px;font-family:'Space Mono',monospace;">Análisis IA personalizado</span>
+        <span style="background:#22C55E10;border:1px solid #22C55E20;color:#22C55E;font-size:9px;padding:2px 8px;border-radius:20px;font-family:'Space Mono',monospace;">Entrega en segundos</span>
+        <span style="background:#22C55E10;border:1px solid #22C55E20;color:#22C55E;font-size:9px;padding:2px 8px;border-radius:20px;font-family:'Space Mono',monospace;">Basado en su diagnóstico</span>
+      </div>
+      <button onclick="buyProduct('mapa')" style="width:100%;background:#22C55E;border:none;border-radius:8px;padding:12px;font-size:13px;font-weight:700;color:#000;cursor:pointer;font-family:'DM Sans',sans-serif;transition:background .15s;" onmouseover="this.style.background='#16A34A'" onmouseout="this.style.background='#22C55E'">Obtener mi Mapa de Sistemas → $97</button>
+    </div>
+
+    <!-- OFFER B: Pack de Implementacion $260 -->
+    <div id="offer-b" style="background:#0c180c;border:1px solid #22C55E25;border-radius:10px;padding:16px;margin-bottom:10px;cursor:pointer;position:relative;overflow:hidden;" >
+      <div style="position:absolute;top:0;left:0;right:0;height:2px;background:#22C55E;"></div>
+      <div style="position:absolute;top:10px;right:12px;background:#22C55E;color:#000;font-size:8px;font-weight:700;padding:2px 8px;border-radius:20px;font-family:'Space Mono',monospace;">RECOMENDADO</div>
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px;padding-right:90px;">
+        <div>
+          <div style="font-size:9px;color:#22C55E;font-family:'Space Mono',monospace;letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px;">Pack completo · Incluye Producto A</div>
+          <div style="font-size:15px;font-weight:700;color:#fff;font-family:'DM Sans',sans-serif;">Pack de Implementación</div>
+        </div>
+        <div style="text-align:right;flex-shrink:0;margin-left:12px;">
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:24px;color:#22C55E;line-height:1;">$260</div>
+          <div style="font-size:9px;color:#333;font-family:'Space Mono',monospace;">USD</div>
+        </div>
+      </div>
+      <p style="font-size:11px;color:#555;line-height:1.6;margin-bottom:10px;">Todo lo anterior más: auditoría de su tienda/perfil digital con IA, templates listos de ManyChat, email marketing, checklist de Shopify y guía SEO de producto. Todo lo que usted necesita para implementar solo.</p>
+      <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px;">
+        <span style="background:#22C55E10;border:1px solid #22C55E20;color:#22C55E;font-size:9px;padding:2px 8px;border-radius:20px;font-family:'Space Mono',monospace;">Mapa de sistemas</span>
+        <span style="background:#22C55E10;border:1px solid #22C55E20;color:#22C55E;font-size:9px;padding:2px 8px;border-radius:20px;font-family:'Space Mono',monospace;">Auditoría IA de su tienda</span>
+        <span style="background:#22C55E10;border:1px solid #22C55E20;color:#22C55E;font-size:9px;padding:2px 8px;border-radius:20px;font-family:'Space Mono',monospace;">Templates listos</span>
+        <span style="background:#22C55E10;border:1px solid #22C55E20;color:#22C55E;font-size:9px;padding:2px 8px;border-radius:20px;font-family:'Space Mono',monospace;">Checklist Shopify</span>
+      </div>
+      <button onclick="buyProduct('pack')" style="width:100%;background:#22C55E;border:none;border-radius:8px;padding:12px;font-size:13px;font-weight:700;color:#000;cursor:pointer;font-family:'DM Sans',sans-serif;transition:background .15s;" onmouseover="this.style.background='#16A34A'" onmouseout="this.style.background='#22C55E'">Obtener Pack de Implementación → $260</button>
+    </div>
+
+    <div style="text-align:center;margin-top:6px;">
+      <a href="https://calendly.com/pablovillamo123" target="_blank" style="font-size:10px;color:#333;font-family:'Space Mono',monospace;text-decoration:none;transition:color .2s;" onmouseover="this.style.color='#22C55E'" onmouseout="this.style.color='#333'">¿Prefiere ir directo al programa completo? → Solicitar auditoría</a>
+    </div>
+  </div>
+
+  <!-- PAYMENT MODAL -->
+  <div id="vg-payment" style="display:none;background:#0f0f0f;border:1px solid #22C55E30;border-radius:10px;padding:20px;margin-top:16px;">
+    <div style="font-size:10px;color:#22C55E;font-family:'Space Mono',monospace;letter-spacing:.08em;margin-bottom:12px;" id="pay-label">MAPA DE SISTEMAS · $97 USD</div>
+    <div style="font-size:13px;color:#bbb;line-height:1.7;margin-bottom:14px;" id="pay-desc">Ingrese su URL de negocio (Shopify, Instagram o sitio web) y su email para recibir el análisis:</div>
+    <input type="url" id="pay-url" placeholder="https://su-tienda.com o @suinstagram" class="vg-input" style="margin-bottom:8px;" />
+    <input type="email" id="pay-email" placeholder="su@email.com" class="vg-input" style="margin-bottom:14px;" />
+    <button onclick="processPayment()" id="pay-btn" style="width:100%;background:#22C55E;border:none;border-radius:8px;padding:13px;font-size:13px;font-weight:700;color:#000;cursor:pointer;font-family:'DM Sans',sans-serif;" id="pay-btn">Ir al pago seguro →</button>
+    <p style="font-size:9px;color:#222;text-align:center;margin-top:8px;font-family:'Space Mono',monospace;">Pago procesado con Stripe · Entrega inmediata tras confirmación</p>
+    <button onclick="document.getElementById('vg-payment').style.display='none'" style="background:none;border:none;color:#333;font-size:10px;cursor:pointer;font-family:'Space Mono',monospace;display:block;margin:8px auto 0;transition:color .2s;" onmouseover="this.style.color='#555'" onmouseout="this.style.color='#333'">← Volver</button>
+  </div>
+
+  <!-- AI PRODUCT OUTPUT -->
+  <div id="vg-product-out" style="display:none;margin-top:16px;">
+    <div style="background:#0c180c;border:1px solid #22C55E20;border-left:3px solid #22C55E;border-radius:0 8px 8px 0;padding:14px 16px;margin-bottom:14px;">
+      <div style="font-size:10px;color:#22C55E;font-family:'Space Mono',monospace;letter-spacing:.08em;margin-bottom:8px;" id="prod-label">MAPA DE SISTEMAS — VILLAMO GROWTH IA</div>
+      <div style="font-size:13px;color:#888;line-height:1.75;white-space:pre-wrap;min-height:60px;" id="prod-out"></div>
+    </div>
+    <button onclick="downloadResult()" style="width:100%;background:#0f0f0f;border:1px solid #22C55E30;border-radius:8px;padding:12px;font-size:12px;font-weight:600;color:#22C55E;cursor:pointer;font-family:'DM Sans',sans-serif;margin-bottom:8px;">Descargar análisis completo</button>
+    <a href="https://calendly.com/pablovillamo123" target="_blank" style="display:block;text-align:center;font-size:10px;color:#333;font-family:'Space Mono',monospace;text-decoration:none;margin-top:4px;" onmouseover="this.style.color='#22C55E'" onmouseout="this.style.color='#333'">¿Quiere que implementemos esto juntos? → Solicitar auditoría</a>
+    <button class="restart-btn" onclick="restart()" style="margin-top:10px;">↺ Nuevo diagnóstico</button>
+  </div>
+
+  <!-- Loading state for product -->
+  <div id="vg-prod-load" style="display:none;padding:30px 0;text-align:center;">
+    <div class="spin" style="margin:0 auto 10px;"></div>
+    <div style="font-size:11px;color:#333;font-family:'Space Mono',monospace;" id="prod-load-txt">Generando su análisis personalizado...</div>
+  </div>
+
+  <button class="restart-btn" id="restart-main" onclick="restart()">↺ Nuevo diagnóstico</button>
 </div>
 </div>
 
@@ -940,7 +1021,7 @@ function generar() {
     var txt = (json.content && json.content[0] && json.content[0].text) ? json.content[0].text : 'No se pudo generar el diagnóstico.';
     clearInterval(iv);
     document.getElementById('vg-load').style.display = 'none';
-    document.getElementById('vg-res').style.display = 'block';
+    document.getElementById('vg-res').style.display = 'block'; setTimeout(showOffer, 1500);
     document.getElementById('pgb').style.width = '100%';
     document.getElementById('res-score').textContent = score;
 
@@ -966,7 +1047,7 @@ function generar() {
   }).catch(function() {
     clearInterval(iv);
     document.getElementById('vg-load').style.display = 'none';
-    document.getElementById('vg-res').style.display = 'block';
+    document.getElementById('vg-res').style.display = 'block'; setTimeout(showOffer, 1500);
     document.getElementById('res-ai').textContent = 'Error al conectar con la IA. Intente de nuevo.';
   });
 }
@@ -990,11 +1071,137 @@ function restart() {
 }
 
 buildBars();
+
+// ─── PRODUCT PURCHASE & AI GENERATION ───────────────────────────────────────
+
+var currentProduct = 'mapa';
+
+function showOffer() {
+  document.getElementById('vg-offer').style.display = 'block';
+  document.getElementById('restart-main').style.display = 'none';
+  document.getElementById('vg-offer').scrollIntoView({behavior:'smooth', block:'nearest'});
+}
+
+function buyProduct(type) {
+  currentProduct = type;
+  document.getElementById('vg-offer').style.display = 'none';
+  var pm = document.getElementById('vg-payment');
+  pm.style.display = 'block';
+  if (type === 'mapa') {
+    document.getElementById('pay-label').textContent = 'MAPA DE SISTEMAS · $97 USD';
+    document.getElementById('pay-desc').textContent = 'Ingrese la URL de su negocio y su email. La IA analizará su situación y generará el mapa personalizado inmediatamente tras confirmar el pago.';
+    document.getElementById('pay-btn').textContent = 'Pagar $97 y obtener mi Mapa →';
+  } else {
+    document.getElementById('pay-label').textContent = 'PACK DE IMPLEMENTACIÓN · $260 USD';
+    document.getElementById('pay-desc').textContent = 'Ingrese la URL de su negocio y su email. Recibirá el mapa de sistemas + auditoría IA de su tienda + todos los templates.';
+    document.getElementById('pay-btn').textContent = 'Pagar $260 y obtener el Pack →';
+  }
+  pm.scrollIntoView({behavior:'smooth', block:'nearest'});
+}
+
+function processPayment() {
+  var url = document.getElementById('pay-url').value.trim();
+  var email = document.getElementById('pay-email').value.trim();
+  if (!url || !email) {
+    alert('Por favor ingrese la URL de su negocio y su email.');
+    return;
+  }
+  // For now: simulate payment confirmation and go straight to AI generation
+  // In production: redirect to Stripe checkout, then on success call generateProduct()
+  document.getElementById('vg-payment').style.display = 'none';
+  generateProduct(url, email);
+}
+
+function generateProduct(url, email) {
+  document.getElementById('vg-prod-load').style.display = 'block';
+  document.getElementById('vg-product-out').style.display = 'none';
+
+  var msgs = ['Analizando su diagnóstico...', 'Evaluando su negocio...', 'Construyendo recomendaciones personalizadas...', 'Casi listo...'];
+  var mi = 0;
+  var iv = setInterval(function() { mi = (mi+1) % msgs.length; document.getElementById('prod-load-txt').textContent = msgs[mi]; }, 1400);
+
+  var sysLabel = D.sistemas && D.sistemas.length ? D.sistemas.join(', ') : 'ninguno';
+  var score = calcScore ? calcScore() : 50;
+
+  var promptMapa = 'Sos Pablo de Villamo Growth. Experto en ecommerce latinoamericano. Ustedeo/voseo, nunca tuteo. Directo, costarricense, sin relleno.
+
+Generá un MAPA DE SISTEMAS personalizado para este negocio. Máximo 280 palabras. Sin subtítulos decorativos innecesarios. Párrafos directos y accionables.
+
+NEGOCIO: ' + url + '
+Producto: ' + D.producto + ' | País: ' + D.pais + '
+Score: ' + score + '/100 | Canal: ' + D.canal + ' | Facturación: $' + D.fac + '/mes
+Dependencia manual: ' + D.dep + '% | Pauta: $' + D.pauta + '/mes
+Sistemas activos: ' + sysLabel + ' | Automatización: ' + D.automatizacion + '/10
+Plataforma: ' + D.plataforma + ' | Pixel: ' + D.pixel + '
+Reportes: ' + D.reportes + ' | Sin el dueño: ' + D.sinmi + '
+Área más débil: ' + D.debil + '
+
+El mapa debe incluir:
+1. Los 3 sistemas que debe activar PRIMERO (en orden de prioridad e impacto)
+2. Qué herramienta usar en cada uno y por qué
+3. El resultado esperado de cada sistema en 30-60 días
+4. El sistema que más dinero le está costando no tener ahora mismo
+
+Tono: directo, operativo. Como si le estuviera explicando en la primera llamada de trabajo.';
+
+  var promptPack = promptMapa + '
+
+ADEMÁS generá una AUDITORÍA rápida de su presencia digital en: ' + url + '
+Identificá los 5 problemas más críticos que se pueden ver desde afuera (estructura, copy, confianza, conversión, SEO básico). Sé específico sobre qué cambiar y por qué impacta en ventas.';
+
+  var prompt = currentProduct === 'mapa' ? promptMapa : promptPack;
+  var label = currentProduct === 'mapa' ? 'MAPA DE SISTEMAS PERSONALIZADO — VILLAMO GROWTH' : 'PACK DE IMPLEMENTACIÓN — ANÁLISIS COMPLETO';
+
+  fetch('https://api.anthropic.com/v1/messages', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ model: 'claude-sonnet-4-20250514', max_tokens: 1000, messages: [{ role: 'user', content: prompt }] })
+  }).then(function(r) { return r.json(); })
+  .then(function(json) {
+    var txt = (json.content && json.content[0] && json.content[0].text) ? json.content[0].text : 'Error generando el análisis.';
+    clearInterval(iv);
+    document.getElementById('vg-prod-load').style.display = 'none';
+    document.getElementById('vg-product-out').style.display = 'block';
+    document.getElementById('prod-label').textContent = label;
+    var out = document.getElementById('prod-out');
+    out.textContent = '';
+    var i = 0;
+    var ti = setInterval(function() {
+      if (i < txt.length) { out.textContent += txt[i]; i++; } else clearInterval(ti);
+    }, 12);
+    // Store for download
+    window._lastProductText = label + '
+
+' + txt + '
+
+---
+Villamo Growth · villamogrowth.com
+' + new Date().toLocaleDateString('es-CR');
+    window._lastProductEmail = email;
+  })
+  .catch(function() {
+    clearInterval(iv);
+    document.getElementById('vg-prod-load').style.display = 'none';
+    document.getElementById('vg-product-out').style.display = 'block';
+    document.getElementById('prod-out').textContent = 'Error al conectar. Por favor recargue e intente de nuevo.';
+  });
+}
+
+function downloadResult() {
+  var txt = window._lastProductText || 'Sin contenido disponible.';
+  var blob = new Blob([txt], { type: 'text/plain;charset=utf-8' });
+  var a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'villamo-growth-analisis.txt';
+  a.click();
+}
+
 </script>
 
     </div>
   </div>
 </section>
+
 <section class="problem">
   <div class="container">
     <div class="problem-quote display reveal">"El problema no es que no trabaja duro. El problema es que <em>sigue dependiendo de usted mismo</em> para que todo funcione."</div>
@@ -1012,138 +1219,6 @@ buildBars();
 
 <div class="green-divider"></div>
 
-<section class="identity" id="que-es">
-  <div class="container">
-    <div class="section-tag">Villamo Growth</div>
-    <h2 class="section-title display reveal">QUÉ ES Y<br>QUÉ NO ES</h2>
-    <p class="section-subtitle reveal">Hay mucho ruido en el mundo del ecommerce. Acá va directo: qué hace Villamo Growth y qué no hace.</p>
-    <div class="identity-grid reveal">
-      <div>
-        <div class="identity-col-title yes">Lo que SÍ es</div>
-        <div class="identity-item"><span class="check green">✓</span><span><strong style="color:var(--white)">Implementación directa.</strong> No consultoría, no teoría. Entro al negocio y construyo los sistemas.</span></div>
-        <div class="identity-item"><span class="check green">✓</span><span><strong style="color:var(--white)">E-Commerce real.</strong> Shopify, conversión, automatización, SEO y contenido orgánico al servicio de marcas que ya venden.</span></div>
-        <div class="identity-item"><span class="check green">✓</span><span><strong style="color:var(--white)">Resultados medibles.</strong> Métricas claras, decisiones con datos, no con intuición.</span></div>
-        <div class="identity-item"><span class="check green">✓</span><span><strong style="color:var(--white)">Experiencia operativa real.</strong> Hablo desde negocios operados, errores pagados y decisiones tomadas.</span></div>
-        <div class="identity-item"><span class="check green">✓</span><span><strong style="color:var(--white)">Sistema completo.</strong> No piezas sueltas — un ecosistema que trabaja en conjunto.</span></div>
-        <div class="identity-item"><span class="check green">✓</span><span><strong style="color:var(--white)">Honestidad total.</strong> Le digo lo que necesita escuchar, no lo que quiere oír.</span></div>
-      </div>
-      <div>
-        <div class="identity-col-title no">Lo que NO es</div>
-        <div class="identity-item"><span class="check red">✗</span><span>Una agencia de publicidad que vive de su presupuesto de pauta.</span></div>
-        <div class="identity-item"><span class="check red">✗</span><span>Cursos genéricos de ecommerce ni fórmulas mágicas para hacerse rico rápido.</span></div>
-        <div class="identity-item"><span class="check red">✗</span><span>Promesas de números inflados ni casos de éxito fabricados.</span></div>
-        <div class="identity-item"><span class="check red">✗</span><span>Coaching motivacional ni discursos de "transformá tu vida".</span></div>
-        <div class="identity-item"><span class="check red">✗</span><span>Teoría sin respaldo real — nada de lo que se leyó en un podcast.</span></div>
-        <div class="identity-item"><span class="check red">✗</span><span>Para dropshipping, modelos sin marca propia, o quienes buscan resultados sin proceso.</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="pillars" id="pilares">
-  <div class="container">
-    <div class="section-tag">Los 6 pilares del programa</div>
-    <h2 class="section-title display reveal">EL SISTEMA<br>COMPLETO</h2>
-    <p class="section-subtitle reveal">Seis pilares que trabajan juntos. Sin uno, los demás funcionan a la mitad. Con los seis, el negocio opera con orden y escala sin caos.</p>
-    <div class="pillars-grid">
-      <div class="pillar-card reveal">
-        <div class="pillar-num">01</div>
-        <div class="pillar-label">Pilar 01</div>
-        <h3>Conversión</h3>
-        <p>La tienda no solo es bonita — convierte. Estructura de página de producto, velocidad, señales de confianza y checkout optimizado. Una tienda que no convierte es pauta quemada, sin importar cuánto tráfico tenga.</p>
-        <div class="pillar-result">Meta: 1.5% – 3% de conversión</div>
-      </div>
-      <div class="pillar-card reveal">
-        <div class="pillar-num">02</div>
-        <div class="pillar-label">Pilar 02</div>
-        <h3>Automatización</h3>
-        <p>ManyChat + email marketing para que el negocio responda consultas, nutra prospectos y cierre ventas sin intervención manual. Funciona 24 horas, 7 días a la semana, sin contratar a nadie.</p>
-        <div class="pillar-result">-70% tiempo en atención manual</div>
-      </div>
-      <div class="pillar-card reveal">
-        <div class="pillar-num">03</div>
-        <div class="pillar-label">Pilar 03</div>
-        <h3>Tráfico</h3>
-        <p>SEO técnico, SEO de producto y contenido orgánico para atraer compradores con intención real. Construcción de fuentes de tráfico propias y sostenibles que no dependen de pauta constante.</p>
-        <div class="pillar-result">Tráfico orgánico sostenible en 3-6 meses</div>
-      </div>
-      <div class="pillar-card reveal">
-        <div class="pillar-num">04</div>
-        <div class="pillar-label">Pilar 04</div>
-        <h3>Captación de datos</h3>
-        <p>Lista de email activa, audiencias de retargeting y datos propios del cliente. Una lista de 3,000 correos de compradores reales vale más que 30,000 seguidores en Instagram. Los datos son el activo que el negocio posee.</p>
-        <div class="pillar-result">Canal de email predecible y propio</div>
-      </div>
-      <div class="pillar-card reveal">
-        <div class="pillar-num">05</div>
-        <div class="pillar-label">Pilar 05</div>
-        <h3>Análisis</h3>
-        <p>Panel de métricas semanal con los números que realmente importan: CAC, LTV, conversión por fuente, tasa de retención y ticket promedio. Cada decisión tiene respaldo en datos reales.</p>
-        <div class="pillar-result">Claridad total en números</div>
-      </div>
-      <div class="pillar-card reveal">
-        <div class="pillar-num">06</div>
-        <div class="pillar-label">Pilar 06</div>
-        <h3>Escalamiento</h3>
-        <p>Procesos documentados, stack tecnológico correcto y hoja de ruta a 6-12 meses. Vender el doble no debería requerir trabajar el doble. El sistema absorbe el volumen sin que el dueño esté en todo.</p>
-        <div class="pillar-result">Base sólida para crecer sin romperse</div>
-      </div>
-    </div>
-    <div style="background:rgba(34,197,94,0.05);border:1px solid rgba(34,197,94,0.15);border-radius:8px;padding:2rem 2.5rem;margin-top:2rem;" class="reveal">
-      <p style="font-size:0.875rem;color:var(--gray);text-align:center;line-height:1.8;">Los 6 pilares no trabajan solos — trabajan como sistema.<br><strong style="color:var(--white)">Conversión convierte el tráfico. Automatización libera el tiempo. Tráfico trae los compradores. Datos construyen actiusted. Análisis guía las decisiones. Escalamiento sostiene el crecimiento.</strong></p>
-    </div>
-  </div>
-</section>
-
-<section class="methodology" id="metodologia">
-  <div class="container">
-    <div class="section-tag">Programa 90 días</div>
-    <h2 class="section-title display reveal">MI METODOLOGÍA</h2>
-    <p class="section-subtitle reveal">Tres fases. Nueve módulos. Un sistema completo. Cada fase tiene un objetivo claro y cada módulo resuelve un problema concreto del negocio.</p>
-    <div class="phases">
-      <div class="phase reveal">
-        <div class="phase-header">
-          <div class="phase-num">01</div>
-          <div class="phase-meta"><div class="phase-days">Días 1 – 15</div><div class="phase-name">Diagnóstico y base</div></div>
-          <div class="phase-result">Al terminar: el negocio tiene diagnóstico y una tienda lista para convertir.</div>
-        </div>
-        <div class="phase-modules">
-          <div class="phase-module"><div class="module-num">— 01</div><div class="module-name">Auditoría inicial</div><div class="module-desc">Diagnóstico completo — cuellos de botella, fugas de conversión, oportunidades reales.</div></div>
-          <div class="phase-module"><div class="module-num">— 02</div><div class="module-name">Shopify optimizado</div><div class="module-desc">Creación o reestructuración con foco en conversión, no solo en diseño.</div></div>
-        </div>
-      </div>
-      <div class="phase reveal">
-        <div class="phase-header">
-          <div class="phase-num">02</div>
-          <div class="phase-meta"><div class="phase-days">Días 16 – 60</div><div class="phase-name">Construcción del sistema</div></div>
-          <div class="phase-result">Al terminar: sistema de ventas activo, automatizaciones funcionando y SEO creciendo.</div>
-        </div>
-        <div class="phase-modules">
-          <div class="phase-module"><div class="module-num">— 03</div><div class="module-name">Optimización de conversión</div><div class="module-desc">Flujo de compra, velocidad y confianza para convertir visitas en ventas reales.</div></div>
-          <div class="phase-module"><div class="module-num">— 04</div><div class="module-name">Automatizaciones ManyChat</div><div class="module-desc">El negocio responde, nutre y cierra ventas sin persona en el chat.</div></div>
-          <div class="phase-module"><div class="module-num">— 05</div><div class="module-name">SEO E-Commerce</div><div class="module-desc">Tráfico orgánico real para reducir dependencia de pauta pagada.</div></div>
-        </div>
-      </div>
-      <div class="phase reveal">
-        <div class="phase-header">
-          <div class="phase-num">03</div>
-          <div class="phase-meta"><div class="phase-days">Días 61 – 90</div><div class="phase-name">Sistema completo y escala</div></div>
-          <div class="phase-result">Al terminar: el negocio tiene todo para crecer sin volver al desorden.</div>
-        </div>
-        <div class="phase-modules">
-          <div class="phase-module"><div class="module-num">— 06</div><div class="module-name">Contenido orgánico</div><div class="module-desc">Sistema de contenido que posiciona la marca y atrae clientes sin anuncios.</div></div>
-          <div class="phase-module"><div class="module-num">— 07</div><div class="module-name">Email marketing</div><div class="module-desc">Flujos de recuperación de carrito, retención y recompra automatizados.</div></div>
-          <div class="phase-module"><div class="module-num">— 08</div><div class="module-name">Métricas y análisis</div><div class="module-desc">Panel de datos para decisiones con números, no con intuición.</div></div>
-          <div class="phase-module"><div class="module-num">— 09</div><div class="module-name">Escalabilidad</div><div class="module-desc">Procesos definidos y base sólida para crecer sin volver al caos.</div></div>
-        </div>
-      </div>
-    </div>
-    <div style="background:rgba(34,197,94,0.06);border:1px solid rgba(34,197,94,0.2);border-radius:8px;padding:2rem 2.5rem;margin-top:2rem;text-align:center;" class="reveal">
-      <p style="font-family:'Bebas Neue',sans-serif;font-size:1.8rem;color:var(--white);margin-bottom:0.5rem;">Al día 90 se acabó el caos.</p>
-      <p style="color:var(--gray);font-size:0.93rem;">Se acabaron los chats sin fin, la dependencia de pauta, los procesos que dependen de una sola persona.<br><strong style="color:var(--green)">El negocio vende con sistemas, no con esfuerzo.</strong></p>
-    </div>
-  </div>
-</section>
 
 <section style="background:var(--black-soft);border-top:1px solid rgba(255,255,255,0.04);" id="quien-soy">
   <div class="container">
@@ -1185,6 +1260,36 @@ buildBars();
     </div>
   </div>
 </section>
+
+
+<section class="identity" id="que-es">
+  <div class="container">
+    <div class="section-tag">Villamo Growth</div>
+    <h2 class="section-title display reveal">QUÉ ES Y<br>QUÉ NO ES</h2>
+    <p class="section-subtitle reveal">Hay mucho ruido en el mundo del ecommerce. Acá va directo: qué hace Villamo Growth y qué no hace.</p>
+    <div class="identity-grid reveal">
+      <div>
+        <div class="identity-col-title yes">Lo que SÍ es</div>
+        <div class="identity-item"><span class="check green">✓</span><span><strong style="color:var(--white)">Implementación directa.</strong> No consultoría, no teoría. Entro al negocio y construyo los sistemas.</span></div>
+        <div class="identity-item"><span class="check green">✓</span><span><strong style="color:var(--white)">E-Commerce real.</strong> Shopify, conversión, automatización, SEO y contenido orgánico al servicio de marcas que ya venden.</span></div>
+        <div class="identity-item"><span class="check green">✓</span><span><strong style="color:var(--white)">Resultados medibles.</strong> Métricas claras, decisiones con datos, no con intuición.</span></div>
+        <div class="identity-item"><span class="check green">✓</span><span><strong style="color:var(--white)">Experiencia operativa real.</strong> Hablo desde negocios operados, errores pagados y decisiones tomadas.</span></div>
+        <div class="identity-item"><span class="check green">✓</span><span><strong style="color:var(--white)">Sistema completo.</strong> No piezas sueltas — un ecosistema que trabaja en conjunto.</span></div>
+        <div class="identity-item"><span class="check green">✓</span><span><strong style="color:var(--white)">Honestidad total.</strong> Le digo lo que necesita escuchar, no lo que quiere oír.</span></div>
+      </div>
+      <div>
+        <div class="identity-col-title no">Lo que NO es</div>
+        <div class="identity-item"><span class="check red">✗</span><span>Una agencia de publicidad que vive de su presupuesto de pauta.</span></div>
+        <div class="identity-item"><span class="check red">✗</span><span>Cursos genéricos de ecommerce ni fórmulas mágicas para hacerse rico rápido.</span></div>
+        <div class="identity-item"><span class="check red">✗</span><span>Promesas de números inflados ni casos de éxito fabricados.</span></div>
+        <div class="identity-item"><span class="check red">✗</span><span>Coaching motivacional ni discursos de "transformá tu vida".</span></div>
+        <div class="identity-item"><span class="check red">✗</span><span>Teoría sin respaldo real — nada de lo que se leyó en un podcast.</span></div>
+        <div class="identity-item"><span class="check red">✗</span><span>Para dropshipping, modelos sin marca propia, o quienes buscan resultados sin proceso.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 <section class="cases" id="casos">
   <div class="container">
@@ -1243,201 +1348,6 @@ buildBars();
   </div>
 </section>
 
-<section class="offer" id="oferta" style="border-top:1px solid rgba(255,255,255,0.04);">
-  <div class="container">
-    <div class="section-tag">La oferta</div>
-    <h2 class="section-title display reveal">PROGRAMA<br>90 DÍAS</h2>
-    <p class="section-subtitle reveal">Implementación directa, no consultoría. No se trata de decirle qué hacer y dejarlo solo. Se trata de entrar, construir y dejarlo funcionando.</p>
-    <div class="offer-price-block reveal">
-      <div class="offer-price">
-        <div class="price-label">Inversión</div>
-        <div style="font-family:'Space Mono',monospace;font-size:0.85rem;color:var(--gray);text-decoration:line-through;margin-bottom:0.2rem;opacity:0.7;">$5,000 USD</div>
-        <div class="price-amount"><span>$3,000</span></div>
-        <div class="price-amount" style="font-size:2rem;color:var(--gray);margin-top:-0.5rem;">USD</div>
-        <div class="price-note">Implementación directa — 90 días</div>
-        <div style="margin-top:1.25rem;background:rgba(34,197,94,0.06);border:1px solid rgba(34,197,94,0.25);border-radius:6px;padding:0.9rem 1rem;">
-          <div style="font-family:'Space Mono',monospace;font-size:0.58rem;color:var(--green);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.5rem;">Precio especial vence en</div>
-          <div id="countdown" style="display:flex;gap:0.5rem;align-items:center;justify-content:center;">
-            <div style="text-align:center;"><div id="cd-days" style="font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--white);line-height:1;">00</div><div style="font-family:'Space Mono',monospace;font-size:0.48rem;color:var(--gray);">DÍAS</div></div>
-            <div style="font-family:'Bebas Neue',sans-serif;font-size:1.8rem;color:var(--green);line-height:1;padding-bottom:0.8rem;">:</div>
-            <div style="text-align:center;"><div id="cd-hours" style="font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--white);line-height:1;">00</div><div style="font-family:'Space Mono',monospace;font-size:0.48rem;color:var(--gray);">HRS</div></div>
-            <div style="font-family:'Bebas Neue',sans-serif;font-size:1.8rem;color:var(--green);line-height:1;padding-bottom:0.8rem;">:</div>
-            <div style="text-align:center;"><div id="cd-mins" style="font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--white);line-height:1;">00</div><div style="font-family:'Space Mono',monospace;font-size:0.48rem;color:var(--gray);">MIN</div></div>
-            <div style="font-family:'Bebas Neue',sans-serif;font-size:1.8rem;color:var(--green);line-height:1;padding-bottom:0.8rem;">:</div>
-            <div style="text-align:center;"><div id="cd-secs" style="font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--white);line-height:1;">00</div><div style="font-family:'Space Mono',monospace;font-size:0.48rem;color:var(--gray);">SEG</div></div>
-          </div>
-          <div style="font-family:'Space Mono',monospace;font-size:0.55rem;color:var(--gray);text-align:center;margin-top:0.5rem;">Hasta el 1 de julio de 2026</div>
-        </div>
-      </div>
-      <div class="offer-description">
-        <h3>Un sistema de ventas completo, construido dentro de su negocio.</h3>
-        <p>El precio del programa no es un gasto. Es la diferencia entre seguir operando en el caos y tener un negocio con estructura real que puede escalar. Sin sistemas: ventas perdidas, pauta quemada, tiempo desperdiciado, clientes que no regresan.</p>
-        <p style="color:var(--green);font-style:italic;font-size:0.93rem;">"El desorden cuesta mucho más que $3,000. La pregunta no es si puede invertir en esto. La pregunta es cuánto le está costando no hacerlo."</p>
-        <a href="https://calendly.com/pablovillamo123" target="_blank" class="btn-primary" style="margin-top:0.5rem;">Solicitar auditoría →</a>
-      </div>
-    </div>
-    <div class="deliverables-grid">
-      <div class="deliverable reveal"><div class="deliverable-num">01 —</div><h4>Auditoría inicial</h4><p>Diagnóstico completo — cuellos de botella, fugas de conversión, oportunidades reales.</p></div>
-      <div class="deliverable reveal"><div class="deliverable-num">02 —</div><h4>Shopify optimizado</h4><p>Creación o reestructuración con foco en conversión, no solo en diseño.</p></div>
-      <div class="deliverable reveal"><div class="deliverable-num">03 —</div><h4>Optimización de conversión</h4><p>Estructura de producto, flujo de compra, velocidad y confianza.</p></div>
-      <div class="deliverable reveal"><div class="deliverable-num">04 —</div><h4>Automatizaciones ManyChat</h4><p>El negocio responde, nutre y cierra ventas sin chat manual.</p></div>
-      <div class="deliverable reveal"><div class="deliverable-num">05 —</div><h4>SEO E-Commerce</h4><p>Estructura base para tráfico orgánico y menos dependencia de pauta.</p></div>
-      <div class="deliverable reveal"><div class="deliverable-num">06 —</div><h4>Contenido orgánico</h4><p>Sistema de contenido que posiciona la marca y atrae clientes sin anuncios.</p></div>
-      <div class="deliverable reveal"><div class="deliverable-num">07 —</div><h4>Email marketing</h4><p>Flujos de recuperación de carrito, retención y recompra automatizados.</p></div>
-      <div class="deliverable reveal"><div class="deliverable-num">08 —</div><h4>Métricas y análisis</h4><p>Panel claro para decisiones con datos reales, no intuición.</p></div>
-      <div class="deliverable reveal"><div class="deliverable-num">09 —</div><h4>Escalabilidad</h4><p>Sistema replicable con procesos definidos y base sólida para crecer.</p></div>
-
-    <div class="cupos-grid reveal">
-
-      <div class="cupos-card cupos-card--green">
-        <div class="cupos-card__top-bar"></div>
-        <p class="cupos-card__label">Cupos limitados</p>
-        <h3 class="cupos-card__title">Trabajamos con pocos clientes simultáneos para garantizar resultados reales.</h3>
-        <p class="cupos-card__body">Los cupos se abren cada trimestre. Nuestra prioridad no es el volumen — es el éxito de su ecommerce. Cuando trabajamos con usted, lo hacemos con atención completa, sin proyectos paralelos que comprometan su resultado.</p>
-        <p class="cupos-card__body">Si hay espacio disponible, evaluamos si hay fit y arrancamos. Si no, puede reservar su lugar para la próxima apertura de cupos.</p>
-        <a href="https://calendly.com/pablovillamo123" target="_blank" class="cupos-card__cta">Solicitar auditoría →</a>
-      </div>
-
-      <div class="cupos-card">
-        <p class="cupos-card__label">Confidencialidad total</p>
-        <h3 class="cupos-card__title">Su éxito es nuestra única carta de presentación.</h3>
-        <p class="cupos-card__body">Todos los resultados y casos mostrados en este sitio son de clientes reales que autorizaron compartir su experiencia. Nunca publicamos información confidencial sin permiso explícito del dueño del negocio.</p>
-        <div class="cupos-card__quote">
-          <p>Al iniciar el programa, le preguntamos si podemos utilizar su caso de éxito como testimonio — siempre con su autorización y de forma transparente. Jamás mostraremos nombre, datos, cifras ni información del negocio que usted no nos permita compartir.</p>
-          <p class="cupos-card__quote-author">— Pablo Villamo, Fundador</p>
-        </div>
-      </div>
-
-    </div>
-    </div>
-  </div>
-</section>
-
-<section class="ideal-client">
-  <div class="container">
-    <div class="section-tag">Para quién es</div>
-    <h2 class="section-title display reveal">ESTO ES<br>PARA USTED?</h2>
-    <p class="section-subtitle reveal">Villamo Growth no es para todo el mundo. Es para quienes ya tienen producto, ya venden y entienden que crecer requiere estructura.</p>
-    <div class="client-grid">
-      <div class="client-col for-you reveal">
-        <div class="client-col-header">Para quién SÍ es</div>
-        <div class="client-item"><span class="client-dot green"></span>Dueños de marca con producto físico real</div>
-        <div class="client-item"><span class="client-dot green"></span>Marcas de moda, ropa, lentes, joyería, calzado y accesorios</div>
-        <div class="client-item"><span class="client-dot green"></span>Tiendas que venden por Instagram o WhatsApp</div>
-        <div class="client-item"><span class="client-dot green"></span>Ecommerce desordenados que ya facturan</div>
-        <div class="client-item"><span class="client-dot green"></span>Marcas que dependen demasiado de pauta pagada</div>
-        <div class="client-item"><span class="client-dot green"></span>Negocios con 1 a 5 años operando que quieren profesionalizarse</div>
-        <div class="client-item"><span class="client-dot green"></span>Marcas con intención real de crecer con orden</div>
-      </div>
-      <div class="client-col not-for-you reveal">
-        <div class="client-col-header">Para quién NO es</div>
-        <div class="client-item"><span class="client-dot red"></span>Personas buscando dinero rápido o resultados sin proceso</div>
-        <div class="client-item"><span class="client-dot red"></span>Dropshipping o modelos sin marca propia</div>
-        <div class="client-item"><span class="client-dot red"></span>Negocios sin producto real ni demanda validada</div>
-        <div class="client-item"><span class="client-dot red"></span>Quien no está dispuesto a comprometerse con la implementación</div>
-        <div class="client-item"><span class="client-dot red"></span>Marcas sin intención real de profesionalizarse</div>
-        <div class="client-item"><span class="client-dot red"></span>Quien quiere resultados sin cambiar cómo opera</div>
-        <div class="client-item"><span class="client-dot red"></span>Modelos sin diferenciación de marca clara</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<section style="background:var(--black);border-top:1px solid rgba(255,255,255,0.04);padding:6rem 2rem;">
-  <div class="container">
-    <div class="section-tag">El verdadero costo</div>
-    <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,5vw,4.5rem);color:var(--white);line-height:0.95;margin-bottom:2rem;" class="reveal">EN PROMEDIO, LOS DUEÑOS DE NEGOCIO QUE ANTES<br>NO TENÍAN SISTEMA DEJAN SOBRE LA MESA<br><span style="color:var(--green);">$2,000 – $4,000 USD<br>CADA MES.</span></h2>
-
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;" class="reveal">
-      <div>
-        <p style="font-size:1.1rem;color:var(--white);font-weight:500;line-height:1.8;margin-bottom:1.5rem;">Eso no es una estimación. Es lo que identificamos en cada diagnóstico: ventas que no se cerraron, carritos que se abandonaron, clientes que no volvieron, pauta que se quemó sin sistema detrás.</p>
-        <p style="font-size:0.95rem;color:var(--gray);line-height:1.8;margin-bottom:1.5rem;">Anualmente, eso significa que está dejando de vender entre <strong style="color:var(--white);">$25,000 y $50,000 dólares</strong> — no por falta de producto, no por falta de clientes, sino por falta de estructura.</p>
-        <div style="border-left:3px solid var(--green);padding-left:1.5rem;margin-bottom:1.5rem;">
-          <p style="font-size:1rem;color:var(--white);line-height:1.7;font-style:italic;">El problema no es el precio del programa. El problema es cuánto le está costando cada mes no tenerlo.</p>
-        </div>
-        <p style="font-size:0.95rem;color:var(--gray);line-height:1.8;">$5,000 USD invertidos una sola vez versus $50,000 que se evaporan año tras año. No porque el negocio esté mal — sino porque opera sin sistema.</p>
-      </div>
-      <div style="display:flex;flex-direction:column;gap:1rem;">
-        <div style="background:var(--black-soft);border:1px solid rgba(255,255,255,0.06);border-radius:8px;padding:1.75rem;">
-          <p style="font-family:'Bebas Neue',sans-serif;font-size:3rem;color:#F87171;line-height:1;margin-bottom:0.4rem;">$2,000 – $4,000</p>
-          <p style="font-size:0.75rem;color:var(--gray);font-family:'Space Mono',monospace;letter-spacing:0.05em;">USD que se pierden cada mes sin sistema</p>
-        </div>
-        <div style="background:var(--black-soft);border:1px solid rgba(255,255,255,0.06);border-radius:8px;padding:1.75rem;">
-          <p style="font-family:'Bebas Neue',sans-serif;font-size:3rem;color:#F87171;line-height:1;margin-bottom:0.4rem;">$25,000 – $50,000</p>
-          <p style="font-size:0.75rem;color:var(--gray);font-family:'Space Mono',monospace;letter-spacing:0.05em;">USD de facturación perdida al año</p>
-        </div>
-        <div style="background:rgba(34,197,94,0.06);border:1px solid rgba(34,197,94,0.25);border-radius:8px;padding:1.75rem;">
-          <p style="font-family:'Bebas Neue',sans-serif;font-size:1.6rem;color:var(--green);line-height:1.2;margin-bottom:0.6rem;">Un sistema bien construido es el activo más valioso que puede tener su negocio.</p>
-          <p style="font-size:0.82rem;color:var(--gray);line-height:1.7;">No se deprecia. No depende de usted para funcionar. Y con el tiempo, se convierte en la razón por la que su competencia no puede alcanzarlo.</p>
-        </div>
-      </div>
-    </div>
-
-    <div style="margin-top:2.5rem;background:var(--black-soft);border:1px solid rgba(255,255,255,0.06);border-radius:8px;padding:2rem 2.5rem;" class="reveal">
-      <p style="font-size:0.95rem;color:var(--gray);line-height:1.8;">Un negocio con sistemas no solo vende más — <strong style="color:var(--white);">vale más.</strong> Cuando construye infraestructura digital real — Shopify optimizado, automatizaciones activas, email marketing funcionando, SEO generando tráfico — no solo mejora la facturación del mes. Está construyendo un activo que trabaja mientras usted duerme, que se aprecia con el tiempo y que no depende de su disponibilidad constante para sobrevivir.</p>
-    </div>
-  </div>
-</section>
-<section class="objections">
-  <div class="container">
-    <div class="section-tag">Objeciones comunes</div>
-    <h2 class="section-title display reveal">LO QUE<br>SE PREGUNTA</h2>
-    <p class="section-subtitle reveal" style="margin-bottom:0;">Las dudas más comunes antes de arrancar — respondidas con honestidad, sin rodeos.</p>
-    <div class="obj-list">
-      <div class="obj-item reveal"><div class="obj-question">"Ya intenté con una agencia y no funcionó."<span class="obj-toggle">+</span></div><div class="obj-answer">Le cobraron, prometieron resultados, llenaron el Shopify de aplicaciones y se fueron. Quedó igual o peor. Villamo Growth no es una agencia — es implementación directa con resultados medibles. Entro al negocio, construyo y lo dejo funcionando. Sin tercerizar, sin desaparecer al mes de haber cobrado.</div></div>
-      <div class="obj-item reveal"><div class="obj-question">"No sé si mi negocio está listo para esto."<span class="obj-toggle">+</span></div><div class="obj-answer">Cree que necesita más seguidores, más presupuesto o más tiempo antes de estructurarse. La verdad es que el desorden cuesta más que la inversión en sistematizarlo. Si ya tiene producto y ya vende, está listo. El desorden no desaparece solo — crece con el volumen.</div></div>
-      <div class="obj-item reveal"><div class="obj-question">"$3,000 es mucho dinero."<span class="obj-toggle">+</span></div><div class="obj-answer">Lo ve como gasto, no como inversión. Calculemos: ¿cuánto le cuesta operar sin sistemas? Tiempo del dueño desperdiciado en chats, ventas perdidas por falta de seguimiento, pauta quemada sin conversión, clientes que no regresan, decisiones tomadas a ciegas. El programa no cuesta $3,000 — el desorden cuesta eso mensualmente.</div></div>
-      <div class="obj-item reveal"><div class="obj-question">"No tengo tiempo para implementar cambios ahora."<span class="obj-toggle">+</span></div><div class="obj-answer">Está tan metido en el día a día que siente que no puede parar. Pero precisamente por eso necesita sistemas — para salir del loop, no para seguir en él. La implementación la hago yo, no usted. Su rol es tomar decisiones, no ejecutar cada detalle técnico.</div></div>
-      <div class="obj-item reveal"><div class="obj-question">"¿Funciona para mi tipo de producto?"<span class="obj-toggle">+</span></div><div class="obj-answer">Ha funcionado en joyería, calzado, lentes, botellas, cosméticos, ropa urbana, gadgets y decoración de hogar. Si tiene producto físico con demanda real y quiere estructurarse para escalar, la metodología funciona. Lo que importa no es el producto — es que haya demanda y disposición a construir con orden.</div></div>
-      <div class="obj-item reveal"><div class="obj-question">"¿Cuánto tiempo me va a tomar ver resultados?"<span class="obj-toggle">+</span></div><div class="obj-answer">Los primeros resultados visibles — mejoras en conversión y automatizaciones activas — se dan entre la semana 3 y la semana 6. SEO y tráfico orgánico son de largo plazo: 3 a 6 meses para sentirse con fuerza. Al final de los 90 días, el sistema está completo. No vendemos resultados de la noche a la mañana porque esos no existen.</div></div>
-      <div class="obj-item reveal"><div class="obj-question">"¿Tengo que tener experiencia técnica para esto?"<span class="obj-toggle">+</span></div><div class="obj-answer">No. La parte técnica es trabajo mío. No necesita saber de Shopify, ManyChat, SEO ni email marketing para que esto funcione. Lo que sí necesita es entender su negocio, tener claridad sobre su producto y estar disponible para tomar decisiones estratégicas cuando corresponda. El resto lo construyo yo.</div></div>
-      <div class="obj-item reveal"><div class="obj-question">"¿Qué pasa después de los 90 días?"<span class="obj-toggle">+</span></div><div class="obj-answer">Al terminar, usted tiene un sistema completo que es suyo. No depende de mí para que funcione. La hoja de ruta de los 6-12 meses post-programa queda documentada. El objetivo del programa es que al día 90 usted pueda operar con independencia total.</div></div>
-      <div class="obj-item reveal"><div class="obj-question">"Ya tengo Shopify activo, ¿de qué me sirve esto?"<span class="obj-toggle">+</span></div><div class="obj-answer">Tener Shopify no es lo mismo que tener un sistema. La mayoría de tiendas que llegan al programa ya tienen Shopify — y el problema es exactamente ese: tienen la herramienta pero sin estructura, sin automatizaciones, sin SEO y sin flujos de retención. Shopify es el punto de partida, no el resultado.</div></div>
-      <div class="obj-item reveal"><div class="obj-question">"¿Por qué confiar en alguien en redes y no en una empresa establecida?"<span class="obj-toggle">+</span></div><div class="obj-answer">Las empresas "establecidas" son las que prometieron resultados y no cumplieron. La confianza no viene de un logo corporativo — viene de resultados documentados en negocios reales, de contenido gratuito de alto valor que puede evaluar antes de invertir y de una propuesta honesta sin promesas infladas. El diagnóstico es gratuito — úselo para evaluar si hay match real.</div></div>
-    </div>
-  </div>
-</section>
-
-<section class="values">
-  <div class="container">
-    <div class="section-tag">Por qué Villamo Growth</div>
-    <h2 class="section-title display reveal">LO QUE<br>NOS MUEVE</h2>
-    <div class="values-list">
-      <div class="value-item reveal"><div class="value-num">01</div><div class="value-content"><h3>Claridad antes que perfección</h3><p>En Latinoamérica hay demasiados negocios paralizados esperando que todo esté perfecto para arrancar. Un sistema imperfecto funcionando vale más que una idea perfecta en pausa.</p></div></div>
-      <div class="value-item reveal"><div class="value-num">02</div><div class="value-content"><h3>Sistemas sobre esfuerzo</h3><p>El problema de la mayoría de negocios no es falta de trabajo — es exceso de esfuerzo sin estructura. Un negocio bien construido no debería depender del sacrificio diario de su dueño para funcionar.</p></div></div>
-      <div class="value-item reveal"><div class="value-num">03</div><div class="value-content"><h3>Experiencia real, no teoría</h3><p>No hablamos de lo que leímos ni de lo que escuchamos en un podcast. Hablamos desde negocios operados, decisiones tomadas y errores pagados. Esa es la única autoridad que reconocemos.</p></div></div>
-      <div class="value-item reveal"><div class="value-num">04</div><div class="value-content"><h3>Honestidad sobre resultados</h3><p>No prometemos lo que no podemos garantizar. Le decimos al cliente lo que necesita escuchar, no lo que quiere oír. La honestidad es parte del servicio.</p></div></div>
-      <div class="value-item reveal"><div class="value-num">05</div><div class="value-content"><h3>Crecimiento con orden</h3><p>Crecer rápido sin estructura no es éxito, es caos con más volumen. Construimos bases sólidas antes de escalar — el negocio tiene que poder sostener lo que vende.</p></div></div>
-    </div>
-  </div>
-</section>
-
-<section class="mission">
-  <div class="mission-inner">
-    <div class="section-tag" style="display:inline-block;margin-bottom:1.5rem;">Misión</div>
-    <h2 class="mission-title display reveal">E-COMMERCE<br>REAL PARA<br>MARCAS <em style="font-style:normal;color:var(--green);">REALES</em><br>EN<br>LATINOAMÉRICA.</h2>
-    <p class="mission-text reveal">Ayudar a marcas latinoamericanas con producto físico a dejar de operar en el caos y construir negocios reales — con sistemas, automatización y estructura — que puedan vender, crecer y escalar sin depender de chats, pauta constante ni de que el dueño esté en todo.</p>
-    <p class="mission-text reveal" style="margin-top:1.5rem;color:rgba(136,135,128,0.6);font-size:0.93rem;font-style:italic;">La visión no es crear más tiendas bonitas. Es cambiar la forma en que los negocios latinoamericanos venden online.</p>
-  </div>
-</section>
-
-
-
-<div class="social-section">
-  <div class="social-inner">
-    <div class="social-text">
-      <h4>Seguí el contenido diario</h4>
-      <p>Estrategia, operación y ecommerce real — todos los días en redes.</p>
-    </div>
-    <div class="social-links">
-      <a href="https://www.instagram.com/villamogrowth?igsh=dmh6cWsxcHJnZmw4&utm_source=qr" target="_blank" class="social-link"><span class="platform-name">Instagram</span> @villamogrowth</a>
-      <a href="https://www.tiktok.com/@villamogrowth" target="_blank" class="social-link"><span class="platform-name">TikTok</span> @villamogrowth</a>
-      <a href="https://www.facebook.com/share/1CbMfBMizH/?mibextid=wwXIfr" target="_blank" class="social-link"><span class="platform-name">Facebook</span> Villamo Growth</a>
-      <a href="https://youtube.com/@pablovillamo?si=3-l_Ygmfd95a3f5R" target="_blank" class="social-link"><span class="platform-name">YouTube</span> Pablo Villamo</a>
-    </div>
-  </div>
-</div>
 
 <section style="background:var(--black);border-top:1px solid rgba(255,255,255,0.04);padding:6rem 2rem;" id="pruebas">
   <div class="container">
@@ -1513,6 +1423,329 @@ buildBars();
       <p style="font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,4vw,3.5rem);color:var(--white);line-height:1;margin-bottom:1rem;">Su negocio podría ser<br>el <span style="color:var(--green);">próximo caso de éxito.</span></p>
       <p style="font-size:0.95rem;color:var(--gray);line-height:1.8;max-width:580px;margin:0 auto 2rem;">Cada uno de estos negocios empezó exactamente donde está usted ahora — con ventas, con producto, con potencial — y sin la estructura para escalar. Eso fue lo que cambió.</p>
       <a href="https://calendly.com/pablovillamo123" target="_blank" style="display:inline-flex;align-items:center;gap:8px;background:var(--green);color:var(--black);padding:1rem 2.25rem;border-radius:4px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:background 0.2s;">Solicitar auditoría →</a>
+    </div>
+  </div>
+</section>
+
+
+<section class="methodology" id="metodologia">
+  <div class="container">
+    <div class="section-tag">Programa 90 días</div>
+    <h2 class="section-title display reveal">MI METODOLOGÍA</h2>
+    <p class="section-subtitle reveal">Tres fases. Nueve módulos. Un sistema completo. Cada fase tiene un objetivo claro y cada módulo resuelve un problema concreto del negocio.</p>
+    <div class="phases">
+      <div class="phase reveal">
+        <div class="phase-header">
+          <div class="phase-num">01</div>
+          <div class="phase-meta"><div class="phase-days">Días 1 – 15</div><div class="phase-name">Diagnóstico y base</div></div>
+          <div class="phase-result">Al terminar: el negocio tiene diagnóstico y una tienda lista para convertir.</div>
+        </div>
+        <div class="phase-modules">
+          <div class="phase-module"><div class="module-num">— 01</div><div class="module-name">Auditoría inicial</div><div class="module-desc">Diagnóstico completo — cuellos de botella, fugas de conversión, oportunidades reales.</div></div>
+          <div class="phase-module"><div class="module-num">— 02</div><div class="module-name">Shopify optimizado</div><div class="module-desc">Creación o reestructuración con foco en conversión, no solo en diseño.</div></div>
+        </div>
+      </div>
+      <div class="phase reveal">
+        <div class="phase-header">
+          <div class="phase-num">02</div>
+          <div class="phase-meta"><div class="phase-days">Días 16 – 60</div><div class="phase-name">Construcción del sistema</div></div>
+          <div class="phase-result">Al terminar: sistema de ventas activo, automatizaciones funcionando y SEO creciendo.</div>
+        </div>
+        <div class="phase-modules">
+          <div class="phase-module"><div class="module-num">— 03</div><div class="module-name">Optimización de conversión</div><div class="module-desc">Flujo de compra, velocidad y confianza para convertir visitas en ventas reales.</div></div>
+          <div class="phase-module"><div class="module-num">— 04</div><div class="module-name">Automatizaciones ManyChat</div><div class="module-desc">El negocio responde, nutre y cierra ventas sin persona en el chat.</div></div>
+          <div class="phase-module"><div class="module-num">— 05</div><div class="module-name">SEO E-Commerce</div><div class="module-desc">Tráfico orgánico real para reducir dependencia de pauta pagada.</div></div>
+        </div>
+      </div>
+      <div class="phase reveal">
+        <div class="phase-header">
+          <div class="phase-num">03</div>
+          <div class="phase-meta"><div class="phase-days">Días 61 – 90</div><div class="phase-name">Sistema completo y escala</div></div>
+          <div class="phase-result">Al terminar: el negocio tiene todo para crecer sin volver al desorden.</div>
+        </div>
+        <div class="phase-modules">
+          <div class="phase-module"><div class="module-num">— 06</div><div class="module-name">Contenido orgánico</div><div class="module-desc">Sistema de contenido que posiciona la marca y atrae clientes sin anuncios.</div></div>
+          <div class="phase-module"><div class="module-num">— 07</div><div class="module-name">Email marketing</div><div class="module-desc">Flujos de recuperación de carrito, retención y recompra automatizados.</div></div>
+          <div class="phase-module"><div class="module-num">— 08</div><div class="module-name">Métricas y análisis</div><div class="module-desc">Panel de datos para decisiones con números, no con intuición.</div></div>
+          <div class="phase-module"><div class="module-num">— 09</div><div class="module-name">Escalabilidad</div><div class="module-desc">Procesos definidos y base sólida para crecer sin volver al caos.</div></div>
+        </div>
+      </div>
+    </div>
+    <div style="background:rgba(34,197,94,0.06);border:1px solid rgba(34,197,94,0.2);border-radius:8px;padding:2rem 2.5rem;margin-top:2rem;text-align:center;" class="reveal">
+      <p style="font-family:'Bebas Neue',sans-serif;font-size:1.8rem;color:var(--white);margin-bottom:0.5rem;">Al día 90 se acabó el caos.</p>
+      <p style="color:var(--gray);font-size:0.93rem;">Se acabaron los chats sin fin, la dependencia de pauta, los procesos que dependen de una sola persona.<br><strong style="color:var(--green)">El negocio vende con sistemas, no con esfuerzo.</strong></p>
+    </div>
+  </div>
+</section>
+
+
+<section class="pillars" id="pilares">
+  <div class="container">
+    <div class="section-tag">Los 6 pilares del programa</div>
+    <h2 class="section-title display reveal">EL SISTEMA<br>COMPLETO</h2>
+    <p class="section-subtitle reveal">Seis pilares que trabajan juntos. Sin uno, los demás funcionan a la mitad. Con los seis, el negocio opera con orden y escala sin caos.</p>
+    <div class="pillars-grid">
+      <div class="pillar-card reveal">
+        <div class="pillar-num">01</div>
+        <div class="pillar-label">Pilar 01</div>
+        <h3>Conversión</h3>
+        <p>La tienda no solo es bonita — convierte. Estructura de página de producto, velocidad, señales de confianza y checkout optimizado. Una tienda que no convierte es pauta quemada, sin importar cuánto tráfico tenga.</p>
+        <div class="pillar-result">Meta: 1.5% – 3% de conversión</div>
+      </div>
+      <div class="pillar-card reveal">
+        <div class="pillar-num">02</div>
+        <div class="pillar-label">Pilar 02</div>
+        <h3>Automatización</h3>
+        <p>ManyChat + email marketing para que el negocio responda consultas, nutra prospectos y cierre ventas sin intervención manual. Funciona 24 horas, 7 días a la semana, sin contratar a nadie.</p>
+        <div class="pillar-result">-70% tiempo en atención manual</div>
+      </div>
+      <div class="pillar-card reveal">
+        <div class="pillar-num">03</div>
+        <div class="pillar-label">Pilar 03</div>
+        <h3>Tráfico</h3>
+        <p>SEO técnico, SEO de producto y contenido orgánico para atraer compradores con intención real. Construcción de fuentes de tráfico propias y sostenibles que no dependen de pauta constante.</p>
+        <div class="pillar-result">Tráfico orgánico sostenible en 3-6 meses</div>
+      </div>
+      <div class="pillar-card reveal">
+        <div class="pillar-num">04</div>
+        <div class="pillar-label">Pilar 04</div>
+        <h3>Captación de datos</h3>
+        <p>Lista de email activa, audiencias de retargeting y datos propios del cliente. Una lista de 3,000 correos de compradores reales vale más que 30,000 seguidores en Instagram. Los datos son el activo que el negocio posee.</p>
+        <div class="pillar-result">Canal de email predecible y propio</div>
+      </div>
+      <div class="pillar-card reveal">
+        <div class="pillar-num">05</div>
+        <div class="pillar-label">Pilar 05</div>
+        <h3>Análisis</h3>
+        <p>Panel de métricas semanal con los números que realmente importan: CAC, LTV, conversión por fuente, tasa de retención y ticket promedio. Cada decisión tiene respaldo en datos reales.</p>
+        <div class="pillar-result">Claridad total en números</div>
+      </div>
+      <div class="pillar-card reveal">
+        <div class="pillar-num">06</div>
+        <div class="pillar-label">Pilar 06</div>
+        <h3>Escalamiento</h3>
+        <p>Procesos documentados, stack tecnológico correcto y hoja de ruta a 6-12 meses. Vender el doble no debería requerir trabajar el doble. El sistema absorbe el volumen sin que el dueño esté en todo.</p>
+        <div class="pillar-result">Base sólida para crecer sin romperse</div>
+      </div>
+    </div>
+    <div style="background:rgba(34,197,94,0.05);border:1px solid rgba(34,197,94,0.15);border-radius:8px;padding:2rem 2.5rem;margin-top:2rem;" class="reveal">
+      <p style="font-size:0.875rem;color:var(--gray);text-align:center;line-height:1.8;">Los 6 pilares no trabajan solos — trabajan como sistema.<br><strong style="color:var(--white)">Conversión convierte el tráfico. Automatización libera el tiempo. Tráfico trae los compradores. Datos construyen actiusted. Análisis guía las decisiones. Escalamiento sostiene el crecimiento.</strong></p>
+    </div>
+  </div>
+</section>
+
+
+<section style="background:var(--black);border-top:1px solid rgba(255,255,255,0.04);padding:6rem 2rem;">
+  <div class="container">
+    <div class="section-tag">El verdadero costo</div>
+    <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,5vw,4.5rem);color:var(--white);line-height:0.95;margin-bottom:2rem;" class="reveal">EN PROMEDIO, LOS DUEÑOS DE NEGOCIO QUE ANTES<br>NO TENÍAN SISTEMA DEJAN SOBRE LA MESA<br><span style="color:var(--green);">$2,000 – $4,000 USD<br>CADA MES.</span></h2>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;" class="reveal">
+      <div>
+        <p style="font-size:1.1rem;color:var(--white);font-weight:500;line-height:1.8;margin-bottom:1.5rem;">Eso no es una estimación. Es lo que identificamos en cada diagnóstico: ventas que no se cerraron, carritos que se abandonaron, clientes que no volvieron, pauta que se quemó sin sistema detrás.</p>
+        <p style="font-size:0.95rem;color:var(--gray);line-height:1.8;margin-bottom:1.5rem;">Anualmente, eso significa que está dejando de vender entre <strong style="color:var(--white);">$25,000 y $50,000 dólares</strong> — no por falta de producto, no por falta de clientes, sino por falta de estructura.</p>
+        <div style="border-left:3px solid var(--green);padding-left:1.5rem;margin-bottom:1.5rem;">
+          <p style="font-size:1rem;color:var(--white);line-height:1.7;font-style:italic;">El problema no es el precio del programa. El problema es cuánto le está costando cada mes no tenerlo.</p>
+        </div>
+        <p style="font-size:0.95rem;color:var(--gray);line-height:1.8;">$5,000 USD invertidos una sola vez versus $50,000 que se evaporan año tras año. No porque el negocio esté mal — sino porque opera sin sistema.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:1rem;">
+        <div style="background:var(--black-soft);border:1px solid rgba(255,255,255,0.06);border-radius:8px;padding:1.75rem;">
+          <p style="font-family:'Bebas Neue',sans-serif;font-size:3rem;color:#F87171;line-height:1;margin-bottom:0.4rem;">$2,000 – $4,000</p>
+          <p style="font-size:0.75rem;color:var(--gray);font-family:'Space Mono',monospace;letter-spacing:0.05em;">USD que se pierden cada mes sin sistema</p>
+        </div>
+        <div style="background:var(--black-soft);border:1px solid rgba(255,255,255,0.06);border-radius:8px;padding:1.75rem;">
+          <p style="font-family:'Bebas Neue',sans-serif;font-size:3rem;color:#F87171;line-height:1;margin-bottom:0.4rem;">$25,000 – $50,000</p>
+          <p style="font-size:0.75rem;color:var(--gray);font-family:'Space Mono',monospace;letter-spacing:0.05em;">USD de facturación perdida al año</p>
+        </div>
+        <div style="background:rgba(34,197,94,0.06);border:1px solid rgba(34,197,94,0.25);border-radius:8px;padding:1.75rem;">
+          <p style="font-family:'Bebas Neue',sans-serif;font-size:1.6rem;color:var(--green);line-height:1.2;margin-bottom:0.6rem;">Un sistema bien construido es el activo más valioso que puede tener su negocio.</p>
+          <p style="font-size:0.82rem;color:var(--gray);line-height:1.7;">No se deprecia. No depende de usted para funcionar. Y con el tiempo, se convierte en la razón por la que su competencia no puede alcanzarlo.</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:2.5rem;background:var(--black-soft);border:1px solid rgba(255,255,255,0.06);border-radius:8px;padding:2rem 2.5rem;" class="reveal">
+      <p style="font-size:0.95rem;color:var(--gray);line-height:1.8;">Un negocio con sistemas no solo vende más — <strong style="color:var(--white);">vale más.</strong> Cuando construye infraestructura digital real — Shopify optimizado, automatizaciones activas, email marketing funcionando, SEO generando tráfico — no solo mejora la facturación del mes. Está construyendo un activo que trabaja mientras usted duerme, que se aprecia con el tiempo y que no depende de su disponibilidad constante para sobrevivir.</p>
+    </div>
+  </div>
+</section>
+
+<section class="offer" id="oferta" style="border-top:1px solid rgba(255,255,255,0.04);">
+  <div class="container">
+    <div class="section-tag">La oferta</div>
+    <h2 class="section-title display reveal">PROGRAMA<br>90 DÍAS</h2>
+    <p class="section-subtitle reveal">Implementación directa, no consultoría. No se trata de decirle qué hacer y dejarlo solo. Se trata de entrar, construir y dejarlo funcionando.</p>
+    <div class="offer-price-block reveal">
+      <div class="offer-price">
+        <div class="price-label">Inversión</div>
+        <div style="font-family:'Space Mono',monospace;font-size:0.85rem;color:var(--gray);text-decoration:line-through;margin-bottom:0.2rem;opacity:0.7;">$5,000 USD</div>
+        <div class="price-amount"><span>$3,000</span></div>
+        <div class="price-amount" style="font-size:2rem;color:var(--gray);margin-top:-0.5rem;">USD</div>
+        <div class="price-note">Implementación directa — 90 días</div>
+        <div style="margin-top:1.25rem;background:rgba(34,197,94,0.06);border:1px solid rgba(34,197,94,0.25);border-radius:6px;padding:0.9rem 1rem;">
+          <div style="font-family:'Space Mono',monospace;font-size:0.58rem;color:var(--green);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.5rem;">Precio especial vence en</div>
+          <div id="countdown" style="display:flex;gap:0.5rem;align-items:center;justify-content:center;">
+            <div style="text-align:center;"><div id="cd-days" style="font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--white);line-height:1;">00</div><div style="font-family:'Space Mono',monospace;font-size:0.48rem;color:var(--gray);">DÍAS</div></div>
+            <div style="font-family:'Bebas Neue',sans-serif;font-size:1.8rem;color:var(--green);line-height:1;padding-bottom:0.8rem;">:</div>
+            <div style="text-align:center;"><div id="cd-hours" style="font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--white);line-height:1;">00</div><div style="font-family:'Space Mono',monospace;font-size:0.48rem;color:var(--gray);">HRS</div></div>
+            <div style="font-family:'Bebas Neue',sans-serif;font-size:1.8rem;color:var(--green);line-height:1;padding-bottom:0.8rem;">:</div>
+            <div style="text-align:center;"><div id="cd-mins" style="font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--white);line-height:1;">00</div><div style="font-family:'Space Mono',monospace;font-size:0.48rem;color:var(--gray);">MIN</div></div>
+            <div style="font-family:'Bebas Neue',sans-serif;font-size:1.8rem;color:var(--green);line-height:1;padding-bottom:0.8rem;">:</div>
+            <div style="text-align:center;"><div id="cd-secs" style="font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--white);line-height:1;">00</div><div style="font-family:'Space Mono',monospace;font-size:0.48rem;color:var(--gray);">SEG</div></div>
+          </div>
+          <div style="font-family:'Space Mono',monospace;font-size:0.55rem;color:var(--gray);text-align:center;margin-top:0.5rem;">Hasta el 1 de julio de 2026</div>
+        </div>
+      </div>
+      <div class="offer-description">
+        <h3>Un sistema de ventas completo, construido dentro de su negocio.</h3>
+        <p>El precio del programa no es un gasto. Es la diferencia entre seguir operando en el caos y tener un negocio con estructura real que puede escalar. Sin sistemas: ventas perdidas, pauta quemada, tiempo desperdiciado, clientes que no regresan.</p>
+        <p style="color:var(--green);font-style:italic;font-size:0.93rem;">"El desorden cuesta mucho más que $3,000. La pregunta no es si puede invertir en esto. La pregunta es cuánto le está costando no hacerlo."</p>
+        <a href="https://calendly.com/pablovillamo123" target="_blank" class="btn-primary" style="margin-top:0.5rem;">Solicitar auditoría →</a>
+      </div>
+    </div>
+    <div class="deliverables-grid">
+      <div class="deliverable reveal"><div class="deliverable-num">01 —</div><h4>Auditoría inicial</h4><p>Diagnóstico completo — cuellos de botella, fugas de conversión, oportunidades reales.</p></div>
+      <div class="deliverable reveal"><div class="deliverable-num">02 —</div><h4>Shopify optimizado</h4><p>Creación o reestructuración con foco en conversión, no solo en diseño.</p></div>
+      <div class="deliverable reveal"><div class="deliverable-num">03 —</div><h4>Optimización de conversión</h4><p>Estructura de producto, flujo de compra, velocidad y confianza.</p></div>
+      <div class="deliverable reveal"><div class="deliverable-num">04 —</div><h4>Automatizaciones ManyChat</h4><p>El negocio responde, nutre y cierra ventas sin chat manual.</p></div>
+      <div class="deliverable reveal"><div class="deliverable-num">05 —</div><h4>SEO E-Commerce</h4><p>Estructura base para tráfico orgánico y menos dependencia de pauta.</p></div>
+      <div class="deliverable reveal"><div class="deliverable-num">06 —</div><h4>Contenido orgánico</h4><p>Sistema de contenido que posiciona la marca y atrae clientes sin anuncios.</p></div>
+      <div class="deliverable reveal"><div class="deliverable-num">07 —</div><h4>Email marketing</h4><p>Flujos de recuperación de carrito, retención y recompra automatizados.</p></div>
+      <div class="deliverable reveal"><div class="deliverable-num">08 —</div><h4>Métricas y análisis</h4><p>Panel claro para decisiones con datos reales, no intuición.</p></div>
+      <div class="deliverable reveal"><div class="deliverable-num">09 —</div><h4>Escalabilidad</h4><p>Sistema replicable con procesos definidos y base sólida para crecer.</p></div>
+
+    <div class="cupos-grid reveal">
+
+      <div class="cupos-card cupos-card--green">
+        <div class="cupos-card__top-bar"></div>
+        <p class="cupos-card__label">Cupos limitados</p>
+        <h3 class="cupos-card__title">Trabajamos con pocos clientes simultáneos para garantizar resultados reales.</h3>
+        <p class="cupos-card__body">Los cupos se abren cada trimestre. Nuestra prioridad no es el volumen — es el éxito de su ecommerce. Cuando trabajamos con usted, lo hacemos con atención completa, sin proyectos paralelos que comprometan su resultado.</p>
+        <p class="cupos-card__body">Si hay espacio disponible, evaluamos si hay fit y arrancamos. Si no, puede reservar su lugar para la próxima apertura de cupos.</p>
+        <a href="https://calendly.com/pablovillamo123" target="_blank" class="cupos-card__cta">Solicitar auditoría →</a>
+      </div>
+
+      <div class="cupos-card">
+        <p class="cupos-card__label">Confidencialidad total</p>
+        <h3 class="cupos-card__title">Su éxito es nuestra única carta de presentación.</h3>
+        <p class="cupos-card__body">Todos los resultados y casos mostrados en este sitio son de clientes reales que autorizaron compartir su experiencia. Nunca publicamos información confidencial sin permiso explícito del dueño del negocio.</p>
+        <div class="cupos-card__quote">
+          <p>Al iniciar el programa, le preguntamos si podemos utilizar su caso de éxito como testimonio — siempre con su autorización y de forma transparente. Jamás mostraremos nombre, datos, cifras ni información del negocio que usted no nos permita compartir.</p>
+          <p class="cupos-card__quote-author">— Pablo Villamo, Fundador</p>
+        </div>
+      </div>
+
+    </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="ideal-client">
+  <div class="container">
+    <div class="section-tag">Para quién es</div>
+    <h2 class="section-title display reveal">ESTO ES<br>PARA USTED?</h2>
+    <p class="section-subtitle reveal">Villamo Growth no es para todo el mundo. Es para quienes ya tienen producto, ya venden y entienden que crecer requiere estructura.</p>
+    <div class="client-grid">
+      <div class="client-col for-you reveal">
+        <div class="client-col-header">Para quién SÍ es</div>
+        <div class="client-item"><span class="client-dot green"></span>Dueños de marca con producto físico real</div>
+        <div class="client-item"><span class="client-dot green"></span>Marcas de moda, ropa, lentes, joyería, calzado y accesorios</div>
+        <div class="client-item"><span class="client-dot green"></span>Tiendas que venden por Instagram o WhatsApp</div>
+        <div class="client-item"><span class="client-dot green"></span>Ecommerce desordenados que ya facturan</div>
+        <div class="client-item"><span class="client-dot green"></span>Marcas que dependen demasiado de pauta pagada</div>
+        <div class="client-item"><span class="client-dot green"></span>Negocios con 1 a 5 años operando que quieren profesionalizarse</div>
+        <div class="client-item"><span class="client-dot green"></span>Marcas con intención real de crecer con orden</div>
+      </div>
+      <div class="client-col not-for-you reveal">
+        <div class="client-col-header">Para quién NO es</div>
+        <div class="client-item"><span class="client-dot red"></span>Personas buscando dinero rápido o resultados sin proceso</div>
+        <div class="client-item"><span class="client-dot red"></span>Dropshipping o modelos sin marca propia</div>
+        <div class="client-item"><span class="client-dot red"></span>Negocios sin producto real ni demanda validada</div>
+        <div class="client-item"><span class="client-dot red"></span>Quien no está dispuesto a comprometerse con la implementación</div>
+        <div class="client-item"><span class="client-dot red"></span>Marcas sin intención real de profesionalizarse</div>
+        <div class="client-item"><span class="client-dot red"></span>Quien quiere resultados sin cambiar cómo opera</div>
+        <div class="client-item"><span class="client-dot red"></span>Modelos sin diferenciación de marca clara</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="objections">
+  <div class="container">
+    <div class="section-tag">Objeciones comunes</div>
+    <h2 class="section-title display reveal">LO QUE<br>SE PREGUNTA</h2>
+    <p class="section-subtitle reveal" style="margin-bottom:0;">Las dudas más comunes antes de arrancar — respondidas con honestidad, sin rodeos.</p>
+    <div class="obj-list">
+      <div class="obj-item reveal"><div class="obj-question">"Ya intenté con una agencia y no funcionó."<span class="obj-toggle">+</span></div><div class="obj-answer">Le cobraron, prometieron resultados, llenaron el Shopify de aplicaciones y se fueron. Quedó igual o peor. Villamo Growth no es una agencia — es implementación directa con resultados medibles. Entro al negocio, construyo y lo dejo funcionando. Sin tercerizar, sin desaparecer al mes de haber cobrado.</div></div>
+      <div class="obj-item reveal"><div class="obj-question">"No sé si mi negocio está listo para esto."<span class="obj-toggle">+</span></div><div class="obj-answer">Cree que necesita más seguidores, más presupuesto o más tiempo antes de estructurarse. La verdad es que el desorden cuesta más que la inversión en sistematizarlo. Si ya tiene producto y ya vende, está listo. El desorden no desaparece solo — crece con el volumen.</div></div>
+      <div class="obj-item reveal"><div class="obj-question">"$3,000 es mucho dinero."<span class="obj-toggle">+</span></div><div class="obj-answer">Lo ve como gasto, no como inversión. Calculemos: ¿cuánto le cuesta operar sin sistemas? Tiempo del dueño desperdiciado en chats, ventas perdidas por falta de seguimiento, pauta quemada sin conversión, clientes que no regresan, decisiones tomadas a ciegas. El programa no cuesta $3,000 — el desorden cuesta eso mensualmente.</div></div>
+      <div class="obj-item reveal"><div class="obj-question">"No tengo tiempo para implementar cambios ahora."<span class="obj-toggle">+</span></div><div class="obj-answer">Está tan metido en el día a día que siente que no puede parar. Pero precisamente por eso necesita sistemas — para salir del loop, no para seguir en él. La implementación la hago yo, no usted. Su rol es tomar decisiones, no ejecutar cada detalle técnico.</div></div>
+      <div class="obj-item reveal"><div class="obj-question">"¿Funciona para mi tipo de producto?"<span class="obj-toggle">+</span></div><div class="obj-answer">Ha funcionado en joyería, calzado, lentes, botellas, cosméticos, ropa urbana, gadgets y decoración de hogar. Si tiene producto físico con demanda real y quiere estructurarse para escalar, la metodología funciona. Lo que importa no es el producto — es que haya demanda y disposición a construir con orden.</div></div>
+      <div class="obj-item reveal"><div class="obj-question">"¿Cuánto tiempo me va a tomar ver resultados?"<span class="obj-toggle">+</span></div><div class="obj-answer">Los primeros resultados visibles — mejoras en conversión y automatizaciones activas — se dan entre la semana 3 y la semana 6. SEO y tráfico orgánico son de largo plazo: 3 a 6 meses para sentirse con fuerza. Al final de los 90 días, el sistema está completo. No vendemos resultados de la noche a la mañana porque esos no existen.</div></div>
+      <div class="obj-item reveal"><div class="obj-question">"¿Tengo que tener experiencia técnica para esto?"<span class="obj-toggle">+</span></div><div class="obj-answer">No. La parte técnica es trabajo mío. No necesita saber de Shopify, ManyChat, SEO ni email marketing para que esto funcione. Lo que sí necesita es entender su negocio, tener claridad sobre su producto y estar disponible para tomar decisiones estratégicas cuando corresponda. El resto lo construyo yo.</div></div>
+      <div class="obj-item reveal"><div class="obj-question">"¿Qué pasa después de los 90 días?"<span class="obj-toggle">+</span></div><div class="obj-answer">Al terminar, usted tiene un sistema completo que es suyo. No depende de mí para que funcione. La hoja de ruta de los 6-12 meses post-programa queda documentada. El objetivo del programa es que al día 90 usted pueda operar con independencia total.</div></div>
+      <div class="obj-item reveal"><div class="obj-question">"Ya tengo Shopify activo, ¿de qué me sirve esto?"<span class="obj-toggle">+</span></div><div class="obj-answer">Tener Shopify no es lo mismo que tener un sistema. La mayoría de tiendas que llegan al programa ya tienen Shopify — y el problema es exactamente ese: tienen la herramienta pero sin estructura, sin automatizaciones, sin SEO y sin flujos de retención. Shopify es el punto de partida, no el resultado.</div></div>
+      <div class="obj-item reveal"><div class="obj-question">"¿Por qué confiar en alguien en redes y no en una empresa establecida?"<span class="obj-toggle">+</span></div><div class="obj-answer">Las empresas "establecidas" son las que prometieron resultados y no cumplieron. La confianza no viene de un logo corporativo — viene de resultados documentados en negocios reales, de contenido gratuito de alto valor que puede evaluar antes de invertir y de una propuesta honesta sin promesas infladas. El diagnóstico es gratuito — úselo para evaluar si hay match real.</div></div>
+    </div>
+  </div>
+</section>
+
+
+<section class="values">
+  <div class="container">
+    <div class="section-tag">Por qué Villamo Growth</div>
+    <h2 class="section-title display reveal">LO QUE<br>NOS MUEVE</h2>
+    <div class="values-list">
+      <div class="value-item reveal"><div class="value-num">01</div><div class="value-content"><h3>Claridad antes que perfección</h3><p>En Latinoamérica hay demasiados negocios paralizados esperando que todo esté perfecto para arrancar. Un sistema imperfecto funcionando vale más que una idea perfecta en pausa.</p></div></div>
+      <div class="value-item reveal"><div class="value-num">02</div><div class="value-content"><h3>Sistemas sobre esfuerzo</h3><p>El problema de la mayoría de negocios no es falta de trabajo — es exceso de esfuerzo sin estructura. Un negocio bien construido no debería depender del sacrificio diario de su dueño para funcionar.</p></div></div>
+      <div class="value-item reveal"><div class="value-num">03</div><div class="value-content"><h3>Experiencia real, no teoría</h3><p>No hablamos de lo que leímos ni de lo que escuchamos en un podcast. Hablamos desde negocios operados, decisiones tomadas y errores pagados. Esa es la única autoridad que reconocemos.</p></div></div>
+      <div class="value-item reveal"><div class="value-num">04</div><div class="value-content"><h3>Honestidad sobre resultados</h3><p>No prometemos lo que no podemos garantizar. Le decimos al cliente lo que necesita escuchar, no lo que quiere oír. La honestidad es parte del servicio.</p></div></div>
+      <div class="value-item reveal"><div class="value-num">05</div><div class="value-content"><h3>Crecimiento con orden</h3><p>Crecer rápido sin estructura no es éxito, es caos con más volumen. Construimos bases sólidas antes de escalar — el negocio tiene que poder sostener lo que vende.</p></div></div>
+    </div>
+  </div>
+</section>
+
+
+<section class="mission">
+  <div class="mission-inner">
+    <div class="section-tag" style="display:inline-block;margin-bottom:1.5rem;">Misión</div>
+    <h2 class="mission-title display reveal">E-COMMERCE<br>REAL PARA<br>MARCAS <em style="font-style:normal;color:var(--green);">REALES</em><br>EN<br>LATINOAMÉRICA.</h2>
+    <p class="mission-text reveal">Ayudar a marcas latinoamericanas con producto físico a dejar de operar en el caos y construir negocios reales — con sistemas, automatización y estructura — que puedan vender, crecer y escalar sin depender de chats, pauta constante ni de que el dueño esté en todo.</p>
+    <p class="mission-text reveal" style="margin-top:1.5rem;color:rgba(136,135,128,0.6);font-size:0.93rem;font-style:italic;">La visión no es crear más tiendas bonitas. Es cambiar la forma en que los negocios latinoamericanos venden online.</p>
+  </div>
+</section>
+
+
+
+
+<section style="background:var(--black-soft);border-top:1px solid rgba(255,255,255,0.04);padding:4rem 2rem;" id="podcast">
+  <div class="container">
+    <div class="section-tag">Podcast gratuito</div>
+    <div style="display:block;" class="podcast-grid">
+
+      <div class="reveal">
+        <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,5vw,4rem);color:var(--white);line-height:0.95;margin-bottom:1.25rem;">
+          EL PODCAST<br>PARA DUEÑOS<br>DE <span style="color:var(--green);">NEGOCIO REAL.</span>
+        </h2>
+        <p style="font-size:1rem;color:var(--gray);line-height:1.8;margin-bottom:1.5rem;">
+          Episodios sobre sistemas, escalabilidad, operación, automatización y mentalidad empresarial. Sin teoría de gurú. Sin relleno. Lo que funciona en negocios reales, explicado desde adentro.
+        </p>
+        <p style="font-size:0.875rem;color:var(--gray);line-height:1.8;margin-bottom:2rem;">
+          Disponible en YouTube y las principales plataformas de podcast. Contenido gratuito, sin suscripción, sin formularios.
+        </p>
+        <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+          <a href="https://youtube.com/@pablovillamo?si=3-l_Ygmfd95a3f5R" target="_blank" style="display:inline-flex;align-items:center;gap:8px;background:var(--green);color:var(--black);padding:0.85rem 1.75rem;border-radius:4px;font-weight:700;font-size:0.875rem;text-decoration:none;transition:background 0.2s;">
+            Escuchar en YouTube →
+          </a>
+        </div>
+      </div>
+
+      
+
     </div>
   </div>
 </section>
@@ -1760,33 +1993,7 @@ buildBars();
     </div>
   </div>
 </section>
-<section style="background:var(--black-soft);border-top:1px solid rgba(255,255,255,0.04);padding:4rem 2rem;" id="podcast">
-  <div class="container">
-    <div class="section-tag">Podcast gratuito</div>
-    <div style="display:block;" class="podcast-grid">
 
-      <div class="reveal">
-        <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,5vw,4rem);color:var(--white);line-height:0.95;margin-bottom:1.25rem;">
-          EL PODCAST<br>PARA DUEÑOS<br>DE <span style="color:var(--green);">NEGOCIO REAL.</span>
-        </h2>
-        <p style="font-size:1rem;color:var(--gray);line-height:1.8;margin-bottom:1.5rem;">
-          Episodios sobre sistemas, escalabilidad, operación, automatización y mentalidad empresarial. Sin teoría de gurú. Sin relleno. Lo que funciona en negocios reales, explicado desde adentro.
-        </p>
-        <p style="font-size:0.875rem;color:var(--gray);line-height:1.8;margin-bottom:2rem;">
-          Disponible en YouTube y las principales plataformas de podcast. Contenido gratuito, sin suscripción, sin formularios.
-        </p>
-        <div style="display:flex;gap:1rem;flex-wrap:wrap;">
-          <a href="https://youtube.com/@pablovillamo?si=3-l_Ygmfd95a3f5R" target="_blank" style="display:inline-flex;align-items:center;gap:8px;background:var(--green);color:var(--black);padding:0.85rem 1.75rem;border-radius:4px;font-weight:700;font-size:0.875rem;text-decoration:none;transition:background 0.2s;">
-            Escuchar en YouTube →
-          </a>
-        </div>
-      </div>
-
-      
-
-    </div>
-  </div>
-</section>
 <section class="cta-section">
   <div class="cta-inner">
     <div class="section-tag" style="display:inline-block;margin-bottom:1.5rem;">Primer paso</div>
@@ -1796,6 +2003,23 @@ buildBars();
     <div class="cta-note reveal">No es una asesoría. Es para evaluar si podemos trabajar juntos.</div>
   </div>
 </section>
+
+
+<div class="social-section">
+  <div class="social-inner">
+    <div class="social-text">
+      <h4>Seguí el contenido diario</h4>
+      <p>Estrategia, operación y ecommerce real — todos los días en redes.</p>
+    </div>
+    <div class="social-links">
+      <a href="https://www.instagram.com/villamogrowth?igsh=dmh6cWsxcHJnZmw4&utm_source=qr" target="_blank" class="social-link"><span class="platform-name">Instagram</span> @villamogrowth</a>
+      <a href="https://www.tiktok.com/@villamogrowth" target="_blank" class="social-link"><span class="platform-name">TikTok</span> @villamogrowth</a>
+      <a href="https://www.facebook.com/share/1CbMfBMizH/?mibextid=wwXIfr" target="_blank" class="social-link"><span class="platform-name">Facebook</span> Villamo Growth</a>
+      <a href="https://youtube.com/@pablovillamo?si=3-l_Ygmfd95a3f5R" target="_blank" class="social-link"><span class="platform-name">YouTube</span> Pablo Villamo</a>
+    </div>
+  </div>
+</div>
+
 
 <footer>
   <div class="footer-inner">
