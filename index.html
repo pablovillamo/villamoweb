@@ -387,6 +387,614 @@
   </div>
 </section>
 
+<section style="background:var(--black);border-top:1px solid rgba(255,255,255,0.04);padding:5rem 2rem;" id="diagnostico">
+  <div class="container">
+    <div class="section-tag">Diagnóstico gratuito</div>
+    <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,4vw,3.5rem);color:var(--white);line-height:0.95;margin-bottom:0.75rem;" class="reveal">DESCUBRA QUÉ ESTÁ<br>FRENANDO SU NEGOCIO.</h2>
+    <p style="font-size:0.95rem;color:var(--gray);max-width:560px;line-height:1.8;margin-bottom:2.5rem;" class="reveal">8 módulos, 40+ preguntas, análisis con inteligencia artificial. Identifique exactamente qué está generando pérdidas y cuánto le está costando no tener un sistema.</p>
+    <div class="reveal" style="max-width:720px;margin:0 auto;">
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap');
+*{box-sizing:border-box;margin:0;padding:0;}
+.vg{background:#0A0A0A;color:#fff;font-family:'DM Sans',sans-serif;border-radius:16px;overflow:hidden;}
+.vg-prog{height:3px;background:#111;}.vg-pb{height:100%;background:#22C55E;transition:width .4s ease;}
+.vg-hd{padding:18px 26px;border-bottom:1px solid #161616;display:flex;align-items:center;gap:10px;}
+.vg-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:14px;color:#fff;letter-spacing:-.02em;}
+.vg-logo span{color:#22C55E;}
+.vg-badge{margin-left:auto;background:#22C55E12;border:1px solid #22C55E35;color:#22C55E;font-size:10px;padding:3px 10px;border-radius:20px;font-family:'DM Mono',monospace;}
+.vg-hero{padding:24px 26px 20px;border-bottom:1px solid #111;}
+.vg-htitle{font-family:'Syne',sans-serif;font-weight:800;font-size:22px;letter-spacing:-.03em;line-height:1.15;color:#fff;margin-bottom:6px;}
+.vg-htitle .g{color:#22C55E;}
+.vg-hsub{font-size:12px;color:#444;line-height:1.6;}
+.vg-tabs{display:flex;padding:0 26px;border-bottom:1px solid #111;overflow-x:auto;gap:0;scrollbar-width:none;}
+.vg-tabs::-webkit-scrollbar{display:none;}
+.vg-tab{padding:12px 0;margin-right:20px;font-size:10px;font-weight:500;color:#2a2a2a;border-bottom:2px solid transparent;white-space:nowrap;font-family:'DM Mono',monospace;letter-spacing:.04em;transition:all .2s;flex-shrink:0;}
+.vg-tab.active{color:#22C55E;border-bottom-color:#22C55E;}
+.vg-tab.done{color:#22C55E50;}
+.vg-body{padding:20px 26px;}
+.vg-sec{display:none;}.vg-sec.active{display:block;}
+.mod-label{font-size:10px;color:#333;font-family:'DM Mono',monospace;letter-spacing:.06em;text-transform:uppercase;margin-bottom:5px;}
+.mod-title{font-family:'Syne',sans-serif;font-weight:800;font-size:17px;color:#fff;margin-bottom:16px;line-height:1.3;}
+.q-title{font-size:13px;font-weight:600;color:#bbb;margin-bottom:8px;margin-top:14px;}
+.q-title:first-of-type{margin-top:0;}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:4px;}
+.opts3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-bottom:4px;}
+.opt{background:#0f0f0f;border:1px solid #1a1a1a;border-radius:8px;padding:10px 12px;cursor:pointer;transition:all .12s;text-align:left;user-select:none;}
+.opt:hover{border-color:#22C55E25;}
+.opt.sel{border-color:#22C55E;background:#22C55E08;}
+.opt-t{font-size:12px;font-weight:600;color:#fff;margin-bottom:1px;pointer-events:none;}
+.opt-s{font-size:10px;color:#333;line-height:1.3;pointer-events:none;}
+.opt.sel .opt-s{color:#22C55E60;}
+.sli{margin-bottom:12px;}
+.sli-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;}
+.sli-lbl{font-size:11px;color:#444;}
+.sli-val{font-family:'Syne',sans-serif;font-size:18px;font-weight:800;color:#22C55E;}
+input[type=range]{width:100%;accent-color:#22C55E;}
+.sli-ends{display:flex;justify-content:space-between;font-size:9px;color:#2a2a2a;margin-top:3px;font-family:'DM Mono',monospace;}
+.vg-input{width:100%;background:#111 !important;border:1px solid #222;border-radius:8px;padding:11px 14px;font-size:13px;color:#fff !important;-webkit-text-fill-color:#fff !important;font-family:'DM Sans',sans-serif;outline:none;transition:border-color .2s;margin-bottom:8px;display:block;}
+.vg-input:focus{border-color:#22C55E50;}
+.vg-input::placeholder{color:#2a2a2a !important;-webkit-text-fill-color:#2a2a2a !important;opacity:1;}
+.vg-textarea{width:100%;background:#111 !important;border:1px solid #222;border-radius:8px;padding:11px 14px;font-size:13px;color:#fff !important;-webkit-text-fill-color:#fff !important;font-family:'DM Sans',sans-serif;outline:none;transition:border-color .2s;margin-bottom:8px;resize:none;min-height:70px;line-height:1.5;}
+.vg-textarea:focus{border-color:#22C55E50;}
+.vg-textarea::placeholder{color:#2a2a2a !important;-webkit-text-fill-color:#2a2a2a !important;opacity:1;}
+.nav{display:flex;gap:8px;margin-top:18px;}
+.btn{padding:12px 18px;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all .15s;border:none;}
+.btn-p{background:#22C55E;color:#000;flex:1;}.btn-p:hover{background:#16A34A;}
+.btn-g{background:transparent;color:#555;border:1px solid #222;}.btn-g:hover{color:#fff;border-color:#444;}
+.vg-load{padding:60px 26px;text-align:center;display:none;}
+.spin{width:30px;height:30px;border:2px solid #111;border-top-color:#22C55E;border-radius:50%;animation:spin .8s linear infinite;margin:0 auto 12px;}
+@keyframes spin{to{transform:rotate(360deg);}}
+.load-txt{font-size:12px;color:#333;font-family:'DM Mono',monospace;}
+.vg-res{display:none;padding:20px 26px;}
+.res-hd{background:#0f0f0f;border:1px solid #161616;border-radius:12px;padding:16px;margin-bottom:14px;display:flex;align-items:center;gap:14px;}
+.score-ring{width:56px;height:56px;border-radius:50%;border:2px solid #22C55E;display:flex;flex-direction:column;align-items:center;justify-content:center;flex-shrink:0;}
+.score-n{font-family:'Syne',sans-serif;font-size:17px;font-weight:800;color:#22C55E;line-height:1;}
+.score-l{font-size:7px;color:#333;font-family:'DM Mono',monospace;margin-top:2px;}
+.res-title{font-family:'Syne',sans-serif;font-size:16px;font-weight:800;color:#fff;margin-bottom:3px;}
+.res-sub{font-size:11px;color:#444;}
+.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-bottom:14px;}
+.met{background:#0f0f0f;border:1px solid #161616;border-radius:8px;padding:10px;text-align:center;}
+.met-v{font-family:'Syne',sans-serif;font-size:16px;font-weight:800;color:#fff;margin-bottom:1px;}
+.met-v.red{color:#ef4444;}.met-v.grn{color:#22C55E;}
+.met-l{font-size:9px;color:#333;font-family:'DM Mono',monospace;}
+.pill{display:inline-block;background:#22C55E10;border:1px solid #22C55E20;color:#22C55E;font-size:9px;padding:2px 7px;border-radius:20px;font-family:'DM Mono',monospace;margin-right:4px;margin-bottom:10px;}
+.ai-out{background:#0c180c;border:1px solid #22C55E15;border-left:3px solid #22C55E;border-radius:0 8px 8px 0;padding:14px 16px;margin-bottom:14px;font-size:13px;line-height:1.75;color:#888;white-space:pre-wrap;min-height:60px;}
+.cta-btn{background:#22C55E;border-radius:10px;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;transition:background .2s;border:none;width:100%;text-align:left;}
+.cta-btn:hover{background:#16A34A;}
+.cta-t{font-family:'Syne',sans-serif;font-size:14px;font-weight:800;color:#000;}
+.cta-s{font-size:10px;color:#00000055;margin-top:2px;}
+.restart-btn{background:none;border:none;color:#222;font-size:10px;cursor:pointer;font-family:'DM Mono',monospace;transition:color .2s;margin-top:10px;display:block;margin-left:auto;margin-right:auto;}
+.restart-btn:hover{color:#555;}
+.mod-bar{display:flex;gap:3px;margin-bottom:14px;}
+.mb{height:2px;flex:1;border-radius:2px;background:#1a1a1a;transition:background .3s;}
+.mb.done{background:#22C55E55;}.mb.cur{background:#22C55E;}
+</style>
+
+<div class="vg">
+<div class="vg-prog"><div class="vg-pb" id="pgb" style="width:0%"></div></div>
+<div class="vg-hd">
+  <div class="vg-logo">VILLAMO <span>GROWTH</span></div>
+  <div class="vg-badge">DIAGNÓSTICO PREMIUM · IA</div>
+</div>
+<div class="vg-hero">
+  <div class="vg-htitle">Diagnóstico <span class="g">360°</span> de su negocio</div>
+  <div class="vg-hsub">8 módulos · 40+ preguntas · Análisis IA personalizado · Identifique exactamente qué está frenando su crecimiento</div>
+</div>
+<div class="vg-tabs" id="vg-tabs">
+  <div class="vg-tab active" id="t0">01 Operación</div>
+  <div class="vg-tab" id="t1">02 Ventas</div>
+  <div class="vg-tab" id="t2">03 Tráfico</div>
+  <div class="vg-tab" id="t3">04 Sistemas</div>
+  <div class="vg-tab" id="t4">05 Negocio</div>
+  <div class="vg-tab" id="t5">06 Equipo</div>
+  <div class="vg-tab" id="t6">07 Finanzas</div>
+  <div class="vg-tab" id="t7">08 Marca</div>
+</div>
+
+<div class="vg-body" id="vg-body">
+
+<!-- S0 OPERACIÓN -->
+<div class="vg-sec active" id="s0">
+  <div class="mod-bar" id="mb0"></div>
+  <div class="mod-label">MÓDULO 01 DE 08</div>
+  <div class="mod-title">Operación</div>
+  <div class="q-title">¿Cómo cierra la mayoría de sus ventas hoy?</div>
+  <div class="opts" id="g-canal">
+    <div class="opt" onclick="pick('canal','whatsapp','g-canal')"><div class="opt-t">WhatsApp / DM</div><div class="opt-s">Todo por chat manual</div></div>
+    <div class="opt" onclick="pick('canal','shopify','g-canal')"><div class="opt-t">Shopify / Web</div><div class="opt-s">Tienda online activa</div></div>
+    <div class="opt" onclick="pick('canal','mixto','g-canal')"><div class="opt-t">Mixto</div><div class="opt-s">Web + chat</div></div>
+    <div class="opt" onclick="pick('canal','instagram','g-canal')"><div class="opt-t">Solo Instagram</div><div class="opt-s">Sin tienda propia</div></div>
+  </div>
+  <div class="q-title">¿Cuánto tiempo dedica a responder clientes por día?</div>
+  <div class="opts3" id="g-horas">
+    <div class="opt" onclick="pick('horas','1-2h','g-horas')"><div class="opt-t">1–2 horas</div><div class="opt-s">Manejable</div></div>
+    <div class="opt" onclick="pick('horas','3-5h','g-horas')"><div class="opt-t">3–5 horas</div><div class="opt-s">Consume el día</div></div>
+    <div class="opt" onclick="pick('horas','6+h','g-horas')"><div class="opt-t">6+ horas</div><div class="opt-s">Es mi trabajo completo</div></div>
+  </div>
+  <div class="q-title">¿Qué pasa con las ventas cuando usted no está disponible?</div>
+  <div class="opts" id="g-ausencia">
+    <div class="opt" onclick="pick('ausencia','pierde','g-ausencia')"><div class="opt-t">Se pierden ventas</div><div class="opt-s">El cliente no espera</div></div>
+    <div class="opt" onclick="pick('ausencia','espera','g-ausencia')"><div class="opt-t">El cliente espera</div><div class="opt-s">Genera fricción</div></div>
+    <div class="opt" onclick="pick('ausencia','alguien','g-ausencia')"><div class="opt-t">Alguien más atiende</div><div class="opt-s">Depende de otra persona</div></div>
+    <div class="opt" onclick="pick('ausencia','auto','g-ausencia')"><div class="opt-t">Funciona solo</div><div class="opt-s">Tengo automatizaciones</div></div>
+  </div>
+  <div class="q-title">¿Cuántos pedidos procesa por semana?</div>
+  <div class="opts3" id="g-pedidos">
+    <div class="opt" onclick="pick('pedidos','1-20','g-pedidos')"><div class="opt-t">1–20</div><div class="opt-s">Volumen inicial</div></div>
+    <div class="opt" onclick="pick('pedidos','21-80','g-pedidos')"><div class="opt-t">21–80</div><div class="opt-s">Creciendo</div></div>
+    <div class="opt" onclick="pick('pedidos','80+','g-pedidos')"><div class="opt-t">80+</div><div class="opt-s">Alto volumen</div></div>
+  </div>
+  <div class="q-title">¿Cuál es el mayor cuello de botella operativo hoy?</div>
+  <div class="opts" id="g-cuello">
+    <div class="opt" onclick="pick('cuello','atencion','g-cuello')"><div class="opt-t">Atención al cliente</div><div class="opt-s">Demasiados mensajes</div></div>
+    <div class="opt" onclick="pick('cuello','logistica','g-cuello')"><div class="opt-t">Logística / entregas</div><div class="opt-s">Problemas de envío</div></div>
+    <div class="opt" onclick="pick('cuello','inventario','g-cuello')"><div class="opt-t">Inventario</div><div class="opt-s">Descontrol de stock</div></div>
+    <div class="opt" onclick="pick('cuello','tiempo','g-cuello')"><div class="opt-t">Tiempo del dueño</div><div class="opt-s">Todo pasa por mí</div></div>
+  </div>
+  <div class="q-title">¿Tiene procesos documentados?</div>
+  <div class="opts3" id="g-docs">
+    <div class="opt" onclick="pick('docs','nada','g-docs')"><div class="opt-t">Nada documentado</div><div class="opt-s">Todo en mi cabeza</div></div>
+    <div class="opt" onclick="pick('docs','algo','g-docs')"><div class="opt-t">Algo informal</div><div class="opt-s">Notas, chats</div></div>
+    <div class="opt" onclick="pick('docs','si','g-docs')"><div class="opt-t">Sí, documentados</div><div class="opt-s">SOPs definidos</div></div>
+  </div>
+  <div class="nav">
+    <button class="btn btn-p" onclick="goTo(1)">Siguiente: Ventas →</button>
+  </div>
+</div>
+
+<!-- S1 VENTAS -->
+<div class="vg-sec" id="s1">
+  <div class="mod-bar" id="mb1"></div>
+  <div class="mod-label">MÓDULO 02 DE 08</div>
+  <div class="mod-title">Ventas</div>
+  <div class="q-title">Facturación mensual aproximada</div>
+  <div class="sli">
+    <div class="sli-row"><span class="sli-lbl">Ingresos/mes</span><span class="sli-val" id="sv-fac">$3,000</span></div>
+    <input type="range" id="fac" min="500" max="30000" step="500" value="3000" oninput="sliUp('fac','sv-fac','$','')">
+    <div class="sli-ends"><span>$500</span><span>$30,000+</span></div>
+  </div>
+  <div class="q-title">Ticket promedio por venta</div>
+  <div class="opts3" id="g-ticket">
+    <div class="opt" onclick="pick('ticket','bajo','g-ticket')"><div class="opt-t">Menos de $30</div><div class="opt-s">Producto de entrada</div></div>
+    <div class="opt" onclick="pick('ticket','medio','g-ticket')"><div class="opt-t">$30–$100</div><div class="opt-s">Rango medio</div></div>
+    <div class="opt" onclick="pick('ticket','alto','g-ticket')"><div class="opt-t">$100+</div><div class="opt-s">Ticket premium</div></div>
+  </div>
+  <div class="q-title">¿Qué porcentaje de ventas depende de que usted esté disponible?</div>
+  <div class="sli">
+    <div class="sli-row"><span class="sli-lbl">Dependencia manual</span><span class="sli-val" id="sv-dep">70%</span></div>
+    <input type="range" id="dep" min="0" max="100" step="10" value="70" oninput="sliUp('dep','sv-dep','','%')">
+    <div class="sli-ends"><span>0%</span><span>100%</span></div>
+  </div>
+  <div class="q-title">¿Tiene recompra o la mayoría compra una sola vez?</div>
+  <div class="opts3" id="g-recompra">
+    <div class="opt" onclick="pick('recompra','unica','g-recompra')"><div class="opt-t">Compra única</div><div class="opt-s">No hay fidelización</div></div>
+    <div class="opt" onclick="pick('recompra','algo','g-recompra')"><div class="opt-t">Algo de recompra</div><div class="opt-s">Algunos regresan</div></div>
+    <div class="opt" onclick="pick('recompra','alta','g-recompra')"><div class="opt-t">Alta recompra</div><div class="opt-s">Base fiel activa</div></div>
+  </div>
+  <div class="q-title">¿Qué está frenando sus ventas hoy?</div>
+  <div class="opts" id="g-freno">
+    <div class="opt" onclick="pick('freno','trafico','g-freno')"><div class="opt-t">Falta de tráfico</div><div class="opt-s">Poca gente llega</div></div>
+    <div class="opt" onclick="pick('freno','conversion','g-freno')"><div class="opt-t">Baja conversión</div><div class="opt-s">Llegan pero no compran</div></div>
+    <div class="opt" onclick="pick('freno','confianza','g-freno')"><div class="opt-t">Falta de confianza</div><div class="opt-s">Dudan antes de comprar</div></div>
+    <div class="opt" onclick="pick('freno','precio','g-freno')"><div class="opt-t">Objeción de precio</div><div class="opt-s">Sienten que es caro</div></div>
+  </div>
+  <div class="q-title">¿Tiene seguimiento postventa activo?</div>
+  <div class="opts3" id="g-postventa">
+    <div class="opt" onclick="pick('postventa','no','g-postventa')"><div class="opt-t">No tengo</div><div class="opt-s">Venta y listo</div></div>
+    <div class="opt" onclick="pick('postventa','manual','g-postventa')"><div class="opt-t">Manual ocasional</div><div class="opt-s">A veces les escribo</div></div>
+    <div class="opt" onclick="pick('postventa','auto','g-postventa')"><div class="opt-t">Automatizado</div><div class="opt-s">Flujos activos</div></div>
+  </div>
+  <div class="nav">
+    <button class="btn btn-g" onclick="goTo(0)">← Volver</button>
+    <button class="btn btn-p" onclick="goTo(2)">Siguiente: Tráfico →</button>
+  </div>
+</div>
+
+<!-- S2 TRÁFICO -->
+<div class="vg-sec" id="s2">
+  <div class="mod-bar" id="mb2"></div>
+  <div class="mod-label">MÓDULO 03 DE 08</div>
+  <div class="mod-title">Tráfico</div>
+  <div class="q-title">Inversión mensual en pauta pagada</div>
+  <div class="sli">
+    <div class="sli-row"><span class="sli-lbl">Inversión en ads</span><span class="sli-val" id="sv-pauta">$500</span></div>
+    <input type="range" id="pauta" min="0" max="5000" step="100" value="500" oninput="sliUp('pauta','sv-pauta','$','')">
+    <div class="sli-ends"><span>$0</span><span>$5,000+</span></div>
+  </div>
+  <div class="q-title">¿Qué plataforma le genera más ventas hoy?</div>
+  <div class="opts" id="g-plataforma">
+    <div class="opt" onclick="pick('plataforma','meta','g-plataforma')"><div class="opt-t">Meta Ads</div><div class="opt-s">Facebook / Instagram</div></div>
+    <div class="opt" onclick="pick('plataforma','organico','g-plataforma')"><div class="opt-t">Contenido orgánico</div><div class="opt-s">Sin pauta</div></div>
+    <div class="opt" onclick="pick('plataforma','google','g-plataforma')"><div class="opt-t">Google / SEO</div><div class="opt-s">Búsqueda orgánica</div></div>
+    <div class="opt" onclick="pick('plataforma','referidos','g-plataforma')"><div class="opt-t">Referidos / boca a boca</div><div class="opt-s">Sin canal digital claro</div></div>
+  </div>
+  <div class="q-title">¿Publica contenido de forma constante?</div>
+  <div class="opts3" id="g-contenido">
+    <div class="opt" onclick="pick('contenido','no','g-contenido')"><div class="opt-t">Casi no publico</div><div class="opt-s">Sin estrategia</div></div>
+    <div class="opt" onclick="pick('contenido','irregular','g-contenido')"><div class="opt-t">Irregular</div><div class="opt-s">Cuando puedo</div></div>
+    <div class="opt" onclick="pick('contenido','constante','g-contenido')"><div class="opt-t">Constante</div><div class="opt-s">Sistema de contenido</div></div>
+  </div>
+  <div class="q-title">¿Está construyendo base de datos de clientes?</div>
+  <div class="opts3" id="g-base">
+    <div class="opt" onclick="pick('base','no','g-base')"><div class="opt-t">No tengo</div><div class="opt-s">Cero captura</div></div>
+    <div class="opt" onclick="pick('base','algo','g-base')"><div class="opt-t">Algo básico</div><div class="opt-s">Lista pequeña</div></div>
+    <div class="opt" onclick="pick('base','si','g-base')"><div class="opt-t">Sí, activa</div><div class="opt-s">Creciendo bien</div></div>
+  </div>
+  <div class="q-title">¿Tiene pixel y métricas correctamente configuradas?</div>
+  <div class="opts3" id="g-pixel">
+    <div class="opt" onclick="pick('pixel','no','g-pixel')"><div class="opt-t">No tengo</div><div class="opt-s">Sin seguimiento</div></div>
+    <div class="opt" onclick="pick('pixel','basico','g-pixel')"><div class="opt-t">Básico</div><div class="opt-s">Pixel instalado</div></div>
+    <div class="opt" onclick="pick('pixel','completo','g-pixel')"><div class="opt-t">Completo</div><div class="opt-s">Eventos + conversiones</div></div>
+  </div>
+  <div class="nav">
+    <button class="btn btn-g" onclick="goTo(1)">← Volver</button>
+    <button class="btn btn-p" onclick="goTo(3)">Siguiente: Sistemas →</button>
+  </div>
+</div>
+
+<!-- S3 SISTEMAS -->
+<div class="vg-sec" id="s3">
+  <div class="mod-bar" id="mb3"></div>
+  <div class="mod-label">MÓDULO 04 DE 08</div>
+  <div class="mod-title">Sistemas y Automatización</div>
+  <div class="q-title">¿Qué sistemas tiene activos hoy? (puede seleccionar varios)</div>
+  <div class="opts" id="g-sistemas">
+    <div class="opt" id="sys-shopify" onclick="tog('shopify','sys-shopify')"><div class="opt-t">Tienda Shopify</div><div class="opt-s">Activa y funcional</div></div>
+    <div class="opt" id="sys-manychat" onclick="tog('manychat','sys-manychat')"><div class="opt-t">ManyChat</div><div class="opt-s">Automatizaciones activas</div></div>
+    <div class="opt" id="sys-email" onclick="tog('email','sys-email')"><div class="opt-t">Email marketing</div><div class="opt-s">Flujos configurados</div></div>
+    <div class="opt" id="sys-crm" onclick="tog('crm','sys-crm')"><div class="opt-t">CRM activo</div><div class="opt-s">Gestión de leads</div></div>
+    <div class="opt" id="sys-analytics" onclick="tog('analytics','sys-analytics')"><div class="opt-t">Google Analytics</div><div class="opt-s">GA4 configurado</div></div>
+    <div class="opt" id="sys-carrito" onclick="tog('carrito','sys-carrito')"><div class="opt-t">Recuperación carritos</div><div class="opt-s">Flujo automatizado</div></div>
+  </div>
+  <div class="q-title">¿Qué tan automatizado está su negocio? (1 manual — 10 funciona solo)</div>
+  <div class="sli">
+    <div class="sli-row"><span class="sli-lbl">Nivel de automatización</span><span class="sli-val" id="sv-auto">4/10</span></div>
+    <input type="range" id="automatizacion" min="1" max="10" step="1" value="4" oninput="sliUp('automatizacion','sv-auto','','/10')">
+    <div class="sli-ends"><span>1 — manual total</span><span>10 — funciona solo</span></div>
+  </div>
+  <div class="q-title">¿Tiene reportes claros para tomar decisiones?</div>
+  <div class="opts3" id="g-reportes">
+    <div class="opt" onclick="pick('reportes','no','g-reportes')"><div class="opt-t">No tengo</div><div class="opt-s">Decido por intuición</div></div>
+    <div class="opt" onclick="pick('reportes','basico','g-reportes')"><div class="opt-t">Algo básico</div><div class="opt-s">Reviso Shopify o Meta</div></div>
+    <div class="opt" onclick="pick('reportes','dashboard','g-reportes')"><div class="opt-t">Dashboard claro</div><div class="opt-s">Métricas centralizadas</div></div>
+  </div>
+  <div class="nav">
+    <button class="btn btn-g" onclick="goTo(2)">← Volver</button>
+    <button class="btn btn-p" onclick="goTo(4)">Siguiente: Negocio →</button>
+  </div>
+</div>
+
+<!-- S4 NEGOCIO -->
+<div class="vg-sec" id="s4">
+  <div class="mod-bar" id="mb4"></div>
+  <div class="mod-label">MÓDULO 05 DE 08</div>
+  <div class="mod-title">Negocio y Visión</div>
+  <input class="vg-input" id="i-producto" type="text" placeholder="¿Qué producto vende? (ej: joyería artesanal, calzado femenino...)">
+  <input class="vg-input" id="i-pais" type="text" placeholder="¿En qué país opera?">
+  <div class="q-title">¿Hace cuánto inició el negocio?</div>
+  <div class="opts3" id="g-antiguedad">
+    <div class="opt" onclick="pick('antiguedad','menos1','g-antiguedad')"><div class="opt-t">Menos de 1 año</div><div class="opt-s">Etapa temprana</div></div>
+    <div class="opt" onclick="pick('antiguedad','1-3','g-antiguedad')"><div class="opt-t">1–3 años</div><div class="opt-s">En crecimiento</div></div>
+    <div class="opt" onclick="pick('antiguedad','3+','g-antiguedad')"><div class="opt-t">3+ años</div><div class="opt-s">Negocio establecido</div></div>
+  </div>
+  <div class="q-title">¿Qué intentó anteriormente para crecer?</div>
+  <div class="opts" id="g-intento">
+    <div class="opt" onclick="pick('intento','agencia','g-intento')"><div class="opt-t">Contratar una agencia</div><div class="opt-s">No dio resultados</div></div>
+    <div class="opt" onclick="pick('intento','curso','g-intento')"><div class="opt-t">Cursos o formación</div><div class="opt-s">Teoría sin implementación</div></div>
+    <div class="opt" onclick="pick('intento','pauta','g-intento')"><div class="opt-t">Más pauta pagada</div><div class="opt-s">Quemé presupuesto</div></div>
+    <div class="opt" onclick="pick('intento','nada','g-intento')"><div class="opt-t">No he intentado nada</div><div class="opt-s">Es mi primera vez</div></div>
+  </div>
+  <div class="q-title">¿Cuál sería su escenario ideal en 12 meses?</div>
+  <div class="opts" id="g-meta12">
+    <div class="opt" onclick="pick('meta12','doble','g-meta12')"><div class="opt-t">Doblar facturación</div><div class="opt-s">Crecer en ventas</div></div>
+    <div class="opt" onclick="pick('meta12','salirchat','g-meta12')"><div class="opt-t">Salir del chat</div><div class="opt-s">Vender sin depender de mí</div></div>
+    <div class="opt" onclick="pick('meta12','sistematizar','g-meta12')"><div class="opt-t">Sistematizar la operación</div><div class="opt-s">Orden y procesos claros</div></div>
+    <div class="opt" onclick="pick('meta12','escalar','g-meta12')"><div class="opt-t">Escalar a nuevos mercados</div><div class="opt-s">Expansión regional</div></div>
+  </div>
+  <div class="nav">
+    <button class="btn btn-g" onclick="goTo(3)">← Volver</button>
+    <button class="btn btn-p" onclick="goTo(5)">Siguiente: Equipo →</button>
+  </div>
+</div>
+
+<!-- S5 EQUIPO -->
+<div class="vg-sec" id="s5">
+  <div class="mod-bar" id="mb5"></div>
+  <div class="mod-label">MÓDULO 06 DE 08</div>
+  <div class="mod-title">Equipo y Delegación</div>
+  <div class="q-title">¿Cuántas personas forman parte del negocio?</div>
+  <div class="opts3" id="g-equipo">
+    <div class="opt" onclick="pick('equipo','solo','g-equipo')"><div class="opt-t">Solo yo</div><div class="opt-s">Operación unipersonal</div></div>
+    <div class="opt" onclick="pick('equipo','2-3','g-equipo')"><div class="opt-t">2–3 personas</div><div class="opt-s">Equipo pequeño</div></div>
+    <div class="opt" onclick="pick('equipo','4+','g-equipo')"><div class="opt-t">4 o más</div><div class="opt-s">Equipo en crecimiento</div></div>
+  </div>
+  <div class="q-title">¿Qué tan fácil sería que el negocio funcione sin usted por una semana?</div>
+  <div class="opts" id="g-sinmi">
+    <div class="opt" onclick="pick('sinmi','imposible','g-sinmi')"><div class="opt-t">Imposible</div><div class="opt-s">Todo se detiene</div></div>
+    <div class="opt" onclick="pick('sinmi','dificil','g-sinmi')"><div class="opt-t">Muy difícil</div><div class="opt-s">Habría problemas graves</div></div>
+    <div class="opt" onclick="pick('sinmi','algo','g-sinmi')"><div class="opt-t">Con esfuerzo</div><div class="opt-s">Alguien podría cubrirme</div></div>
+    <div class="opt" onclick="pick('sinmi','facil','g-sinmi')"><div class="opt-t">Sin problema</div><div class="opt-s">Tengo sistemas y equipo</div></div>
+  </div>
+  <div class="q-title">¿Qué área del negocio siente más débil hoy?</div>
+  <div class="opts" id="g-debil">
+    <div class="opt" onclick="pick('debil','marketing','g-debil')"><div class="opt-t">Marketing y ventas</div><div class="opt-s">No sé cómo crecer</div></div>
+    <div class="opt" onclick="pick('debil','operacion','g-debil')"><div class="opt-t">Operación</div><div class="opt-s">Mucho caos interno</div></div>
+    <div class="opt" onclick="pick('debil','finanzas','g-debil')"><div class="opt-t">Finanzas</div><div class="opt-s">Sin claridad de números</div></div>
+    <div class="opt" onclick="pick('debil','equipo','g-debil')"><div class="opt-t">Equipo / delegación</div><div class="opt-s">Todo depende de mí</div></div>
+  </div>
+  <div class="nav">
+    <button class="btn btn-g" onclick="goTo(4)">← Volver</button>
+    <button class="btn btn-p" onclick="goTo(6)">Siguiente: Finanzas →</button>
+  </div>
+</div>
+
+<!-- S6 FINANZAS -->
+<div class="vg-sec" id="s6">
+  <div class="mod-bar" id="mb6"></div>
+  <div class="mod-label">MÓDULO 07 DE 08</div>
+  <div class="mod-title">Finanzas y Rentabilidad</div>
+  <div class="q-title">¿Qué porcentaje de su facturación se va en publicidad?</div>
+  <div class="sli">
+    <div class="sli-row"><span class="sli-lbl">% en pauta</span><span class="sli-val" id="sv-pctpauta">20%</span></div>
+    <input type="range" id="pctpauta" min="0" max="60" step="5" value="20" oninput="sliUp('pctpauta','sv-pctpauta','','%')">
+    <div class="sli-ends"><span>0%</span><span>60%+</span></div>
+  </div>
+  <div class="q-title">¿Conoce sus márgenes reales por producto?</div>
+  <div class="opts3" id="g-margenes">
+    <div class="opt" onclick="pick('margenes','no','g-margenes')"><div class="opt-t">No los conozco</div><div class="opt-s">Opero sin datos</div></div>
+    <div class="opt" onclick="pick('margenes','aprox','g-margenes')"><div class="opt-t">Aproximadamente</div><div class="opt-s">Estimados básicos</div></div>
+    <div class="opt" onclick="pick('margenes','si','g-margenes')"><div class="opt-t">Sí, con claridad</div><div class="opt-s">Cálculo exacto</div></div>
+  </div>
+  <div class="q-title">¿Siente que el negocio genera utilidad real o solo movimiento de dinero?</div>
+  <div class="opts3" id="g-utilidad">
+    <div class="opt" onclick="pick('utilidad','movimiento','g-utilidad')"><div class="opt-t">Solo movimiento</div><div class="opt-s">Entra y sale igual</div></div>
+    <div class="opt" onclick="pick('utilidad','algo','g-utilidad')"><div class="opt-t">Algo de utilidad</div><div class="opt-s">Queda poco al final</div></div>
+    <div class="opt" onclick="pick('utilidad','buena','g-utilidad')"><div class="opt-t">Buena utilidad</div><div class="opt-s">Negocio rentable</div></div>
+  </div>
+  <div class="q-title">¿Qué tan rentable considera el negocio hoy? (1–10)</div>
+  <div class="sli">
+    <div class="sli-row"><span class="sli-lbl">Rentabilidad percibida</span><span class="sli-val" id="sv-rent">5/10</span></div>
+    <input type="range" id="rent" min="1" max="10" step="1" value="5" oninput="sliUp('rent','sv-rent','','/10')">
+    <div class="sli-ends"><span>1 — apenas sobrevive</span><span>10 — muy rentable</span></div>
+  </div>
+  <div class="nav">
+    <button class="btn btn-g" onclick="goTo(5)">← Volver</button>
+    <button class="btn btn-p" onclick="goTo(7)">Siguiente: Marca →</button>
+  </div>
+</div>
+
+<!-- S7 MARCA -->
+<div class="vg-sec" id="s7">
+  <div class="mod-bar" id="mb7"></div>
+  <div class="mod-label">MÓDULO 08 DE 08</div>
+  <div class="mod-title">Marca y Conversión</div>
+  <div class="q-title">¿Su sitio web fue construido para convertir o solo para verse bien?</div>
+  <div class="opts3" id="g-web">
+    <div class="opt" onclick="pick('web','no','g-web')"><div class="opt-t">No tengo web</div><div class="opt-s">Solo redes sociales</div></div>
+    <div class="opt" onclick="pick('web','visual','g-web')"><div class="opt-t">Solo visual</div><div class="opt-s">Bonita pero no convierte</div></div>
+    <div class="opt" onclick="pick('web','conversion','g-web')"><div class="opt-t">Para convertir</div><div class="opt-s">Optimizada con estrategia</div></div>
+  </div>
+  <div class="q-title">¿Su marca transmite confianza y autoridad de forma inmediata?</div>
+  <div class="opts3" id="g-confianza">
+    <div class="opt" onclick="pick('confianza','no','g-confianza')"><div class="opt-t">No creo</div><div class="opt-s">Falta solidez</div></div>
+    <div class="opt" onclick="pick('confianza','algo','g-confianza')"><div class="opt-t">Algo, mejorable</div><div class="opt-s">Hay oportunidad</div></div>
+    <div class="opt" onclick="pick('confianza','si','g-confianza')"><div class="opt-t">Sí, claramente</div><div class="opt-s">Branding sólido</div></div>
+  </div>
+  <div class="q-title">¿Tiene pruebas sociales visibles?</div>
+  <div class="opts3" id="g-social">
+    <div class="opt" onclick="pick('social','no','g-social')"><div class="opt-t">No tengo</div><div class="opt-s">Sin prueba social</div></div>
+    <div class="opt" onclick="pick('social','pocas','g-social')"><div class="opt-t">Algunas</div><div class="opt-s">Podría mejorar</div></div>
+    <div class="opt" onclick="pick('social','si','g-social')"><div class="opt-t">Sí, activas</div><div class="opt-s">Bien visibles</div></div>
+  </div>
+  <div class="q-title">¿Qué hace que alguien NO compre hoy en su negocio?</div>
+  <div class="opts" id="g-nocompra">
+    <div class="opt" onclick="pick('nocompra','desconfianza','g-nocompra')"><div class="opt-t">Desconfianza</div><div class="opt-s">No parece seguro comprar</div></div>
+    <div class="opt" onclick="pick('nocompra','friccion','g-nocompra')"><div class="opt-t">Fricción en el proceso</div><div class="opt-s">Comprar es complicado</div></div>
+    <div class="opt" onclick="pick('nocompra','precio','g-nocompra')"><div class="opt-t">Precio</div><div class="opt-s">Sienten que es caro</div></div>
+    <div class="opt" onclick="pick('nocompra','info','g-nocompra')"><div class="opt-t">Falta de información</div><div class="opt-s">No entienden el producto</div></div>
+  </div>
+  <div style="margin-top:16px;padding:14px;background:#0f1a0f;border:1px solid #22C55E20;border-left:3px solid #22C55E;border-radius:0 8px 8px 0;">
+    <div style="font-size:10px;color:#22C55E;font-family:'DM Mono',monospace;margin-bottom:6px;letter-spacing:.04em;">PREGUNTA FINAL</div>
+    <div style="font-size:13px;color:#ddd;font-weight:600;margin-bottom:8px;line-height:1.5;">Si pudiera resolver un solo problema en los próximos 90 días… ¿cuál sería?</div>
+    <textarea class="vg-textarea" id="i-problema" placeholder="Descríbalo con sus propias palabras..."></textarea>
+  </div>
+  <div class="nav">
+    <button class="btn btn-g" onclick="goTo(6)">← Volver</button>
+    <button class="btn btn-p" onclick="generar()">Generar diagnóstico completo →</button>
+  </div>
+</div>
+
+</div><!-- /body -->
+
+<div class="vg-load" id="vg-load">
+  <div class="spin"></div>
+  <div class="load-txt" id="load-txt">Analizando su operación...</div>
+</div>
+
+<div class="vg-res" id="vg-res">
+  <div class="res-hd">
+    <div class="score-ring"><div class="score-n" id="res-score">--</div><div class="score-l">SCORE</div></div>
+    <div><div class="res-title" id="res-title">Diagnóstico listo</div><div class="res-sub" id="res-sub">Análisis 360° · Villamo Growth IA</div></div>
+  </div>
+  <div class="metrics" id="res-metrics"></div>
+  <div><span class="pill">Diagnóstico 360°</span><span class="pill">8 módulos</span><span class="pill">Análisis IA</span></div>
+  <div class="ai-out" id="res-ai"></div>
+  <button class="cta-btn" onclick="sendPrompt('Quiero hablar sobre el programa de 90 días de Villamo Growth para implementar estos sistemas en mi negocio')">
+    <div><div class="cta-t">Quiero implementar esto en 90 días</div><div class="cta-s">Programa Villamo Growth · $3,000 USD · Implementación directa</div></div>
+    <div style="font-size:18px;color:#000;">→</div>
+  </button>
+  <button class="restart-btn" onclick="restart()">↺ Nuevo diagnóstico</button>
+</div>
+</div>
+
+<script>
+var D = {
+  canal:'',horas:'',ausencia:'',pedidos:'',cuello:'',docs:'',
+  fac:3000,dep:70,ticket:'',recompra:'',freno:'',postventa:'',
+  pauta:500,plataforma:'',contenido:'',base:'',pixel:'',
+  sistemas:[],automatizacion:4,reportes:'',
+  producto:'',pais:'',antiguedad:'',intento:'',meta12:'',
+  equipo:'',sinmi:'',debil:'',
+  pctpauta:20,margenes:'',utilidad:'',rent:5,
+  web:'',confianza:'',social:'',nocompra:'',problema:''
+};
+var cur = 0;
+
+function sliUp(id, outId, pre, suf) {
+  var v = parseInt(document.getElementById(id).value);
+  D[id] = v;
+  document.getElementById(outId).textContent = pre === '$' ? '$' + v.toLocaleString() : v + suf;
+}
+
+function pick(key, val, gid) {
+  var group = document.getElementById(gid);
+  var opts = group.querySelectorAll('.opt');
+  for (var i = 0; i < opts.length; i++) opts[i].classList.remove('sel');
+  event.currentTarget.classList.add('sel');
+  D[key] = val;
+}
+
+function tog(val, elId) {
+  var el = document.getElementById(elId);
+  var idx = D.sistemas.indexOf(val);
+  if (idx > -1) { D.sistemas.splice(idx, 1); el.classList.remove('sel'); }
+  else { D.sistemas.push(val); el.classList.add('sel'); }
+}
+
+function buildBars() {
+  for (var i = 0; i < 8; i++) {
+    var el = document.getElementById('mb' + i);
+    if (!el) continue;
+    var h = '';
+    for (var j = 0; j < 8; j++) {
+      var cls = j < i ? 'done' : j === i ? 'cur' : '';
+      h += '<div class="mb ' + cls + '"></div>';
+    }
+    el.innerHTML = h;
+  }
+}
+
+function goTo(n) {
+  document.getElementById('s' + cur).classList.remove('active');
+  document.getElementById('t' + cur).classList.remove('active');
+  if (n > cur) document.getElementById('t' + cur).classList.add('done');
+  cur = n;
+  document.getElementById('s' + cur).classList.add('active');
+  document.getElementById('t' + cur).classList.add('active');
+  document.getElementById('pgb').style.width = ((cur / 8) * 100) + '%';
+  buildBars();
+}
+
+function calcScore() {
+  var s = 0;
+  if (D.canal === 'shopify') s += 8; else if (D.canal === 'mixto') s += 4;
+  if (D.horas === '1-2h') s += 6; else if (D.horas === '3-5h') s += 3;
+  if (D.ausencia === 'auto') s += 8; else if (D.ausencia === 'alguien') s += 3;
+  if (D.docs === 'si') s += 6; else if (D.docs === 'algo') s += 2;
+  if (D.dep <= 20) s += 8; else if (D.dep <= 50) s += 4;
+  if (D.recompra === 'alta') s += 6; else if (D.recompra === 'algo') s += 3;
+  if (D.contenido === 'constante') s += 5; else if (D.contenido === 'irregular') s += 2;
+  if (D.base === 'si') s += 5; else if (D.base === 'algo') s += 2;
+  if (D.pixel === 'completo') s += 5; else if (D.pixel === 'basico') s += 2;
+  s += D.sistemas.length * 2;
+  s += Math.round(D.automatizacion * 1.2);
+  if (D.reportes === 'dashboard') s += 5; else if (D.reportes === 'basico') s += 2;
+  if (D.sinmi === 'facil') s += 6; else if (D.sinmi === 'algo') s += 3;
+  if (D.margenes === 'si') s += 4; else if (D.margenes === 'aprox') s += 2;
+  if (D.utilidad === 'buena') s += 4; else if (D.utilidad === 'algo') s += 2;
+  if (D.web === 'conversion') s += 5; else if (D.web === 'visual') s += 1;
+  if (D.confianza === 'si') s += 4; else if (D.confianza === 'algo') s += 2;
+  if (D.social === 'si') s += 3; else if (D.social === 'pocas') s += 1;
+  return Math.min(Math.round(s), 100);
+}
+
+function generar() {
+  D.producto = document.getElementById('i-producto').value || 'producto físico';
+  D.pais = document.getElementById('i-pais').value || 'Latinoamérica';
+  D.problema = document.getElementById('i-problema').value || 'no especificado';
+
+  document.getElementById('vg-body').style.display = 'none';
+  document.getElementById('vg-tabs').style.display = 'none';
+  document.getElementById('vg-load').style.display = 'block';
+
+  var msgs = ['Analizando operación y cuello de botella...','Calculando pérdidas invisibles...','Evaluando sistemas y automatización...','Identificando oportunidades...','Construyendo diagnóstico premium...'];
+  var mi = 0;
+  var iv = setInterval(function() { mi = (mi + 1) % msgs.length; document.getElementById('load-txt').textContent = msgs[mi]; }, 1300);
+
+  var score = calcScore();
+  var costoDesorden = Math.round(D.fac * (D.dep / 100) * 0.3);
+  var ventasPerdidas = Math.round(D.fac * 0.18);
+  var pautaQuemada = Math.round(D.pauta * (D.pixel === 'no' ? 0.5 : D.pixel === 'basico' ? 0.3 : 0.15));
+  var sysLabel = D.sistemas.length === 0 ? 'ninguno' : D.sistemas.join(', ');
+
+  var prompt = 'Sos Pablo de Villamo Growth. Experto en ecommerce latinoamericano. Ustedeo y voseo, nunca tuteo. Directo, costarricense, autoridad real desde experiencia operativa. Sin promesas vacías ni coach de redes.\n\nGenerá un diagnóstico de negocio premium basado en estos datos. Máximo 220 palabras. Sin subtítulos ni bullets. Párrafos directos.\n\nDATOS:\nProducto: ' + D.producto + ' | País: ' + D.pais + '\nAntigüedad: ' + D.antiguedad + ' | Equipo: ' + D.equipo + '\nCanal de ventas: ' + D.canal + ' | Pedidos/semana: ' + D.pedidos + '\nHoras/día en atención: ' + D.horas + '\nCuando no está disponible: ' + D.ausencia + '\nCuello de botella: ' + D.cuello + '\nProcesos documentados: ' + D.docs + '\nFacturación mensual: $' + D.fac.toLocaleString() + ' USD\nTicket: ' + D.ticket + ' | Dependencia manual: ' + D.dep + '%\nRecompra: ' + D.recompra + ' | Freno de ventas: ' + D.freno + '\nPostventa: ' + D.postventa + '\nPauta: $' + D.pauta + '/mes (' + D.pctpauta + '% de facturación)\nPlataforma principal: ' + D.plataforma + '\nContenido: ' + D.contenido + ' | Base de datos: ' + D.base + '\nPixel/métricas: ' + D.pixel + '\nSistemas activos: ' + sysLabel + '\nAutomatización: ' + D.automatizacion + '/10\nReportes: ' + D.reportes + '\nSin el dueño una semana: ' + D.sinmi + '\nÁrea más débil: ' + D.debil + '\nMárgenes: ' + D.margenes + ' | Utilidad: ' + D.utilidad + '\nRentabilidad: ' + D.rent + '/10\nWeb: ' + D.web + ' | Confianza de marca: ' + D.confianza + '\nPrueba social: ' + D.social + ' | Por qué no compran: ' + D.nocompra + '\nLo intentado antes: ' + D.intento + '\nMeta 12 meses: ' + D.meta12 + '\nProblema a resolver en 90 días: "' + D.problema + '"\nScore de madurez digital: ' + score + '/100\n\nEl diagnóstico debe:\n1. Nombrar el problema raíz con precisión, sin suavizarlo\n2. Conectar 2-3 problemas entre sí mostrando el patrón\n3. Señalar la oportunidad concreta más grande\n4. Cerrar con el costo real de no actuar\n\nTono: primera llamada real. Directo. Sin relleno.';
+
+  fetch('https://api.anthropic.com/v1/messages', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ model: 'claude-sonnet-4-20250514', max_tokens: 1000, messages: [{ role: 'user', content: prompt }] })
+  }).then(function(res) {
+    return res.json();
+  }).then(function(json) {
+    var txt = (json.content && json.content[0] && json.content[0].text) ? json.content[0].text : 'No se pudo generar el diagnóstico.';
+    clearInterval(iv);
+    document.getElementById('vg-load').style.display = 'none';
+    document.getElementById('vg-res').style.display = 'block';
+    document.getElementById('pgb').style.width = '100%';
+    document.getElementById('res-score').textContent = score;
+
+    var levels = score < 25 ? ['Negocio en zona de riesgo', 'Estructura crítica — depende de usted para sobrevivir'] :
+      score < 45 ? ['Potencial bloqueado por el caos', 'Vende, pero el desorden frena el crecimiento real'] :
+      score < 65 ? ['Buena base, sistemas incompletos', 'Tiene lo básico — le faltan las capas que escalan'] :
+      ['Base sólida, listo para escalar', 'Buena operación — hora de acelerar con orden'];
+    document.getElementById('res-title').textContent = levels[0];
+    document.getElementById('res-sub').textContent = levels[1];
+
+    document.getElementById('res-metrics').innerHTML =
+      '<div class="met"><div class="met-v red">$' + costoDesorden.toLocaleString() + '</div><div class="met-l">Costo desorden/mes</div></div>' +
+      '<div class="met"><div class="met-v red">$' + ventasPerdidas.toLocaleString() + '</div><div class="met-l">Ventas perdidas est.</div></div>' +
+      '<div class="met"><div class="met-v red">$' + pautaQuemada.toLocaleString() + '</div><div class="met-l">Pauta sin optimizar</div></div>' +
+      '<div class="met"><div class="met-v ' + (score >= 60 ? 'grn' : 'red') + '">' + score + '/100</div><div class="met-l">Madurez digital</div></div>';
+
+    var aiOut = document.getElementById('res-ai');
+    aiOut.textContent = '';
+    var i = 0;
+    var ti = setInterval(function() {
+      if (i < txt.length) { aiOut.textContent += txt[i]; i++; } else clearInterval(ti);
+    }, 14);
+  }).catch(function() {
+    clearInterval(iv);
+    document.getElementById('vg-load').style.display = 'none';
+    document.getElementById('vg-res').style.display = 'block';
+    document.getElementById('res-ai').textContent = 'Error al conectar con la IA. Intente de nuevo.';
+  });
+}
+
+function restart() {
+  D = { canal:'',horas:'',ausencia:'',pedidos:'',cuello:'',docs:'', fac:3000,dep:70,ticket:'',recompra:'',freno:'',postventa:'', pauta:500,plataforma:'',contenido:'',base:'',pixel:'', sistemas:[],automatizacion:4,reportes:'', producto:'',pais:'',antiguedad:'',intento:'',meta12:'', equipo:'',sinmi:'',debil:'', pctpauta:20,margenes:'',utilidad:'',rent:5, web:'',confianza:'',social:'',nocompra:'',problema:'' };
+  cur = 0;
+  document.getElementById('vg-res').style.display = 'none';
+  document.getElementById('vg-body').style.display = 'block';
+  document.getElementById('vg-tabs').style.display = 'flex';
+  for (var i = 0; i < 8; i++) {
+    document.getElementById('t' + i).classList.remove('active', 'done');
+    document.getElementById('s' + i).classList.remove('active');
+  }
+  document.getElementById('t0').classList.add('active');
+  document.getElementById('s0').classList.add('active');
+  document.getElementById('pgb').style.width = '0%';
+  document.querySelectorAll('.opt').forEach(function(o) { o.classList.remove('sel'); });
+  ['i-producto','i-pais','i-problema'].forEach(function(id) { var el = document.getElementById(id); if (el) el.value = ''; });
+  buildBars();
+}
+
+buildBars();
+</script>
+
+    </div>
+  </div>
+</section>
 <section class="problem">
   <div class="container">
     <div class="problem-quote display reveal">"El problema no es que no trabaja duro. El problema es que <em>sigue dependiendo de usted mismo</em> para que todo funcione."</div>
@@ -1152,10 +1760,10 @@
     </div>
   </div>
 </section>
-<section style="background:var(--black-soft);border-top:1px solid rgba(255,255,255,0.04);padding:6rem 2rem;" id="podcast">
+<section style="background:var(--black-soft);border-top:1px solid rgba(255,255,255,0.04);padding:4rem 2rem;" id="podcast">
   <div class="container">
     <div class="section-tag">Podcast gratuito</div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;" class="podcast-grid">
+    <div style="display:block;" class="podcast-grid">
 
       <div class="reveal">
         <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,5vw,4rem);color:var(--white);line-height:0.95;margin-bottom:1.25rem;">
@@ -1171,31 +1779,10 @@
           <a href="https://youtube.com/@pablovillamo?si=3-l_Ygmfd95a3f5R" target="_blank" style="display:inline-flex;align-items:center;gap:8px;background:var(--green);color:var(--black);padding:0.85rem 1.75rem;border-radius:4px;font-weight:700;font-size:0.875rem;text-decoration:none;transition:background 0.2s;">
             Escuchar en YouTube →
           </a>
-          <a href="podcast-background.html" target="_blank" style="display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--white);padding:0.85rem 1.75rem;border-radius:4px;border:1px solid rgba(255,255,255,0.15);font-weight:500;font-size:0.875rem;text-decoration:none;transition:border-color 0.2s;">
-            Ver portada del podcast
-          </a>
         </div>
       </div>
 
-      <div class="reveal">
-        <a href="podcast-background.html" target="_blank" style="display:block;text-decoration:none;position:relative;border-radius:12px;overflow:hidden;border:1px solid rgba(34,197,94,0.2);transition:border-color 0.2s;box-shadow:0 20px 60px rgba(0,0,0,0.5);">
-          <!-- Live preview of podcast background using iframe -->
-          <div style="position:relative;aspect-ratio:16/9;background:#0A0A0A;overflow:hidden;">
-            <iframe src="podcast-background.html" style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;pointer-events:none;" title="Podcast Background Preview" loading="lazy"></iframe>
-            <!-- Overlay with play/visit button -->
-            <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(0,0,0,0.3);transition:background 0.2s;">
-              <div style="width:64px;height:64px;background:var(--green);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:1rem;">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><polygon points="8,5 19,12 8,19" fill="#0A0A0A"/></svg>
-              </div>
-              <p style="font-family:'Space Mono',monospace;font-size:0.65rem;color:rgba(255,255,255,0.7);letter-spacing:0.1em;text-transform:uppercase;">Ver portada completa</p>
-            </div>
-          </div>
-          <div style="padding:1.25rem 1.5rem;background:var(--black);">
-            <p style="font-family:'Space Mono',monospace;font-size:0.6rem;color:var(--green);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.4rem;">Villamo Growth</p>
-            <p style="font-size:0.95rem;font-weight:600;color:var(--white);">Podcast Para Dueños de Negocio</p>
-          </div>
-        </a>
-      </div>
+      
 
     </div>
   </div>
@@ -1274,6 +1861,7 @@
     <div class="nav-logo-text">VILLAMO <span>GROWTH</span></div>
   </a>
   <ul class="nav-links">
+    <li><a href="#diagnostico">Diagnóstico</a></li>
     <li><a href="#que-es">Qué es</a></li>
     <li><a href="#quien-soy">Quién soy</a></li>
     <li><a href="#quien-soy">Quién soy</a>
